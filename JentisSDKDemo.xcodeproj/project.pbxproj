@@ -1,0 +1,633 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		967214882CB4029800570B9D /* JentisSDKDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214872CB4029800570B9D /* JentisSDKDemoApp.swift */; };
+		9672148A2CB4029800570B9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214892CB4029800570B9D /* ContentView.swift */; };
+		9672148C2CB4029900570B9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9672148B2CB4029900570B9D /* Assets.xcassets */; };
+		9672148F2CB4029900570B9D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9672148E2CB4029900570B9D /* Preview Assets.xcassets */; };
+		967214992CB4029900570B9D /* JentisSDKDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214982CB4029900570B9D /* JentisSDKDemoTests.swift */; };
+		967214A32CB4029900570B9D /* JentisSDKDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214A22CB4029900570B9D /* JentisSDKDemoUITests.swift */; };
+		967214A52CB4029900570B9D /* JentisSDKDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214A42CB4029900570B9D /* JentisSDKDemoUITestsLaunchTests.swift */; };
+		967214B22CB402D200570B9D /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214B12CB402D200570B9D /* SplashScreenView.swift */; };
+		967214B62CB4035B00570B9D /* JentisSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967214B52CB4035B00570B9D /* JentisSDK.xcframework */; };
+		967214B72CB4035B00570B9D /* JentisSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 967214B52CB4035B00570B9D /* JentisSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		967214BA2CB4039100570B9D /* SnackbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214B92CB4039100570B9D /* SnackbarView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		967214952CB4029900570B9D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9672147C2CB4029800570B9D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 967214832CB4029800570B9D;
+			remoteInfo = JentisSDKDemo;
+		};
+		9672149F2CB4029900570B9D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9672147C2CB4029800570B9D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 967214832CB4029800570B9D;
+			remoteInfo = JentisSDKDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		967214B82CB4035C00570B9D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				967214B72CB4035B00570B9D /* JentisSDK.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		967214842CB4029800570B9D /* JentisSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JentisSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		967214872CB4029800570B9D /* JentisSDKDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JentisSDKDemoApp.swift; sourceTree = "<group>"; };
+		967214892CB4029800570B9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9672148B2CB4029900570B9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9672148E2CB4029900570B9D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		967214942CB4029900570B9D /* JentisSDKDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JentisSDKDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		967214982CB4029900570B9D /* JentisSDKDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JentisSDKDemoTests.swift; sourceTree = "<group>"; };
+		9672149E2CB4029900570B9D /* JentisSDKDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JentisSDKDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		967214A22CB4029900570B9D /* JentisSDKDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JentisSDKDemoUITests.swift; sourceTree = "<group>"; };
+		967214A42CB4029900570B9D /* JentisSDKDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JentisSDKDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		967214B12CB402D200570B9D /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		967214B32CB4034700570B9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		967214B52CB4035B00570B9D /* JentisSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = JentisSDK.xcframework; sourceTree = "<group>"; };
+		967214B92CB4039100570B9D /* SnackbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		967214812CB4029800570B9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				967214B62CB4035B00570B9D /* JentisSDK.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		967214912CB4029900570B9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9672149B2CB4029900570B9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9672147B2CB4029800570B9D = {
+			isa = PBXGroup;
+			children = (
+				967214862CB4029800570B9D /* JentisSDKDemo */,
+				967214972CB4029900570B9D /* JentisSDKDemoTests */,
+				967214A12CB4029900570B9D /* JentisSDKDemoUITests */,
+				967214852CB4029800570B9D /* Products */,
+				967214B42CB4035B00570B9D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		967214852CB4029800570B9D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				967214842CB4029800570B9D /* JentisSDKDemo.app */,
+				967214942CB4029900570B9D /* JentisSDKDemoTests.xctest */,
+				9672149E2CB4029900570B9D /* JentisSDKDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		967214862CB4029800570B9D /* JentisSDKDemo */ = {
+			isa = PBXGroup;
+			children = (
+				967214B32CB4034700570B9D /* Info.plist */,
+				967214872CB4029800570B9D /* JentisSDKDemoApp.swift */,
+				967214892CB4029800570B9D /* ContentView.swift */,
+				9672148B2CB4029900570B9D /* Assets.xcassets */,
+				9672148D2CB4029900570B9D /* Preview Content */,
+				967214B12CB402D200570B9D /* SplashScreenView.swift */,
+				967214B92CB4039100570B9D /* SnackbarView.swift */,
+			);
+			path = JentisSDKDemo;
+			sourceTree = "<group>";
+		};
+		9672148D2CB4029900570B9D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9672148E2CB4029900570B9D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		967214972CB4029900570B9D /* JentisSDKDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				967214982CB4029900570B9D /* JentisSDKDemoTests.swift */,
+			);
+			path = JentisSDKDemoTests;
+			sourceTree = "<group>";
+		};
+		967214A12CB4029900570B9D /* JentisSDKDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				967214A22CB4029900570B9D /* JentisSDKDemoUITests.swift */,
+				967214A42CB4029900570B9D /* JentisSDKDemoUITestsLaunchTests.swift */,
+			);
+			path = JentisSDKDemoUITests;
+			sourceTree = "<group>";
+		};
+		967214B42CB4035B00570B9D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				967214B52CB4035B00570B9D /* JentisSDK.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		967214832CB4029800570B9D /* JentisSDKDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 967214A82CB4029900570B9D /* Build configuration list for PBXNativeTarget "JentisSDKDemo" */;
+			buildPhases = (
+				967214802CB4029800570B9D /* Sources */,
+				967214812CB4029800570B9D /* Frameworks */,
+				967214822CB4029800570B9D /* Resources */,
+				967214B82CB4035C00570B9D /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JentisSDKDemo;
+			productName = JentisSDKDemo;
+			productReference = 967214842CB4029800570B9D /* JentisSDKDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		967214932CB4029900570B9D /* JentisSDKDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 967214AB2CB4029900570B9D /* Build configuration list for PBXNativeTarget "JentisSDKDemoTests" */;
+			buildPhases = (
+				967214902CB4029900570B9D /* Sources */,
+				967214912CB4029900570B9D /* Frameworks */,
+				967214922CB4029900570B9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				967214962CB4029900570B9D /* PBXTargetDependency */,
+			);
+			name = JentisSDKDemoTests;
+			productName = JentisSDKDemoTests;
+			productReference = 967214942CB4029900570B9D /* JentisSDKDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9672149D2CB4029900570B9D /* JentisSDKDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 967214AE2CB4029900570B9D /* Build configuration list for PBXNativeTarget "JentisSDKDemoUITests" */;
+			buildPhases = (
+				9672149A2CB4029900570B9D /* Sources */,
+				9672149B2CB4029900570B9D /* Frameworks */,
+				9672149C2CB4029900570B9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				967214A02CB4029900570B9D /* PBXTargetDependency */,
+			);
+			name = JentisSDKDemoUITests;
+			productName = JentisSDKDemoUITests;
+			productReference = 9672149E2CB4029900570B9D /* JentisSDKDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9672147C2CB4029800570B9D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					967214832CB4029800570B9D = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					967214932CB4029900570B9D = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 967214832CB4029800570B9D;
+					};
+					9672149D2CB4029900570B9D = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 967214832CB4029800570B9D;
+					};
+				};
+			};
+			buildConfigurationList = 9672147F2CB4029800570B9D /* Build configuration list for PBXProject "JentisSDKDemo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9672147B2CB4029800570B9D;
+			productRefGroup = 967214852CB4029800570B9D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				967214832CB4029800570B9D /* JentisSDKDemo */,
+				967214932CB4029900570B9D /* JentisSDKDemoTests */,
+				9672149D2CB4029900570B9D /* JentisSDKDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		967214822CB4029800570B9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9672148F2CB4029900570B9D /* Preview Assets.xcassets in Resources */,
+				9672148C2CB4029900570B9D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		967214922CB4029900570B9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9672149C2CB4029900570B9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		967214802CB4029800570B9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9672148A2CB4029800570B9D /* ContentView.swift in Sources */,
+				967214BA2CB4039100570B9D /* SnackbarView.swift in Sources */,
+				967214882CB4029800570B9D /* JentisSDKDemoApp.swift in Sources */,
+				967214B22CB402D200570B9D /* SplashScreenView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		967214902CB4029900570B9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				967214992CB4029900570B9D /* JentisSDKDemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9672149A2CB4029900570B9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				967214A32CB4029900570B9D /* JentisSDKDemoUITests.swift in Sources */,
+				967214A52CB4029900570B9D /* JentisSDKDemoUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		967214962CB4029900570B9D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 967214832CB4029800570B9D /* JentisSDKDemo */;
+			targetProxy = 967214952CB4029900570B9D /* PBXContainerItemProxy */;
+		};
+		967214A02CB4029900570B9D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 967214832CB4029800570B9D /* JentisSDKDemo */;
+			targetProxy = 9672149F2CB4029900570B9D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		967214A62CB4029900570B9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		967214A72CB4029900570B9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		967214A92CB4029900570B9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"JentisSDKDemo/Preview Content\"";
+				DEVELOPMENT_TEAM = P88DR85ZT4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JentisSDKDemo/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jentis.JentisSDKDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		967214AA2CB4029900570B9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"JentisSDKDemo/Preview Content\"";
+				DEVELOPMENT_TEAM = P88DR85ZT4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JentisSDKDemo/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jentis.JentisSDKDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		967214AC2CB4029900570B9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P88DR85ZT4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jentis.JentisSDKDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JentisSDKDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/JentisSDKDemo";
+			};
+			name = Debug;
+		};
+		967214AD2CB4029900570B9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P88DR85ZT4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jentis.JentisSDKDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JentisSDKDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/JentisSDKDemo";
+			};
+			name = Release;
+		};
+		967214AF2CB4029900570B9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P88DR85ZT4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jentis.JentisSDKDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JentisSDKDemo;
+			};
+			name = Debug;
+		};
+		967214B02CB4029900570B9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P88DR85ZT4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jentis.JentisSDKDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JentisSDKDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9672147F2CB4029800570B9D /* Build configuration list for PBXProject "JentisSDKDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				967214A62CB4029900570B9D /* Debug */,
+				967214A72CB4029900570B9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		967214A82CB4029900570B9D /* Build configuration list for PBXNativeTarget "JentisSDKDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				967214A92CB4029900570B9D /* Debug */,
+				967214AA2CB4029900570B9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		967214AB2CB4029900570B9D /* Build configuration list for PBXNativeTarget "JentisSDKDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				967214AC2CB4029900570B9D /* Debug */,
+				967214AD2CB4029900570B9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		967214AE2CB4029900570B9D /* Build configuration list for PBXNativeTarget "JentisSDKDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				967214AF2CB4029900570B9D /* Debug */,
+				967214B02CB4029900570B9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9672147C2CB4029800570B9D /* Project object */;
+}
