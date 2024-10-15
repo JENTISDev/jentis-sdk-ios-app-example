@@ -9,10 +9,15 @@ import SwiftUI
 import JentisSDK
 
 struct ContentView: View {
-    @State private var message: String = ""
     @State private var snackbarMessage: String = ""
     @State private var showSnackbar: Bool = false
     @State private var isError: Bool = false
+    
+    // Available actions from TrackingService
+    private let actions: [(String, () async throws -> Void)] = [
+        ("Send Consent Model", TrackingService.sendConsentModel),
+        ("Send Data Submission Model", TrackingService.sendDataSubmissionModel)
+    ]
     
     var body: some View {
         ZStack {
@@ -22,26 +27,25 @@ struct ContentView: View {
                     .fontWeight(.bold)
                     .padding()
 
-                Text("Enter a message to log it to the server.")
+                Text("Select an action to perform.")
                     .font(.subheadline)
                     .foregroundColor(.gray)
 
-                TextField("Enter your message here...", text: $message)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                // Dynamically creating buttons for each action
+                ForEach(actions, id: \.0) { action in
+                    Button(action: {
+                        performAction(action.1)
+                    }) {
+                        Text(action.0)
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color.jentisBlue)
+                            .cornerRadius(10)
+                    }
                     .padding(.horizontal)
-
-                Button(action: {
-                    saveMessage()
-                }) {
-                    Text("Send Message")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
-                        .cornerRadius(10)
                 }
-                .padding(.horizontal)
 
                 Spacer()
             }
@@ -56,18 +60,18 @@ struct ContentView: View {
         }
     }
 
-    private func saveMessage() {
+    private func performAction(_ action: @escaping () async throws -> Void) {
         Task {
             do {
-                try await TrackingService.saveString(message)
+                try await action()
                 DispatchQueue.main.async {
-                    snackbarMessage = "String stored successfully!"
+                    snackbarMessage = "Action executed successfully!"
                     isError = false
                     showSnackbarWithDelay()
                 }
             } catch {
                 DispatchQueue.main.async {
-                    snackbarMessage = message.isEmpty ? "Parameter \"myString\" not provided" : "Failed to send message."
+                    snackbarMessage = "Failed to execute action."
                     isError = true
                     showSnackbarWithDelay()
                 }

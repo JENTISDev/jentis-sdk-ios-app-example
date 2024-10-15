@@ -18,6 +18,8 @@
 		967214B62CB4035B00570B9D /* JentisSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967214B52CB4035B00570B9D /* JentisSDK.xcframework */; };
 		967214B72CB4035B00570B9D /* JentisSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 967214B52CB4035B00570B9D /* JentisSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		967214BA2CB4039100570B9D /* SnackbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214B92CB4039100570B9D /* SnackbarView.swift */; };
+		96FBA5C62CBE21EE0045C096 /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 96FBA5C52CBE21EE0045C096 /* netfox */; };
+		96FBA5CA2CBE264C0045C096 /* Color+Jentis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBA5C92CBE264C0045C096 /* Color+Jentis.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,7 @@
 		967214B32CB4034700570B9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		967214B52CB4035B00570B9D /* JentisSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = JentisSDK.xcframework; sourceTree = "<group>"; };
 		967214B92CB4039100570B9D /* SnackbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarView.swift; sourceTree = "<group>"; };
+		96FBA5C92CBE264C0045C096 /* Color+Jentis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Jentis.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96FBA5C62CBE21EE0045C096 /* netfox in Frameworks */,
 				967214B62CB4035B00570B9D /* JentisSDK.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +129,7 @@
 				9672148D2CB4029900570B9D /* Preview Content */,
 				967214B12CB402D200570B9D /* SplashScreenView.swift */,
 				967214B92CB4039100570B9D /* SnackbarView.swift */,
+				96FBA5C92CBE264C0045C096 /* Color+Jentis.swift */,
 			);
 			path = JentisSDKDemo;
 			sourceTree = "<group>";
@@ -179,6 +184,9 @@
 			dependencies = (
 			);
 			name = JentisSDKDemo;
+			packageProductDependencies = (
+				96FBA5C52CBE21EE0045C096 /* netfox */,
+			);
 			productName = JentisSDKDemo;
 			productReference = 967214842CB4029800570B9D /* JentisSDKDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -251,6 +259,9 @@
 				Base,
 			);
 			mainGroup = 9672147B2CB4029800570B9D;
+			packageReferences = (
+				96FBA5C42CBE21EE0045C096 /* XCRemoteSwiftPackageReference "netfox" */,
+			);
 			productRefGroup = 967214852CB4029800570B9D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -294,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9672148A2CB4029800570B9D /* ContentView.swift in Sources */,
+				96FBA5CA2CBE264C0045C096 /* Color+Jentis.swift in Sources */,
 				967214BA2CB4039100570B9D /* SnackbarView.swift in Sources */,
 				967214882CB4029800570B9D /* JentisSDKDemoApp.swift in Sources */,
 				967214B22CB402D200570B9D /* SplashScreenView.swift in Sources */,
@@ -628,6 +640,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		96FBA5C42CBE21EE0045C096 /* XCRemoteSwiftPackageReference "netfox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kasketis/netfox.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.21.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		96FBA5C52CBE21EE0045C096 /* netfox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 96FBA5C42CBE21EE0045C096 /* XCRemoteSwiftPackageReference "netfox" */;
+			productName = netfox;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9672147C2CB4029800570B9D /* Project object */;
 }

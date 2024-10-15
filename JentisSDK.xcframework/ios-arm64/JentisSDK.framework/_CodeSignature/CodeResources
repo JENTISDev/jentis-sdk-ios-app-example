@@ -10,27 +10,27 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		/KQ8HqIjLc89uyX0mzUPyzgjVt8=
+		bgkAFRzaIOGHwo7bXH9MkVICotA=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		h4wQzYcZ8T6dojcD8jcJoFsSh64=
+		XX9ymSwOaaMFbHBTPLS3+r82Eoo=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		NckkfNImSkld1a3jRjddZOO6f40=
+		zaMK7MRVmJD79hr0yjdk52LzWBs=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		w43wLPjjZ66CYSSqyr3bNCphw3s=
+		CN7yIoJojBhO9FvPEGgg49A93wk=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		NckkfNImSkld1a3jRjddZOO6f40=
+		zaMK7MRVmJD79hr0yjdk52LzWBs=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		EHbBv6qBZevR4t4CpO4InaloIac=
+		2mJYU5cU9a+SiuJE/JdepM4eO/Q=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -50,35 +50,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8K0A2EIMeyvLLJkxb3dhbQ0plq/dax8al4JP1siT8Wk=
+			RVAlj1DkwFlugOedSNUo0wTS7b8SqtmjjKEvdBfnYoA=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			29KyqucG6QtK2gSmMVcT5mzuSQfuALUCOUUGGwkPWvg=
+			VIP7xNnyTfDAX/9GHCQQdbPdIeOd2NO1X/Lbsf1zjuI=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lwcZB0WeW3pCVqSCppSYX1Ve4RQYRJ7q3FHNmomBSv8=
+			wdHzT4JbRBnGAAISijhG9RN6ROlfgTt09b31cImqCtw=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			29KyqucG6QtK2gSmMVcT5mzuSQfuALUCOUUGGwkPWvg=
+			VIP7xNnyTfDAX/9GHCQQdbPdIeOd2NO1X/Lbsf1zjuI=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/wIlVUmXtbIMxX00dJGTUBD98ElpJ8Xm2EVPDAKBLws=
+			v5GGZGfxN4c/ppBphhBZxiXQangi84BPb0hXwhPWp1k=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

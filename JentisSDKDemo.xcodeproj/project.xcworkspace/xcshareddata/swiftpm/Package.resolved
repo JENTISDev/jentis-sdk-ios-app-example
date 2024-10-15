@@ -1,0 +1,15 @@
+{
+  "originHash" : "2d4a793c0b9b56f17b25f8e4ef6eb3d29182419b48cfc3ea89029a74d3f63c78",
+  "pins" : [
+    {
+      "identity" : "netfox",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kasketis/netfox.git",
+      "state" : {
+        "revision" : "557576032736fd3140422baefb68b8f76c55088f",
+        "version" : "1.21.0"
+      }
+    }
+  ],
+  "version" : 3
+}

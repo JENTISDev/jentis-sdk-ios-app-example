@@ -1,9 +1,46 @@
 {
   "ABIRoot": {
     "kind": "Root",
-    "name": "TopLevel",
-    "printedName": "TopLevel",
+    "name": "JentisSDK",
+    "printedName": "JentisSDK",
     "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Security",
+        "printedName": "Security",
+        "declKind": "Import",
+        "moduleName": "JentisSDK"
+      },
       {
         "kind": "Import",
         "name": "Foundation",
@@ -48,6 +85,54 @@
             ],
             "throwing": true,
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "sendConsentModel",
+            "printedName": "sendConsentModel()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9JentisSDK15TrackingServiceC16sendConsentModelyyYaKFZ",
+            "mangledName": "$s9JentisSDK15TrackingServiceC16sendConsentModelyyYaKFZ",
+            "moduleName": "JentisSDK",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "sendDataSubmissionModel",
+            "printedName": "sendDataSubmissionModel()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9JentisSDK15TrackingServiceC23sendDataSubmissionModelyyYaKFZ",
+            "mangledName": "$s9JentisSDK15TrackingServiceC23sendDataSubmissionModelyyYaKFZ",
+            "moduleName": "JentisSDK",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
@@ -57,7 +142,57 @@
         "declAttributes": [
           "AccessControl"
         ],
-        "hasMissingDesignatedInitializers": true
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "JentisSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Security",
+        "printedName": "Security",
+        "declKind": "Import",
+        "moduleName": "JentisSDK"
       },
       {
         "kind": "Import",
@@ -74,11 +209,81 @@
   },
   "ConstValues": [
     {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
+      "kind": "StringLiteral",
+      "offset": 598,
+      "length": 21,
+      "value": "\"navigator-userAgent\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
+      "kind": "StringLiteral",
+      "offset": 896,
+      "length": 17,
+      "value": "\"googleanalytics\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
+      "kind": "StringLiteral",
+      "offset": 3356,
+      "length": 24,
+      "value": "\"document_location_href\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
+      "kind": "StringLiteral",
+      "offset": 3416,
+      "length": 15,
+      "value": "\"fb_browser_id\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
+      "kind": "StringLiteral",
+      "offset": 3504,
+      "length": 12,
+      "value": "\"product_id\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
+      "kind": "StringLiteral",
+      "offset": 3780,
+      "length": 25,
+      "value": "\"enrichment_xxxlprodfeed\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/ConsentModel.swift",
+      "kind": "StringLiteral",
+      "offset": 554,
+      "length": 21,
+      "value": "\"navigator-userAgent\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/ConsentModel.swift",
+      "kind": "StringLiteral",
+      "offset": 1937,
+      "length": 17,
+      "value": "\"googleanalytics\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Utilities\/ConsentIDUtility.swift",
+      "kind": "StringLiteral",
+      "offset": 192,
+      "length": 23,
+      "value": "\"com.yourapp.consentID\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Utilities\/UserIDUtility.swift",
+      "kind": "StringLiteral",
+      "offset": 183,
+      "length": 20,
+      "value": "\"com.yourapp.userID\""
+    },
+    {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/Service.swift",
       "kind": "StringLiteral",
       "offset": 235,
-      "length": 68,
-      "value": "\"https:\/\/us-central1-mobilesdklogging.cloudfunctions.net\/saveString\""
+      "length": 40,
+      "value": "\"https:\/\/qc3ipx.ckion-dev.jtm-demo.com\/\""
     }
   ]
 }
