@@ -20,6 +20,8 @@
 		967214BA2CB4039100570B9D /* SnackbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214B92CB4039100570B9D /* SnackbarView.swift */; };
 		96FBA5C62CBE21EE0045C096 /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 96FBA5C52CBE21EE0045C096 /* netfox */; };
 		96FBA5CA2CBE264C0045C096 /* Color+Jentis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBA5C92CBE264C0045C096 /* Color+Jentis.swift */; };
+		96FBA5CC2CBE28CC0045C096 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96FBA5CB2CBE28CC0045C096 /* GoogleService-Info.plist */; };
+		96FBA5CF2CBE29720045C096 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 96FBA5CE2CBE29710045C096 /* FirebaseAppDistribution-Beta */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,7 @@
 		967214B52CB4035B00570B9D /* JentisSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = JentisSDK.xcframework; sourceTree = "<group>"; };
 		967214B92CB4039100570B9D /* SnackbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarView.swift; sourceTree = "<group>"; };
 		96FBA5C92CBE264C0045C096 /* Color+Jentis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Jentis.swift"; sourceTree = "<group>"; };
+		96FBA5CB2CBE28CC0045C096 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,7 @@
 			files = (
 				96FBA5C62CBE21EE0045C096 /* netfox in Frameworks */,
 				967214B62CB4035B00570B9D /* JentisSDK.xcframework in Frameworks */,
+				96FBA5CF2CBE29720045C096 /* FirebaseAppDistribution-Beta in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +126,7 @@
 		967214862CB4029800570B9D /* JentisSDKDemo */ = {
 			isa = PBXGroup;
 			children = (
+				96FBA5CB2CBE28CC0045C096 /* GoogleService-Info.plist */,
 				967214B32CB4034700570B9D /* Info.plist */,
 				967214872CB4029800570B9D /* JentisSDKDemoApp.swift */,
 				967214892CB4029800570B9D /* ContentView.swift */,
@@ -186,6 +191,7 @@
 			name = JentisSDKDemo;
 			packageProductDependencies = (
 				96FBA5C52CBE21EE0045C096 /* netfox */,
+				96FBA5CE2CBE29710045C096 /* FirebaseAppDistribution-Beta */,
 			);
 			productName = JentisSDKDemo;
 			productReference = 967214842CB4029800570B9D /* JentisSDKDemo.app */;
@@ -261,6 +267,7 @@
 			mainGroup = 9672147B2CB4029800570B9D;
 			packageReferences = (
 				96FBA5C42CBE21EE0045C096 /* XCRemoteSwiftPackageReference "netfox" */,
+				96FBA5CD2CBE29710045C096 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 967214852CB4029800570B9D /* Products */;
 			projectDirPath = "";
@@ -280,6 +287,7 @@
 			files = (
 				9672148F2CB4029900570B9D /* Preview Assets.xcassets in Resources */,
 				9672148C2CB4029900570B9D /* Assets.xcassets in Resources */,
+				96FBA5CC2CBE28CC0045C096 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,6 +658,14 @@
 				version = 1.21.0;
 			};
 		};
+		96FBA5CD2CBE29710045C096 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = exactVersion;
+				version = 11.3.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -657,6 +673,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 96FBA5C42CBE21EE0045C096 /* XCRemoteSwiftPackageReference "netfox" */;
 			productName = netfox;
+		};
+		96FBA5CE2CBE29710045C096 /* FirebaseAppDistribution-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 96FBA5CD2CBE29710045C096 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAppDistribution-Beta";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

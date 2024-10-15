@@ -7,6 +7,7 @@
 
 import SwiftUI
 import netfox
+import FirebaseCore
 
 @main
 struct JentisSDKDemoApp: App {
@@ -27,6 +28,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         // Start Netfox only in debug mode
         NFX.sharedInstance().start()
         // #endif
+        FirebaseApp.configure()
         return true
     }
     
