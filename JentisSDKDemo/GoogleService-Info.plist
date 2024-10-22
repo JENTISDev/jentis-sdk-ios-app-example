@@ -9,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.jentis.JentisSDKDemo</string>
+	<string>com.jentis.sdkdemo</string>
 	<key>PROJECT_ID</key>
 	<string>jentis-sdk</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:24550449168:ios:831f020a5f5d89def72a95</string>
+	<string>1:24550449168:ios:fe0955c554a564fdf72a95</string>
 </dict>
 </plist>

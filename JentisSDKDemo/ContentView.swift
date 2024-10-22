@@ -15,8 +15,8 @@ struct ContentView: View {
     
     // Available actions from TrackingService
     private let actions: [(String, () async throws -> Void)] = [
-        ("Send Consent Model", TrackingService.sendConsentModel),
-        ("Send Data Submission Model", TrackingService.sendDataSubmissionModel)
+        ("Send Consent Model", { try await TrackingService.shared.sendConsentModel() }),
+        ("Send Data Submission Model", { try await TrackingService.shared.sendDataSubmissionModel() })
     ]
     
     var body: some View {

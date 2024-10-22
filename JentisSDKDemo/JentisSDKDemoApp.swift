@@ -8,6 +8,7 @@
 import SwiftUI
 import netfox
 import FirebaseCore
+import JentisSDK
 
 @main
 struct JentisSDKDemoApp: App {
@@ -28,7 +29,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         // Start Netfox only in debug mode
         NFX.sharedInstance().start()
         // #endif
+
+        // Initialize Firebase
         FirebaseApp.configure()
+        setupJentisSDK()
+        
         return true
     }
     
@@ -37,5 +42,17 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         // Stop Netfox when the app is terminated
         NFX.sharedInstance().stop()
         // #endif
+    }
+    
+    private func setupJentisSDK() {
+        let config = TrackConfig(
+            trackDomain: "qc3ipx.ckion-dev.jtm-demo.com",
+            container: "app-mobiweb",
+            environment: .stage,
+            version: "3",
+            debugCode: "a675b5f1-48d2-43bf-b314-ba4830cda52d"
+        )
+        
+        JentisService.configure(with: config)
     }
 }
