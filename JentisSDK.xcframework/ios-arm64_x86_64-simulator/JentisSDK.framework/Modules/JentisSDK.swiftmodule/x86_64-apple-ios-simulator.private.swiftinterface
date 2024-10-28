@@ -3,7 +3,6 @@
 // swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name JentisSDK
 import Foundation
 @_exported import JentisSDK
-import Security
 import Swift
 import UIKit
 import _Concurrency
@@ -12,9 +11,12 @@ import _SwiftConcurrencyShims
 import os
 @_hasMissingDesignatedInitializers public class SessionManager {
   public static func startObservingAppLifecycle()
-  public static func startOrResumeSession() -> Swift.String
+  public static func startOrResumeSession() -> (Swift.String, JentisSDK.Action)
   public static func endSession()
-  public static func updateLastActiveTimestamp()
+  public static func setLastActiveTimestamp(_ timestamp: Foundation.TimeInterval)
+  public static func getLastActiveTimestamp() -> Foundation.TimeInterval
+  public static func setCurrentSessionID(_ sessionID: Swift.String?)
+  public static func getCurrentSessionID() -> Swift.String?
   @objc deinit
 }
 public class TrackConfig : Swift.Codable {
@@ -63,6 +65,18 @@ public class TrackConfig : Swift.Codable {
   public static func currentTimestampInMillis() -> Swift.Int
   @objc deinit
 }
+public enum Action : Swift.String {
+  case new
+  case update
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
 extension JentisSDK.TrackConfig.Environment : Swift.Equatable {}
 extension JentisSDK.TrackConfig.Environment : Swift.Hashable {}
 extension JentisSDK.TrackConfig.Environment : Swift.RawRepresentable {}
+extension JentisSDK.Action : Swift.Equatable {}
+extension JentisSDK.Action : Swift.Hashable {}
+extension JentisSDK.Action : Swift.RawRepresentable {}

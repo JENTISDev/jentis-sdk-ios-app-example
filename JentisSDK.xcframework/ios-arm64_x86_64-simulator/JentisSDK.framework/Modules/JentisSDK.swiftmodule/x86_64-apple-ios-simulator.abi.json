@@ -76,14 +76,27 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
+                "name": "Tuple",
+                "printedName": "(Swift.String, JentisSDK.Action)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Action",
+                    "printedName": "JentisSDK.Action",
+                    "usr": "s:9JentisSDK6ActionO"
+                  }
+                ]
               }
             ],
             "declKind": "Func",
-            "usr": "s:9JentisSDK14SessionManagerC013startOrResumeC0SSyFZ",
-            "mangledName": "$s9JentisSDK14SessionManagerC013startOrResumeC0SSyFZ",
+            "usr": "s:9JentisSDK14SessionManagerC013startOrResumeC0SS_AA6ActionOtyFZ",
+            "mangledName": "$s9JentisSDK14SessionManagerC013startOrResumeC0SS_AA6ActionOtyFZ",
             "moduleName": "JentisSDK",
             "static": true,
             "declAttributes": [
@@ -111,6 +124,34 @@
             "static": true,
             "declAttributes": [
               "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setLastActiveTimestamp",
+            "printedName": "setLastActiveTimestamp(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9JentisSDK14SessionManagerC22setLastActiveTimestampyySdFZ",
+            "mangledName": "$s9JentisSDK14SessionManagerC22setLastActiveTimestampyySdFZ",
+            "moduleName": "JentisSDK",
+            "static": true,
+            "declAttributes": [
+              "Final",
               "AccessControl",
               "RawDocComment"
             ],
@@ -118,24 +159,91 @@
           },
           {
             "kind": "Function",
-            "name": "updateLastActiveTimestamp",
-            "printedName": "updateLastActiveTimestamp()",
+            "name": "getLastActiveTimestamp",
+            "printedName": "getLastActiveTimestamp()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9JentisSDK14SessionManagerC22getLastActiveTimestampSdyFZ",
+            "mangledName": "$s9JentisSDK14SessionManagerC22getLastActiveTimestampSdyFZ",
+            "moduleName": "JentisSDK",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setCurrentSessionID",
+            "printedName": "setCurrentSessionID(_:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:9JentisSDK14SessionManagerC25updateLastActiveTimestampyyFZ",
-            "mangledName": "$s9JentisSDK14SessionManagerC25updateLastActiveTimestampyyFZ",
+            "usr": "s:9JentisSDK14SessionManagerC010setCurrentC2IDyySSSgFZ",
+            "mangledName": "$s9JentisSDK14SessionManagerC010setCurrentC2IDyySSSgFZ",
             "moduleName": "JentisSDK",
             "static": true,
             "declAttributes": [
               "Final",
-              "AccessControl",
-              "RawDocComment"
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getCurrentSessionID",
+            "printedName": "getCurrentSessionID()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9JentisSDK14SessionManagerC010getCurrentC2IDSSSgyFZ",
+            "mangledName": "$s9JentisSDK14SessionManagerC010getCurrentC2IDSSSgyFZ",
+            "moduleName": "JentisSDK",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
             ],
             "funcSelfKind": "NonMutating"
           }
@@ -1111,13 +1219,6 @@
       },
       {
         "kind": "Import",
-        "name": "Security",
-        "printedName": "Security",
-        "declKind": "Import",
-        "moduleName": "JentisSDK"
-      },
-      {
-        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -1305,8 +1406,7 @@
             "mangledName": "$s9JentisSDK15TrackingServiceC23sendDataSubmissionModelyyYaKF",
             "moduleName": "JentisSDK",
             "declAttributes": [
-              "AccessControl",
-              "RawDocComment"
+              "AccessControl"
             ],
             "throwing": true,
             "funcSelfKind": "NonMutating"
@@ -1441,13 +1541,6 @@
       },
       {
         "kind": "Import",
-        "name": "Security",
-        "printedName": "Security",
-        "declKind": "Import",
-        "moduleName": "JentisSDK"
-      },
-      {
-        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -1462,6 +1555,220 @@
         "printedName": "os",
         "declKind": "Import",
         "moduleName": "JentisSDK"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Action",
+        "printedName": "Action",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "new",
+            "printedName": "new",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(JentisSDK.Action.Type) -> JentisSDK.Action",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Action",
+                    "printedName": "JentisSDK.Action",
+                    "usr": "s:9JentisSDK6ActionO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "JentisSDK.Action.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Action",
+                        "printedName": "JentisSDK.Action",
+                        "usr": "s:9JentisSDK6ActionO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:9JentisSDK6ActionO3newyA2CmF",
+            "mangledName": "$s9JentisSDK6ActionO3newyA2CmF",
+            "moduleName": "JentisSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "update",
+            "printedName": "update",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(JentisSDK.Action.Type) -> JentisSDK.Action",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Action",
+                    "printedName": "JentisSDK.Action",
+                    "usr": "s:9JentisSDK6ActionO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "JentisSDK.Action.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Action",
+                        "printedName": "JentisSDK.Action",
+                        "usr": "s:9JentisSDK6ActionO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:9JentisSDK6ActionO6updateyA2CmF",
+            "mangledName": "$s9JentisSDK6ActionO6updateyA2CmF",
+            "moduleName": "JentisSDK"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "JentisSDK.Action?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Action",
+                    "printedName": "JentisSDK.Action",
+                    "usr": "s:9JentisSDK6ActionO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:9JentisSDK6ActionO8rawValueACSgSS_tcfc",
+            "mangledName": "$s9JentisSDK6ActionO8rawValueACSgSS_tcfc",
+            "moduleName": "JentisSDK",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9JentisSDK6ActionO8rawValueSSvp",
+            "mangledName": "$s9JentisSDK6ActionO8rawValueSSvp",
+            "moduleName": "JentisSDK",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9JentisSDK6ActionO8rawValueSSvg",
+                "mangledName": "$s9JentisSDK6ActionO8rawValueSSvg",
+                "moduleName": "JentisSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:9JentisSDK6ActionO",
+        "mangledName": "$s9JentisSDK6ActionO",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
       },
       {
         "kind": "Import",
@@ -1480,159 +1787,159 @@
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
       "kind": "StringLiteral",
-      "offset": 628,
+      "offset": 652,
       "length": 21,
       "value": "\"navigator-userAgent\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
       "kind": "StringLiteral",
-      "offset": 953,
+      "offset": 977,
       "length": 17,
       "value": "\"googleanalytics\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
       "kind": "StringLiteral",
-      "offset": 3413,
+      "offset": 3437,
       "length": 24,
       "value": "\"document_location_href\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
       "kind": "StringLiteral",
-      "offset": 3473,
+      "offset": 3497,
       "length": 15,
       "value": "\"fb_browser_id\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
       "kind": "StringLiteral",
-      "offset": 3561,
+      "offset": 3585,
       "length": 12,
       "value": "\"product_id\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
       "kind": "StringLiteral",
-      "offset": 3837,
+      "offset": 3861,
       "length": 25,
       "value": "\"enrichment_xxxlprodfeed\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/ConsentModel.swift",
       "kind": "StringLiteral",
-      "offset": 554,
+      "offset": 578,
       "length": 21,
       "value": "\"navigator-userAgent\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/ConsentModel.swift",
       "kind": "StringLiteral",
-      "offset": 1937,
+      "offset": 1961,
       "length": 17,
       "value": "\"googleanalytics\""
     },
     {
-      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/SessionManager.swift",
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Session\/SessionManager.swift",
       "kind": "IntegerLiteral",
       "offset": 311,
       "length": 2,
       "value": "60"
     },
     {
-      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackConfig.swift",
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config\/TrackConfig.swift",
       "kind": "StringLiteral",
       "offset": 812,
       "length": 24,
       "value": "\"com.jentis.TrackConfig\""
     },
     {
-      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config.swift",
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config\/Config.swift",
       "kind": "StringLiteral",
       "offset": 152,
       "length": 17,
       "value": "\"at.allaboutapps\""
     },
     {
-      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config.swift",
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config\/Config.swift",
       "kind": "StringLiteral",
       "offset": 224,
       "length": 5,
       "value": "\"iOS\""
     },
     {
-      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config.swift",
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config\/Config.swift",
       "kind": "StringLiteral",
       "offset": 264,
       "length": 7,
       "value": "\"Apple\""
     },
     {
-      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config.swift",
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config\/Config.swift",
       "kind": "IntegerLiteral",
       "offset": 333,
       "length": 2,
       "value": "23"
     },
     {
-      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config.swift",
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config\/Config.swift",
       "kind": "StringLiteral",
       "offset": 366,
       "length": 17,
       "value": "\"jts_push_submit\""
     },
     {
-      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config.swift",
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config\/Config.swift",
       "kind": "IntegerLiteral",
       "offset": 421,
       "length": 2,
       "value": "30"
     },
     {
-      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config.swift",
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config\/Config.swift",
       "kind": "StringLiteral",
       "offset": 454,
       "length": 7,
       "value": "\"track\""
     },
     {
-      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config.swift",
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config\/Config.swift",
       "kind": "StringLiteral",
       "offset": 491,
       "length": 6,
       "value": "\"data\""
     },
     {
-      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config.swift",
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config\/Config.swift",
       "kind": "StringLiteral",
       "offset": 535,
       "length": 14,
       "value": "\"documentType\""
     },
     {
-      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config.swift",
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config\/Config.swift",
       "kind": "StringLiteral",
       "offset": 585,
       "length": 10,
       "value": "\"property\""
     },
     {
-      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config.swift",
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config\/Config.swift",
       "kind": "StringLiteral",
       "offset": 628,
       "length": 9,
       "value": "\"product\""
     },
     {
-      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config.swift",
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config\/Config.swift",
       "kind": "StringLiteral",
       "offset": 677,
       "length": 9,
       "value": "\"sdk-ios\""
     },
     {
-      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config.swift",
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config\/Config.swift",
       "kind": "StringLiteral",
       "offset": 729,
       "length": 10,
@@ -1651,6 +1958,20 @@
       "offset": 406,
       "length": 9,
       "value": "\"default\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/Action.swift",
+      "kind": "StringLiteral",
+      "offset": 134,
+      "length": 5,
+      "value": "\"new\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/Action.swift",
+      "kind": "StringLiteral",
+      "offset": 158,
+      "length": 8,
+      "value": "\"update\""
     }
   ]
 }
