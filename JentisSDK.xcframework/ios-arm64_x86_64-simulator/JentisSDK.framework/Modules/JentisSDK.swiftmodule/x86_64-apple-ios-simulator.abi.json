@@ -25,6 +25,409 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "VariablesWrapper",
+        "printedName": "VariablesWrapper",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "documentLocationHref",
+            "printedName": "documentLocationHref",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9JentisSDK16VariablesWrapperV20documentLocationHrefSSvp",
+            "mangledName": "$s9JentisSDK16VariablesWrapperV20documentLocationHrefSSvp",
+            "moduleName": "JentisSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9JentisSDK16VariablesWrapperV20documentLocationHrefSSvg",
+                "mangledName": "$s9JentisSDK16VariablesWrapperV20documentLocationHrefSSvg",
+                "moduleName": "JentisSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "fbBrowserId",
+            "printedName": "fbBrowserId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9JentisSDK16VariablesWrapperV11fbBrowserIdSSvp",
+            "mangledName": "$s9JentisSDK16VariablesWrapperV11fbBrowserIdSSvp",
+            "moduleName": "JentisSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9JentisSDK16VariablesWrapperV11fbBrowserIdSSvg",
+                "mangledName": "$s9JentisSDK16VariablesWrapperV11fbBrowserIdSSvg",
+                "moduleName": "JentisSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "jtspushedcommands",
+            "printedName": "jtspushedcommands",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9JentisSDK16VariablesWrapperV17jtspushedcommandsSaySSGvp",
+            "mangledName": "$s9JentisSDK16VariablesWrapperV17jtspushedcommandsSaySSGvp",
+            "moduleName": "JentisSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9JentisSDK16VariablesWrapperV17jtspushedcommandsSaySSGvg",
+                "mangledName": "$s9JentisSDK16VariablesWrapperV17jtspushedcommandsSaySSGvg",
+                "moduleName": "JentisSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "productId",
+            "printedName": "productId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9JentisSDK16VariablesWrapperV9productIdSaySSGvp",
+            "mangledName": "$s9JentisSDK16VariablesWrapperV9productIdSaySSGvp",
+            "moduleName": "JentisSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9JentisSDK16VariablesWrapperV9productIdSaySSGvg",
+                "mangledName": "$s9JentisSDK16VariablesWrapperV9productIdSaySSGvg",
+                "moduleName": "JentisSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "customProperties",
+            "printedName": "customProperties",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9JentisSDK16VariablesWrapperV16customPropertiesSDyS2SGvp",
+            "mangledName": "$s9JentisSDK16VariablesWrapperV16customPropertiesSDyS2SGvp",
+            "moduleName": "JentisSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9JentisSDK16VariablesWrapperV16customPropertiesSDyS2SGvg",
+                "mangledName": "$s9JentisSDK16VariablesWrapperV16customPropertiesSDyS2SGvg",
+                "moduleName": "JentisSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(documentLocationHref:fbBrowserId:jtspushedcommands:productId:customProperties:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "VariablesWrapper",
+                "printedName": "JentisSDK.VariablesWrapper",
+                "usr": "s:9JentisSDK16VariablesWrapperV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:9JentisSDK16VariablesWrapperV20documentLocationHref11fbBrowserId17jtspushedcommands07productJ016customPropertiesACSS_SSSaySSGAISDyS2SGtcfc",
+            "mangledName": "$s9JentisSDK16VariablesWrapperV20documentLocationHref11fbBrowserId17jtspushedcommands07productJ016customPropertiesACSS_SSSaySSGAISDyS2SGtcfc",
+            "moduleName": "JentisSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:9JentisSDK16VariablesWrapperV",
+        "mangledName": "$s9JentisSDK16VariablesWrapperV",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -271,6 +674,16 @@
             "usr": "s:s9EscapableP",
             "mangledName": "$ss9EscapableP"
           }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "RawDocComment"
         ]
       },
       {
@@ -1393,7 +1806,83 @@
           {
             "kind": "Function",
             "name": "sendDataSubmissionModel",
-            "printedName": "sendDataSubmissionModel()",
+            "printedName": "sendDataSubmissionModel(variables:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "JentisSDK.VariablesWrapper?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VariablesWrapper",
+                    "printedName": "JentisSDK.VariablesWrapper",
+                    "usr": "s:9JentisSDK16VariablesWrapperV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9JentisSDK15TrackingServiceC23sendDataSubmissionModel9variablesyAA16VariablesWrapperVSg_tYaKF",
+            "mangledName": "$s9JentisSDK15TrackingServiceC23sendDataSubmissionModel9variablesyAA16VariablesWrapperVSg_tYaKF",
+            "moduleName": "JentisSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "push",
+            "printedName": "push(customProperties:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9JentisSDK15TrackingServiceC4push16customPropertiesySDySSypG_tF",
+            "mangledName": "$s9JentisSDK15TrackingServiceC4push16customPropertiesySDySSypG_tF",
+            "moduleName": "JentisSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "submit",
+            "printedName": "submit()",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -1402,12 +1891,13 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:9JentisSDK15TrackingServiceC23sendDataSubmissionModelyyYaKF",
-            "mangledName": "$s9JentisSDK15TrackingServiceC23sendDataSubmissionModelyyYaKF",
+            "usr": "s:9JentisSDK15TrackingServiceC6submityyYaKF",
+            "mangledName": "$s9JentisSDK15TrackingServiceC6submityyYaKF",
             "moduleName": "JentisSDK",
             "declAttributes": [
               "AccessControl"
             ],
+            "isFromExtension": true,
             "throwing": true,
             "funcSelfKind": "NonMutating"
           }
@@ -1787,44 +2277,58 @@
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
       "kind": "StringLiteral",
-      "offset": 652,
+      "offset": 706,
       "length": 21,
       "value": "\"navigator-userAgent\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
       "kind": "StringLiteral",
-      "offset": 977,
+      "offset": 1035,
       "length": 17,
       "value": "\"googleanalytics\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
       "kind": "StringLiteral",
-      "offset": 3437,
+      "offset": 3342,
       "length": 24,
       "value": "\"document_location_href\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
       "kind": "StringLiteral",
-      "offset": 3497,
+      "offset": 3402,
       "length": 15,
       "value": "\"fb_browser_id\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
       "kind": "StringLiteral",
-      "offset": 3585,
+      "offset": 3490,
       "length": 12,
       "value": "\"product_id\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
+      "kind": "Dictionary",
+      "offset": 3766,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
       "kind": "StringLiteral",
-      "offset": 3861,
+      "offset": 6245,
       "length": 25,
       "value": "\"enrichment_xxxlprodfeed\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
+      "kind": "Dictionary",
+      "offset": 7160,
+      "length": 3,
+      "value": "[]"
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/ConsentModel.swift",
@@ -1846,6 +2350,20 @@
       "offset": 311,
       "length": 2,
       "value": "60"
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/PushData.swift",
+      "kind": "Dictionary",
+      "offset": 289,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/PushData.swift",
+      "kind": "Array",
+      "offset": 337,
+      "length": 17,
+      "value": "[\"track\", \"type\"]"
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config\/TrackConfig.swift",
@@ -1944,6 +2462,27 @@
       "offset": 729,
       "length": 10,
       "value": "\"https:\/\/\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
+      "kind": "StringLiteral",
+      "offset": 8054,
+      "length": 21,
+      "value": "\"defaultTrackCommand\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
+      "kind": "StringLiteral",
+      "offset": 8100,
+      "length": 23,
+      "value": "\"defaultDependencyType\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Utilities\/UserDefaultsUtility.swift",
+      "kind": "StringLiteral",
+      "offset": 187,
+      "length": 14,
+      "value": "\"pushDataList\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Utilities\/LoggerUtility.swift",

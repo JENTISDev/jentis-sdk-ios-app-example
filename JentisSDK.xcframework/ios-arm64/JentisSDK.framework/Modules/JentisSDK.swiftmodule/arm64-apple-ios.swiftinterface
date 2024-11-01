@@ -9,6 +9,14 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 import os
+public struct VariablesWrapper {
+  public let documentLocationHref: Swift.String
+  public let fbBrowserId: Swift.String
+  public let jtspushedcommands: [Swift.String]
+  public let productId: [Swift.String]
+  public let customProperties: [Swift.String : Swift.String]
+  public init(documentLocationHref: Swift.String, fbBrowserId: Swift.String, jtspushedcommands: [Swift.String], productId: [Swift.String], customProperties: [Swift.String : Swift.String] = [:])
+}
 @_hasMissingDesignatedInitializers public class SessionManager {
   public static func startObservingAppLifecycle()
   public static func startOrResumeSession() -> (Swift.String, JentisSDK.Action)
@@ -58,8 +66,12 @@ public class TrackConfig : Swift.Codable {
     get
   }
   public func sendConsentModel() async throws
-  public func sendDataSubmissionModel() async throws
+  public func sendDataSubmissionModel(variables: JentisSDK.VariablesWrapper? = nil) async throws
   @objc deinit
+}
+extension JentisSDK.TrackingService {
+  public func push(customProperties: [Swift.String : Any])
+  public func submit() async throws
 }
 @_hasMissingDesignatedInitializers public class TimestampUtility {
   public static func currentTimestampInMillis() -> Swift.Int

@@ -12,11 +12,16 @@ struct ContentView: View {
     @State private var snackbarMessage: String = ""
     @State private var showSnackbar: Bool = false
     @State private var isError: Bool = false
-    
+
     // Available actions from TrackingService
     private let actions: [(String, () async throws -> Void)] = [
         ("Send Consent Model", { try await TrackingService.shared.sendConsentModel() }),
-        ("Send Data Submission Model", { try await TrackingService.shared.sendDataSubmissionModel() })
+        ("Send Data Submission Model", { try await TrackingService.shared.sendDataSubmissionModel() }),
+        ("Add Item to Push Queue", {
+            let randomData = generateRandomPushData()
+            TrackingService.shared.push(customProperties: randomData)
+        }),
+        ("Submit Stored Push Data", { try await TrackingService.shared.submit() })
     ]
     
     var body: some View {
@@ -84,6 +89,40 @@ struct ContentView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             showSnackbar = false
         }
+    }
+    
+    // Helper function to generate random push data
+    private static func generateRandomPushData() -> [String: String] {
+        let urls = [
+            "https://www.example.com",
+            "https://www.sampledomain.com",
+            "https://www.testsite.org",
+            "https://www.anotherexample.net"
+        ]
+        let titles = [
+            "Welcome Page",
+            "About Us",
+            "Contact Page",
+            "Product Details",
+            "Blog Post"
+        ]
+        
+        let events = [
+            "pageview",
+            "click",
+            "purchase",
+            "order",
+        ]
+        
+        let randomURL = urls.randomElement() ?? "https://www.default.com"
+        let randomTitle = titles.randomElement() ?? "Default Title"
+        let randomEvent = events.randomElement() ?? "pageview"
+        
+        return [
+            "track": randomEvent,
+            "url": randomURL,
+            "title": randomTitle
+        ]
     }
 }
 
