@@ -6,13 +6,15 @@
 //
 import SwiftUI
 
-// ConsentModalView for configuring vendors consent
 struct ConsentModalView: View {
     @Environment(\.presentationMode) var presentationMode
     @Binding var isGoogleAnalyticsAllowed: Bool
     @Binding var isFacebookAllowed: Bool
     @Binding var isAwinAllowed: Bool
-    
+    @State private var isGoogleAnalyticsNCM: Bool = false
+    @State private var isFacebookNCM: Bool = false
+    @State private var isAwinNCM: Bool = false
+
     var body: some View {
         VStack(spacing: 20) {
             // Header
@@ -32,11 +34,11 @@ struct ConsentModalView: View {
             
             Divider()
             
-            // Toggles
+            // Toggles and NCM options
             VStack(spacing: 16) {
-                consentToggle(title: "Google Analytics", isOn: $isGoogleAnalyticsAllowed, color: .blue)
-                consentToggle(title: "Facebook", isOn: $isFacebookAllowed, color: .indigo)
-                consentToggle(title: "Awin", isOn: $isAwinAllowed, color: .green)
+                consentToggle(title: "Google Analytics", isOn: $isGoogleAnalyticsAllowed, ncmBinding: $isGoogleAnalyticsNCM, color: .blue)
+                consentToggle(title: "Facebook", isOn: $isFacebookAllowed, ncmBinding: $isFacebookNCM, color: .indigo)
+                consentToggle(title: "Awin", isOn: $isAwinAllowed, ncmBinding: $isAwinNCM, color: .green)
             }
             .padding(.horizontal)
             
@@ -65,17 +67,46 @@ struct ConsentModalView: View {
         .padding()
     }
     
-    // Helper function for toggles with custom styling
+    // Helper function for toggles with custom styling and NCM checkbox
     @ViewBuilder
-    private func consentToggle(title: String, isOn: Binding<Bool>, color: Color) -> some View {
-        Toggle(isOn: isOn) {
-            Text(title)
-                .font(.headline)
-                .foregroundColor(.primary)
+    private func consentToggle(title: String, isOn: Binding<Bool>, ncmBinding: Binding<Bool>, color: Color) -> some View {
+        HStack {
+            Toggle(isOn: isOn) {
+                Text(title)
+                    .font(.headline)
+                    .foregroundColor(.primary)
+            }
+            .toggleStyle(SwitchToggleStyle(tint: color))
+            
+            Spacer()
+            
+            // NCM Checkbox
+            HStack {
+                Text("NCM")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                Toggle("", isOn: ncmBinding)
+                    .labelsHidden()
+                    .toggleStyle(CheckboxToggleStyle())
+            }
+            .padding(.horizontal)
+            .background(Color(.secondarySystemBackground))
+            .cornerRadius(8)
         }
-        .toggleStyle(SwitchToggleStyle(tint: color))
         .padding()
         .background(Color(.secondarySystemBackground))
         .cornerRadius(10)
+    }
+}
+
+// Custom checkbox toggle style
+struct CheckboxToggleStyle: ToggleStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        Button(action: { configuration.isOn.toggle() }) {
+            Image(systemName: configuration.isOn ? "checkmark.square.fill" : "square")
+                .foregroundColor(configuration.isOn ? .blue : .secondary)
+                .imageScale(.large)
+        }
+        .buttonStyle(PlainButtonStyle())
     }
 }
