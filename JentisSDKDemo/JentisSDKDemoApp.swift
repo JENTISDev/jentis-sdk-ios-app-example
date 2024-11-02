@@ -46,11 +46,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     
     private func setupJentisSDK() {
         let config = TrackConfig(
-            trackDomain: "qc3ipx.ckion-dev.jtm-demo.com",
-            container: "app-mobiweb",
-            environment: .stage,
-            version: "3",
-            debugCode: "a675b5f1-48d2-43bf-b314-ba4830cda52d"
+            trackDomain: "nd7cud.mobiweb.jtm-demo.com",
+            container: "mobiweb-demoshop",
+            environment: .live,
+            version: "1",
+            debugCode: "44c2acd3-434d-4234-983b-48e91551eb5a"
         )
         
         JentisService.configure(with: config)
