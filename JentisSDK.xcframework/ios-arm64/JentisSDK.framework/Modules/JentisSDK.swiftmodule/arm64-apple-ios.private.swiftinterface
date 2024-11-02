@@ -17,6 +17,86 @@ public struct VariablesWrapper {
   public let customProperties: [Swift.String : Swift.String]
   public init(documentLocationHref: Swift.String, fbBrowserId: Swift.String, jtspushedcommands: [Swift.String], productId: [Swift.String], customProperties: [Swift.String : Swift.String] = [:])
 }
+public struct ConsentModel : Swift.Codable {
+  public let version: Swift.String
+  public let system: JentisSDK.ConsentModel.System
+  public let configuration: JentisSDK.ConsentModel.Configuration
+  public let data: JentisSDK.ConsentModel.DataClass
+  public struct System : Swift.Codable {
+    public let type: Swift.String
+    public let timestamp: Swift.Int
+    public let navigatorUserAgent: Swift.String
+    public let initiator: Swift.String
+    public enum CodingKeys : Swift.String, Swift.CodingKey {
+      case type, timestamp
+      case navigatorUserAgent
+      case initiator
+      public init?(rawValue: Swift.String)
+      public init?(stringValue: Swift.String)
+      public init?(intValue: Swift.Int)
+      public typealias RawValue = Swift.String
+      public var intValue: Swift.Int? {
+        get
+      }
+      public var rawValue: Swift.String {
+        get
+      }
+      public var stringValue: Swift.String {
+        get
+      }
+    }
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public struct Configuration : Swift.Codable {
+    public let container: Swift.String
+    public let environment: Swift.String
+    public let version: Swift.String
+    public let debugcode: Swift.String
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public struct DataClass : Swift.Codable {
+    public let identifier: JentisSDK.ConsentModel.DataClass.Identifier
+    public let consent: JentisSDK.ConsentModel.DataClass.Consent
+    public struct Identifier : Swift.Codable {
+      public let user: JentisSDK.ConsentModel.DataClass.Identifier.User
+      public let consent: JentisSDK.ConsentModel.DataClass.Identifier.ConsentID
+      public struct User : Swift.Codable {
+        public let id: Swift.String
+        public let action: Swift.String
+        public func encode(to encoder: any Swift.Encoder) throws
+        public init(from decoder: any Swift.Decoder) throws
+      }
+      public struct ConsentID : Swift.Codable {
+        public let id: Swift.String
+        public let action: Swift.String
+        public func encode(to encoder: any Swift.Encoder) throws
+        public init(from decoder: any Swift.Decoder) throws
+      }
+      public func encode(to encoder: any Swift.Encoder) throws
+      public init(from decoder: any Swift.Decoder) throws
+    }
+    public struct Consent : Swift.Codable {
+      public let lastupdate: Swift.Int
+      public let data: [Swift.String : Swift.String]
+      public var vendors: [Swift.String : JentisSDK.ConsentModel.DataClass.Consent.VendorValue]
+      public var vendorsChanged: [Swift.String : JentisSDK.ConsentModel.DataClass.Consent.VendorValue]
+      public enum VendorValue : Swift.Codable {
+        case bool(Swift.Bool)
+        case string(Swift.String)
+        public init(from decoder: any Swift.Decoder) throws
+        public func encode(to encoder: any Swift.Encoder) throws
+      }
+      public func encode(to encoder: any Swift.Encoder) throws
+      public init(from decoder: any Swift.Decoder) throws
+    }
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
 @_hasMissingDesignatedInitializers public class SessionManager {
   public static func startObservingAppLifecycle()
   public static func startOrResumeSession() -> (Swift.String, JentisSDK.Action)
@@ -65,7 +145,7 @@ public class TrackConfig : Swift.Codable {
   public static var shared: JentisSDK.TrackingService {
     get
   }
-  public func sendConsentModel() async throws
+  public func setConsents(vendorConsents: [Swift.String : JentisSDK.ConsentStatus], vendorChanges: [Swift.String : JentisSDK.ConsentStatus]) async throws
   public func sendDataSubmissionModel(variables: JentisSDK.VariablesWrapper? = nil) async throws
   @objc deinit
 }
@@ -86,9 +166,27 @@ public enum Action : Swift.String {
     get
   }
 }
+public enum ConsentStatus {
+  case allow
+  case deny
+  case ncm
+  public var toVendorValue: JentisSDK.ConsentModel.DataClass.Consent.VendorValue {
+    get
+  }
+  public static func == (a: JentisSDK.ConsentStatus, b: JentisSDK.ConsentStatus) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension JentisSDK.ConsentModel.System.CodingKeys : Swift.Equatable {}
+extension JentisSDK.ConsentModel.System.CodingKeys : Swift.Hashable {}
+extension JentisSDK.ConsentModel.System.CodingKeys : Swift.RawRepresentable {}
 extension JentisSDK.TrackConfig.Environment : Swift.Equatable {}
 extension JentisSDK.TrackConfig.Environment : Swift.Hashable {}
 extension JentisSDK.TrackConfig.Environment : Swift.RawRepresentable {}
 extension JentisSDK.Action : Swift.Equatable {}
 extension JentisSDK.Action : Swift.Hashable {}
 extension JentisSDK.Action : Swift.RawRepresentable {}
+extension JentisSDK.ConsentStatus : Swift.Equatable {}
+extension JentisSDK.ConsentStatus : Swift.Hashable {}

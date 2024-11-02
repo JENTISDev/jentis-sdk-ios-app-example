@@ -5,6 +5,7 @@
 //  Created by Alexandre Oliveira on 02/11/2024.
 //
 import SwiftUI
+import JentisSDK
 
 struct ConsentModalView: View {
     @Environment(\.presentationMode) var presentationMode
@@ -14,10 +15,12 @@ struct ConsentModalView: View {
     @State private var isGoogleAnalyticsNCM: Bool = false
     @State private var isFacebookNCM: Bool = false
     @State private var isAwinNCM: Bool = false
+    let onSave: ([String: ConsentStatus]) async -> Void
+
+    private let userDefaults = UserDefaults.standard
 
     var body: some View {
         VStack(spacing: 20) {
-            // Header
             VStack {
                 Text("Configure Vendors Consent")
                     .font(.title2)
@@ -34,7 +37,6 @@ struct ConsentModalView: View {
             
             Divider()
             
-            // Toggles and NCM options
             VStack(spacing: 16) {
                 consentToggle(title: "Google Analytics", isOn: $isGoogleAnalyticsAllowed, ncmBinding: $isGoogleAnalyticsNCM, color: .blue)
                 consentToggle(title: "Facebook", isOn: $isFacebookAllowed, ncmBinding: $isFacebookNCM, color: .indigo)
@@ -44,10 +46,7 @@ struct ConsentModalView: View {
             
             Spacer()
             
-            // Save Button
-            Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }) {
+            Button(action: saveConsents) {
                 Text("Save Changes")
                     .fontWeight(.semibold)
                     .frame(maxWidth: .infinity)
@@ -65,9 +64,38 @@ struct ConsentModalView: View {
         .cornerRadius(16)
         .shadow(radius: 10)
         .padding()
+        .onAppear(perform: loadConsents)
     }
     
-    // Helper function for toggles with custom styling and NCM checkbox
+    private func saveConsents() {
+        // Save current selections to UserDefaults
+        userDefaults.set(isGoogleAnalyticsAllowed, forKey: "isGoogleAnalyticsAllowed")
+        userDefaults.set(isFacebookAllowed, forKey: "isFacebookAllowed")
+        userDefaults.set(isAwinAllowed, forKey: "isAwinAllowed")
+        userDefaults.set(isGoogleAnalyticsNCM, forKey: "isGoogleAnalyticsNCM")
+        userDefaults.set(isFacebookNCM, forKey: "isFacebookNCM")
+        userDefaults.set(isAwinNCM, forKey: "isAwinNCM")
+
+        // Map to ConsentStatus and pass to onSave
+        let vendorConsents: [String: ConsentStatus] = [
+            "googleanalytics": isGoogleAnalyticsNCM ? .ncm : (isGoogleAnalyticsAllowed ? .allow : .deny),
+            "facebook": isFacebookNCM ? .ncm : (isFacebookAllowed ? .allow : .deny),
+            "awin": isAwinNCM ? .ncm : (isAwinAllowed ? .allow : .deny)
+        ]
+        presentationMode.wrappedValue.dismiss()
+        Task { await onSave(vendorConsents) }
+    }
+    
+    private func loadConsents() {
+        // Load saved values from UserDefaults
+        isGoogleAnalyticsAllowed = userDefaults.bool(forKey: "isGoogleAnalyticsAllowed")
+        isFacebookAllowed = userDefaults.bool(forKey: "isFacebookAllowed")
+        isAwinAllowed = userDefaults.bool(forKey: "isAwinAllowed")
+        isGoogleAnalyticsNCM = userDefaults.bool(forKey: "isGoogleAnalyticsNCM")
+        isFacebookNCM = userDefaults.bool(forKey: "isFacebookNCM")
+        isAwinNCM = userDefaults.bool(forKey: "isAwinNCM")
+    }
+    
     @ViewBuilder
     private func consentToggle(title: String, isOn: Binding<Bool>, ncmBinding: Binding<Bool>, color: Color) -> some View {
         HStack {
@@ -77,6 +105,7 @@ struct ConsentModalView: View {
                     .foregroundColor(.primary)
             }
             .toggleStyle(SwitchToggleStyle(tint: color))
+            .disabled(ncmBinding.wrappedValue) // Disable if NCM is selected
             
             Spacer()
             
@@ -88,6 +117,11 @@ struct ConsentModalView: View {
                 Toggle("", isOn: ncmBinding)
                     .labelsHidden()
                     .toggleStyle(CheckboxToggleStyle())
+                    .onChange(of: ncmBinding.wrappedValue) { isNCMSelected in
+                        if isNCMSelected {
+                            isOn.wrappedValue = false // Reset main toggle if NCM is selected
+                        }
+                    }
             }
             .padding(.horizontal)
             .background(Color(.secondarySystemBackground))

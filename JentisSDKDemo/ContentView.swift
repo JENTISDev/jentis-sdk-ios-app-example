@@ -20,7 +20,6 @@ struct ContentView: View {
 
     // Available actions from TrackingService
     private let actions: [(String, () async throws -> Void)] = [
-        ("Send Consent Model", { try await TrackingService.shared.sendConsentModel() }),
         ("Send Data Submission Model", { try await TrackingService.shared.sendDataSubmissionModel() }),
         ("Add Item to Push Queue", {
             let randomData = generateRandomPushData()
@@ -41,7 +40,6 @@ struct ContentView: View {
                     .font(.subheadline)
                     .foregroundColor(.gray)
 
-                // Dynamically creating buttons for each action
                 ForEach(actions, id: \.0) { action in
                     Button(action: {
                         performAction(action.1)
@@ -57,7 +55,6 @@ struct ContentView: View {
                     .padding(.horizontal)
                 }
                 
-                // Consent Modal Button
                 Button(action: {
                     showConsentModal.toggle()
                 }) {
@@ -79,7 +76,8 @@ struct ContentView: View {
                 ConsentModalView(
                     isGoogleAnalyticsAllowed: $isGoogleAnalyticsAllowed,
                     isFacebookAllowed: $isFacebookAllowed,
-                    isAwinAllowed: $isAwinAllowed
+                    isAwinAllowed: $isAwinAllowed,
+                    onSave: setConsentModel
                 )
             }
 
@@ -91,21 +89,32 @@ struct ContentView: View {
         }
     }
 
+    private func setConsentModel(vendorConsents: [String: ConsentStatus]) async {
+        do {
+            try await TrackingService.shared.setConsents(
+                vendorConsents: vendorConsents,
+                vendorChanges: vendorConsents
+            )
+            snackbarMessage = "Consent model sent successfully!"
+            isError = false
+        } catch {
+            snackbarMessage = "Failed to send consent model."
+            isError = true
+        }
+        showSnackbarWithDelay()
+    }
+
     private func performAction(_ action: @escaping () async throws -> Void) {
         Task {
             do {
                 try await action()
-                DispatchQueue.main.async {
-                    snackbarMessage = "Action executed successfully!"
-                    isError = false
-                    showSnackbarWithDelay()
-                }
+                snackbarMessage = "Action executed successfully!"
+                isError = false
+                showSnackbarWithDelay()
             } catch {
-                DispatchQueue.main.async {
-                    snackbarMessage = "Failed to execute action."
-                    isError = true
-                    showSnackbarWithDelay()
-                }
+                snackbarMessage = "Failed to execute action."
+                isError = true
+                showSnackbarWithDelay()
             }
         }
     }
@@ -117,7 +126,6 @@ struct ContentView: View {
         }
     }
     
-    // Helper function to generate random push data
     private static func generateRandomPushData() -> [String: String] {
         let urls = [
             "https://www.example.com",
@@ -152,8 +160,3 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
