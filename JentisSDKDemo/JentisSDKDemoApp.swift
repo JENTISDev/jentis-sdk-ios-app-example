@@ -9,6 +9,7 @@ import SwiftUI
 import netfox
 import FirebaseCore
 import JentisSDK
+import AppTrackingTransparency
 
 @main
 struct JentisSDKDemoApp: App {

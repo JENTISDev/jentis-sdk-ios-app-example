@@ -12,6 +12,11 @@ struct ContentView: View {
     @State private var snackbarMessage: String = ""
     @State private var showSnackbar: Bool = false
     @State private var isError: Bool = false
+    @State private var showConsentModal: Bool = false
+
+    @State private var isGoogleAnalyticsAllowed: Bool = false
+    @State private var isFacebookAllowed: Bool = false
+    @State private var isAwinAllowed: Bool = false
 
     // Available actions from TrackingService
     private let actions: [(String, () async throws -> Void)] = [
@@ -51,11 +56,32 @@ struct ContentView: View {
                     }
                     .padding(.horizontal)
                 }
-
+                
+                // Consent Modal Button
+                Button(action: {
+                    showConsentModal.toggle()
+                }) {
+                    Text("Consent Modal")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.green)
+                        .cornerRadius(10)
+                }
+                .padding(.horizontal)
+                
                 Spacer()
             }
             .padding()
             .background(Color(.systemBackground).edgesIgnoringSafeArea(.all))
+            .sheet(isPresented: $showConsentModal) {
+                ConsentModalView(
+                    isGoogleAnalyticsAllowed: $isGoogleAnalyticsAllowed,
+                    isFacebookAllowed: $isFacebookAllowed,
+                    isAwinAllowed: $isAwinAllowed
+                )
+            }
 
             if showSnackbar {
                 SnackbarView(message: snackbarMessage, isError: isError)

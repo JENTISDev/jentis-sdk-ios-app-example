@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		965768682CD63389007893A2 /* ConsentModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965768672CD63388007893A2 /* ConsentModalView.swift */; };
 		967214882CB4029800570B9D /* JentisSDKDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214872CB4029800570B9D /* JentisSDKDemoApp.swift */; };
 		9672148A2CB4029800570B9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214892CB4029800570B9D /* ContentView.swift */; };
 		9672148C2CB4029900570B9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9672148B2CB4029900570B9D /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		965768672CD63388007893A2 /* ConsentModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentModalView.swift; sourceTree = "<group>"; };
 		967214842CB4029800570B9D /* JentisSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JentisSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		967214872CB4029800570B9D /* JentisSDKDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JentisSDKDemoApp.swift; sourceTree = "<group>"; };
 		967214892CB4029800570B9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		967214862CB4029800570B9D /* JentisSDKDemo */ = {
 			isa = PBXGroup;
 			children = (
+				965768672CD63388007893A2 /* ConsentModalView.swift */,
 				96FBA5CB2CBE28CC0045C096 /* GoogleService-Info.plist */,
 				967214B32CB4034700570B9D /* Info.plist */,
 				967214872CB4029800570B9D /* JentisSDKDemoApp.swift */,
@@ -317,6 +320,7 @@
 				967214BA2CB4039100570B9D /* SnackbarView.swift in Sources */,
 				967214882CB4029800570B9D /* JentisSDKDemoApp.swift in Sources */,
 				967214B22CB402D200570B9D /* SplashScreenView.swift in Sources */,
+				965768682CD63389007893A2 /* ConsentModalView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
