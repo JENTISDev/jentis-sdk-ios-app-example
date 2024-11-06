@@ -19,6 +19,7 @@
 		967214B62CB4035B00570B9D /* JentisSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967214B52CB4035B00570B9D /* JentisSDK.xcframework */; };
 		967214B72CB4035B00570B9D /* JentisSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 967214B52CB4035B00570B9D /* JentisSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		967214BA2CB4039100570B9D /* SnackbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214B92CB4039100570B9D /* SnackbarView.swift */; };
+		96DF45832CDB39CE00BD5D30 /* ConfigModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DF45822CDB39CC00BD5D30 /* ConfigModalView.swift */; };
 		96FBA5C62CBE21EE0045C096 /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 96FBA5C52CBE21EE0045C096 /* netfox */; };
 		96FBA5CA2CBE264C0045C096 /* Color+Jentis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBA5C92CBE264C0045C096 /* Color+Jentis.swift */; };
 		96FBA5CC2CBE28CC0045C096 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96FBA5CB2CBE28CC0045C096 /* GoogleService-Info.plist */; };
@@ -72,6 +73,7 @@
 		967214B32CB4034700570B9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		967214B52CB4035B00570B9D /* JentisSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = JentisSDK.xcframework; sourceTree = "<group>"; };
 		967214B92CB4039100570B9D /* SnackbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarView.swift; sourceTree = "<group>"; };
+		96DF45822CDB39CC00BD5D30 /* ConfigModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigModalView.swift; sourceTree = "<group>"; };
 		96FBA5C92CBE264C0045C096 /* Color+Jentis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Jentis.swift"; sourceTree = "<group>"; };
 		96FBA5CB2CBE28CC0045C096 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +130,7 @@
 		967214862CB4029800570B9D /* JentisSDKDemo */ = {
 			isa = PBXGroup;
 			children = (
+				96DF45822CDB39CC00BD5D30 /* ConfigModalView.swift */,
 				965768672CD63388007893A2 /* ConsentModalView.swift */,
 				96FBA5CB2CBE28CC0045C096 /* GoogleService-Info.plist */,
 				967214B32CB4034700570B9D /* Info.plist */,
@@ -321,6 +324,7 @@
 				967214882CB4029800570B9D /* JentisSDKDemoApp.swift in Sources */,
 				967214B22CB402D200570B9D /* SplashScreenView.swift in Sources */,
 				965768682CD63389007893A2 /* ConsentModalView.swift in Sources */,
+				96DF45832CDB39CE00BD5D30 /* ConfigModalView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

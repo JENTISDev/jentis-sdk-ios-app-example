@@ -4210,6 +4210,38 @@
             "funcSelfKind": "NonMutating"
           },
           {
+            "kind": "Function",
+            "name": "currentConfig",
+            "printedName": "currentConfig()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "JentisSDK.TrackConfig?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TrackConfig",
+                    "printedName": "JentisSDK.TrackConfig",
+                    "usr": "s:9JentisSDK11TrackConfigC"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9JentisSDK11TrackConfigC07currentD0ACSgyFZ",
+            "mangledName": "$s9JentisSDK11TrackConfigC07currentD0ACSgyFZ",
+            "moduleName": "JentisSDK",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(from:)",
@@ -4466,13 +4498,51 @@
           },
           {
             "kind": "Function",
-            "name": "setConsents",
-            "printedName": "setConsents(vendorConsents:vendorChanges:)",
+            "name": "resetInstance",
+            "printedName": "resetInstance()",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9JentisSDK15TrackingServiceC13resetInstanceyyFZ",
+            "mangledName": "$s9JentisSDK15TrackingServiceC13resetInstanceyyFZ",
+            "moduleName": "JentisSDK",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setConsents",
+            "printedName": "setConsents(vendorConsents:vendorChanges:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
               },
               {
                 "kind": "TypeNominal",
@@ -4516,13 +4586,12 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:9JentisSDK15TrackingServiceC11setConsents06vendorF00G7ChangesySDySSAA13ConsentStatusOG_AItYaKF",
-            "mangledName": "$s9JentisSDK15TrackingServiceC11setConsents06vendorF00G7ChangesySDySSAA13ConsentStatusOG_AItYaKF",
+            "usr": "s:9JentisSDK15TrackingServiceC11setConsents06vendorF00G7Changess6ResultOySbs5Error_pGSDySSAA13ConsentStatusOG_AMtYaF",
+            "mangledName": "$s9JentisSDK15TrackingServiceC11setConsents06vendorF00G7Changess6ResultOySbs5Error_pGSDySSAA13ConsentStatusOG_AMtYaF",
             "moduleName": "JentisSDK",
             "declAttributes": [
               "AccessControl"
             ],
-            "throwing": true,
             "funcSelfKind": "NonMutating"
           },
           {
@@ -5482,14 +5551,14 @@
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
       "kind": "StringLiteral",
-      "offset": 8122,
+      "offset": 8807,
       "length": 21,
       "value": "\"defaultTrackCommand\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
       "kind": "StringLiteral",
-      "offset": 8168,
+      "offset": 8853,
       "length": 23,
       "value": "\"defaultDependencyType\""
     },

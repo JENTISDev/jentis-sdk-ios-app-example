@@ -13,12 +13,12 @@ struct ContentView: View {
     @State private var showSnackbar: Bool = false
     @State private var isError: Bool = false
     @State private var showConsentModal: Bool = false
+    @State private var isConfigModalPresented = false
 
     @State private var isGoogleAnalyticsAllowed: Bool = false
     @State private var isFacebookAllowed: Bool = false
     @State private var isAwinAllowed: Bool = false
 
-    // Available actions from TrackingService
     private let actions: [(String, () async throws -> Void)] = [
         ("Send Data Submission Model", { try await TrackingService.shared.sendDataSubmissionModel() }),
         ("Add Item to Push Queue", {
@@ -29,63 +29,81 @@ struct ContentView: View {
     ]
     
     var body: some View {
-        ZStack {
-            VStack(spacing: 20) {
-                Text("Jentis SDK Demo")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .padding()
+        NavigationView {
+            ZStack {
+                VStack(spacing: 20) {
+                    Text("Jentis SDK Demo")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .padding()
 
-                Text("Select an action to perform.")
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
+                    Text("Select an action to perform.")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
 
-                ForEach(actions, id: \.0) { action in
+                    ForEach(actions, id: \.0) { action in
+                        Button(action: {
+                            performAction(action.1)
+                        }) {
+                            Text(action.0)
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(Color.blue)
+                                .cornerRadius(10)
+                        }
+                        .padding(.horizontal)
+                    }
+                    
                     Button(action: {
-                        performAction(action.1)
+                        showConsentModal.toggle()
                     }) {
-                        Text(action.0)
+                        Text("Consent Modal")
                             .font(.headline)
                             .foregroundColor(.white)
                             .padding()
                             .frame(maxWidth: .infinity)
-                            .background(Color.jentisBlue)
+                            .background(Color.green)
                             .cornerRadius(10)
                     }
                     .padding(.horizontal)
+                    
+                    Spacer()
                 }
-                
-                Button(action: {
-                    showConsentModal.toggle()
-                }) {
-                    Text("Consent Modal")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.green)
-                        .cornerRadius(10)
+                .padding()
+                .background(Color(.systemBackground).edgesIgnoringSafeArea(.all))
+                .sheet(isPresented: $showConsentModal) {
+                    ConsentModalView(
+                        isGoogleAnalyticsAllowed: $isGoogleAnalyticsAllowed,
+                        isFacebookAllowed: $isFacebookAllowed,
+                        isAwinAllowed: $isAwinAllowed,
+                        onSave: setConsentModel
+                    )
                 }
-                .padding(.horizontal)
-                
-                Spacer()
-            }
-            .padding()
-            .background(Color(.systemBackground).edgesIgnoringSafeArea(.all))
-            .sheet(isPresented: $showConsentModal) {
-                ConsentModalView(
-                    isGoogleAnalyticsAllowed: $isGoogleAnalyticsAllowed,
-                    isFacebookAllowed: $isFacebookAllowed,
-                    isAwinAllowed: $isAwinAllowed,
-                    onSave: setConsentModel
-                )
-            }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button(action: {
+                            isConfigModalPresented = true
+                        }) {
+                            Image(systemName: "ellipsis")
+                                .imageScale(.large)
+                        }
+                    }
+                }
+                .sheet(isPresented: $isConfigModalPresented) {
+                    ConfigModalView { newConfig in
+                        JentisService.configure(with: newConfig)
+                    }
+                }
 
-            if showSnackbar {
-                SnackbarView(message: snackbarMessage, isError: isError)
-                    .transition(.move(edge: .bottom))
-                    .animation(.easeInOut, value: showSnackbar)
+                if showSnackbar {
+                    SnackbarView(message: snackbarMessage, isError: isError)
+                        .transition(.move(edge: .bottom))
+                        .animation(.easeInOut, value: showSnackbar)
+                }
             }
+            .navigationTitle("Dashboard")
         }
     }
 
@@ -159,4 +177,3 @@ struct ContentView: View {
         ]
     }
 }
-
