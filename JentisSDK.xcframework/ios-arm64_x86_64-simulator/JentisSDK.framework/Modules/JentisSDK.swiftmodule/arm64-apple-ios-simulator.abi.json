@@ -3197,8 +3197,7 @@
             "static": true,
             "declAttributes": [
               "Final",
-              "AccessControl",
-              "RawDocComment"
+              "AccessControl"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -4718,8 +4717,8 @@
           },
           {
             "kind": "Function",
-            "name": "setConsent",
-            "printedName": "setConsent(_:)",
+            "name": "setConsents",
+            "printedName": "setConsents(_:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -4763,8 +4762,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:9JentisSDK15TrackingServiceC10setConsentys6ResultOySbs5Error_pGSDySSAA0F6StatusOGYaF",
-            "mangledName": "$s9JentisSDK15TrackingServiceC10setConsentys6ResultOySbs5Error_pGSDySSAA0F6StatusOGYaF",
+            "usr": "s:9JentisSDK15TrackingServiceC11setConsentsys6ResultOySbs5Error_pGSDySSAA13ConsentStatusOGYaF",
+            "mangledName": "$s9JentisSDK15TrackingServiceC11setConsentsys6ResultOySbs5Error_pGSDySSAA13ConsentStatusOGYaF",
             "moduleName": "JentisSDK",
             "declAttributes": [
               "AccessControl"
@@ -6085,7 +6084,7 @@
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Session\/SessionManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 329,
+      "offset": 270,
       "length": 2,
       "value": "60"
     },
@@ -6204,14 +6203,14 @@
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
       "kind": "StringLiteral",
-      "offset": 7194,
+      "offset": 7195,
       "length": 21,
       "value": "\"defaultTrackCommand\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
       "kind": "StringLiteral",
-      "offset": 7240,
+      "offset": 7241,
       "length": 23,
       "value": "\"defaultDependencyType\""
     },

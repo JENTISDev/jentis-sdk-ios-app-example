@@ -109,7 +109,7 @@ struct ContentView: View {
 
     private func setConsent(_ vendorConsents: [String: ConsentStatus]) async {
         do {
-            try await TrackingService.shared.setConsent(vendorConsents)
+            try await TrackingService.shared.setConsents(vendorConsents)
             snackbarMessage = "Consent model sent successfully!"
             isError = false
         } catch {

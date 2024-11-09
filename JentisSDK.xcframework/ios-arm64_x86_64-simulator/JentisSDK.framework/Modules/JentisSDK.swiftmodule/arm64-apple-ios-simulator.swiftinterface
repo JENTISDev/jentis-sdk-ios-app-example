@@ -152,7 +152,7 @@ public class TrackConfig : Swift.Codable {
     get
   }
   public static func resetInstance()
-  public func setConsent(_ vendorConsents: [Swift.String : JentisSDK.ConsentStatus]) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  public func setConsents(_ vendorConsents: [Swift.String : JentisSDK.ConsentStatus]) async -> Swift.Result<Swift.Bool, any Swift.Error>
   @objc deinit
 }
 extension JentisSDK.TrackingService {
