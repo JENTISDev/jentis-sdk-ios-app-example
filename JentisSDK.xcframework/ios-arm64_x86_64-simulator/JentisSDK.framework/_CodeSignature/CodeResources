@@ -14,43 +14,43 @@
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		Q9enjSTC2Xy2sAkg8J/Z3OVXPUA=
+		QhcZnXV/rzQquGogdahRHIMKQDE=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		sSW4eqXtyaG8nu15c/H7hKyhkyg=
+		CMGb/xqlhpmsQ1GmD1Q/Y08tqaY=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		MBSe5Aw6PvLmjbkmc4n0ah/7aHo=
+		3Mpplz5Qjx1bFIUnpiAZwk5B4N0=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		sSW4eqXtyaG8nu15c/H7hKyhkyg=
+		CMGb/xqlhpmsQ1GmD1Q/Y08tqaY=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Be05pVov1REYG/tQ5qMFN/T7bXw=
+		u9epTc+3tobiNKrqboBLXhE3v90=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		Q9enjSTC2Xy2sAkg8J/Z3OVXPUA=
+		QhcZnXV/rzQquGogdahRHIMKQDE=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		z/A9nPrKD1en1LXFrV3jFhnTWmc=
+		y9313iG6+jaI0GtyZeyqZQAZQ8o=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		ki7EQYDvBSfOcHPxH81DTHCCWYQ=
+		sZWTLJYQPNbNHMvzRluoiNwz8Q4=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		z/A9nPrKD1en1LXFrV3jFhnTWmc=
+		y9313iG6+jaI0GtyZeyqZQAZQ8o=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		/Uq2uRaxhH7FH0pS1VIAVr6ObI0=
+		ySg46dxvbOhOKf/J2kDhQO28smQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -70,70 +70,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ITdNainDwJwC6t+Fl/WbLlX4fUoTCQNU9VUZOCN/JsY=
+			FayE/w/GMuKKkfBb1uNhvkO8YoqzmdnTfLzNfTgjDcs=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			C4z1tlY+Un5lNipS70l64/B3jZZjCY40V2px+R119A0=
+			cGRJllliIcU6X+ES76i8ExrIr8899qFYH0nU7elVQhY=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8jlYwFi23B0x/0OszKZKR1tOhKrojtwaJZJzY4kMCpg=
+			auzwShqIk/95S0FDsE2UmxqofrovE2vb72SIYcGsOg0=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			C4z1tlY+Un5lNipS70l64/B3jZZjCY40V2px+R119A0=
+			cGRJllliIcU6X+ES76i8ExrIr8899qFYH0nU7elVQhY=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AS9m+A2inu0b29mcRNefBfCwHXswmE6GED2ZXF3wyEw=
+			aL6E8qpRvRV79OmQkAU8bYtOZb7NV4QcrOva9T1Hfbg=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ITdNainDwJwC6t+Fl/WbLlX4fUoTCQNU9VUZOCN/JsY=
+			FayE/w/GMuKKkfBb1uNhvkO8YoqzmdnTfLzNfTgjDcs=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			StO9IjojaMr1JQwKKWqerB+uCPgK4OqNLL1uAMRDi10=
+			whCbkRANXiZqjtNJg/sbdaQY+rFC0Q2aL5HO2BF0Oe8=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rVeuWjOp8SOw2HTJvcGZF7A1Uv8adKFrHKjgsaB0e+o=
+			FIhDQBMm59hyE0EB/6W5Ee82GOFVxZDVTQtAC9wXJ2k=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			StO9IjojaMr1JQwKKWqerB+uCPgK4OqNLL1uAMRDi10=
+			whCbkRANXiZqjtNJg/sbdaQY+rFC0Q2aL5HO2BF0Oe8=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			q4epryf4tehOxoGTt+wL//tKg2i/BELgjfKu+YKuc14=
+			ddqb1WqhbAcveOTs7Bwijo64jnWWTyRkRo6domKbmDI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

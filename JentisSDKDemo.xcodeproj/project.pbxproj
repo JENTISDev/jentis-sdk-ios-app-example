@@ -19,6 +19,7 @@
 		967214B62CB4035B00570B9D /* JentisSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967214B52CB4035B00570B9D /* JentisSDK.xcframework */; };
 		967214B72CB4035B00570B9D /* JentisSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 967214B52CB4035B00570B9D /* JentisSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		967214BA2CB4039100570B9D /* SnackbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214B92CB4039100570B9D /* SnackbarView.swift */; };
+		96754F052CDF36CA0098E4E8 /* TrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96754F042CDF36C90098E4E8 /* TrackingView.swift */; };
 		96DF45832CDB39CE00BD5D30 /* ConfigModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DF45822CDB39CC00BD5D30 /* ConfigModalView.swift */; };
 		96FBA5C62CBE21EE0045C096 /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 96FBA5C52CBE21EE0045C096 /* netfox */; };
 		96FBA5CA2CBE264C0045C096 /* Color+Jentis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBA5C92CBE264C0045C096 /* Color+Jentis.swift */; };
@@ -73,6 +74,7 @@
 		967214B32CB4034700570B9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		967214B52CB4035B00570B9D /* JentisSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = JentisSDK.xcframework; sourceTree = "<group>"; };
 		967214B92CB4039100570B9D /* SnackbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarView.swift; sourceTree = "<group>"; };
+		96754F042CDF36C90098E4E8 /* TrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingView.swift; sourceTree = "<group>"; };
 		96DF45822CDB39CC00BD5D30 /* ConfigModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigModalView.swift; sourceTree = "<group>"; };
 		96FBA5C92CBE264C0045C096 /* Color+Jentis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Jentis.swift"; sourceTree = "<group>"; };
 		96FBA5CB2CBE28CC0045C096 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -130,17 +132,13 @@
 		967214862CB4029800570B9D /* JentisSDKDemo */ = {
 			isa = PBXGroup;
 			children = (
-				96DF45822CDB39CC00BD5D30 /* ConfigModalView.swift */,
-				965768672CD63388007893A2 /* ConsentModalView.swift */,
+				96754F072CDF3BAB0098E4E8 /* Views */,
+				96754F062CDF3B980098E4E8 /* Extensions */,
 				96FBA5CB2CBE28CC0045C096 /* GoogleService-Info.plist */,
 				967214B32CB4034700570B9D /* Info.plist */,
 				967214872CB4029800570B9D /* JentisSDKDemoApp.swift */,
-				967214892CB4029800570B9D /* ContentView.swift */,
 				9672148B2CB4029900570B9D /* Assets.xcassets */,
 				9672148D2CB4029900570B9D /* Preview Content */,
-				967214B12CB402D200570B9D /* SplashScreenView.swift */,
-				967214B92CB4039100570B9D /* SnackbarView.swift */,
-				96FBA5C92CBE264C0045C096 /* Color+Jentis.swift */,
 			);
 			path = JentisSDKDemo;
 			sourceTree = "<group>";
@@ -176,6 +174,27 @@
 				967214B52CB4035B00570B9D /* JentisSDK.xcframework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96754F062CDF3B980098E4E8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				96FBA5C92CBE264C0045C096 /* Color+Jentis.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		96754F072CDF3BAB0098E4E8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				967214892CB4029800570B9D /* ContentView.swift */,
+				96754F042CDF36C90098E4E8 /* TrackingView.swift */,
+				96DF45822CDB39CC00BD5D30 /* ConfigModalView.swift */,
+				965768672CD63388007893A2 /* ConsentModalView.swift */,
+				967214B12CB402D200570B9D /* SplashScreenView.swift */,
+				967214B92CB4039100570B9D /* SnackbarView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +340,7 @@
 				9672148A2CB4029800570B9D /* ContentView.swift in Sources */,
 				96FBA5CA2CBE264C0045C096 /* Color+Jentis.swift in Sources */,
 				967214BA2CB4039100570B9D /* SnackbarView.swift in Sources */,
+				96754F052CDF36CA0098E4E8 /* TrackingView.swift in Sources */,
 				967214882CB4029800570B9D /* JentisSDKDemoApp.swift in Sources */,
 				967214B22CB402D200570B9D /* SplashScreenView.swift in Sources */,
 				965768682CD63389007893A2 /* ConsentModalView.swift in Sources */,

@@ -14,48 +14,22 @@ struct ContentView: View {
     @State private var isError: Bool = false
     @State private var showConsentModal: Bool = false
     @State private var isConfigModalPresented = false
+    @State private var showTrackingView = false
 
     @State private var isGoogleAnalyticsAllowed: Bool = false
     @State private var isFacebookAllowed: Bool = false
     @State private var isAwinAllowed: Bool = false
 
-    private let actions: [(String, () async throws -> Void)] = [
-        ("Send Data Submission Model", { try await TrackingService.shared.sendDataSubmissionModel() }),
-        ("Add Item to Push Queue", {
-            let randomData = generateRandomPushData()
-            TrackingService.shared.push(customProperties: randomData)
-        }),
-        ("Submit Stored Push Data", { try await TrackingService.shared.submit() })
-    ]
-    
     var body: some View {
         NavigationView {
             ZStack {
                 VStack(spacing: 20) {
                     Text("Jentis SDK Demo")
+                        .foregroundColor(.blue)
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .padding()
 
-                    Text("Select an action to perform.")
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
-
-                    ForEach(actions, id: \.0) { action in
-                        Button(action: {
-                            performAction(action.1)
-                        }) {
-                            Text(action.0)
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .padding()
-                                .frame(maxWidth: .infinity)
-                                .background(Color.blue)
-                                .cornerRadius(10)
-                        }
-                        .padding(.horizontal)
-                    }
-                    
                     Button(action: {
                         showConsentModal.toggle()
                     }) {
@@ -69,7 +43,34 @@ struct ContentView: View {
                     }
                     .padding(.horizontal)
                     
+                    Button(action: {
+                        showTrackingView = true
+                    }) {
+                        Text("Tracking Examples")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color.purple)
+                            .cornerRadius(10)
+                    }
+                    .padding(.horizontal)
+                    .background(
+                        NavigationLink(destination: TrackingView(), isActive: $showTrackingView) {
+                            EmptyView()
+                        }
+                        .hidden()
+                    )
+
                     Spacer()
+                    
+                    if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
+                       let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
+                        Text("Version \(version) (\(build))")
+                            .font(.footnote)
+                            .foregroundColor(.gray)
+                            .padding(.bottom, 10)
+                    }
                 }
                 .padding()
                 .background(Color(.systemBackground).edgesIgnoringSafeArea(.all))
@@ -78,7 +79,7 @@ struct ContentView: View {
                         isGoogleAnalyticsAllowed: $isGoogleAnalyticsAllowed,
                         isFacebookAllowed: $isFacebookAllowed,
                         isAwinAllowed: $isAwinAllowed,
-                        onSave: setConsentModel
+                        onSave: setConsent
                     )
                 }
                 .toolbar {
@@ -103,16 +104,12 @@ struct ContentView: View {
                         .animation(.easeInOut, value: showSnackbar)
                 }
             }
-            .navigationTitle("Dashboard")
         }
     }
 
-    private func setConsentModel(vendorConsents: [String: ConsentStatus]) async {
+    private func setConsent(_ vendorConsents: [String: ConsentStatus]) async {
         do {
-            try await TrackingService.shared.setConsents(
-                vendorConsents: vendorConsents,
-                vendorChanges: vendorConsents
-            )
+            try await TrackingService.shared.setConsent(vendorConsents)
             snackbarMessage = "Consent model sent successfully!"
             isError = false
         } catch {
@@ -122,58 +119,10 @@ struct ContentView: View {
         showSnackbarWithDelay()
     }
 
-    private func performAction(_ action: @escaping () async throws -> Void) {
-        Task {
-            do {
-                try await action()
-                snackbarMessage = "Action executed successfully!"
-                isError = false
-                showSnackbarWithDelay()
-            } catch {
-                snackbarMessage = "Failed to execute action."
-                isError = true
-                showSnackbarWithDelay()
-            }
-        }
-    }
-
     private func showSnackbarWithDelay() {
         showSnackbar = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             showSnackbar = false
         }
-    }
-    
-    private static func generateRandomPushData() -> [String: String] {
-        let urls = [
-            "https://www.example.com",
-            "https://www.sampledomain.com",
-            "https://www.testsite.org",
-            "https://www.anotherexample.net"
-        ]
-        let titles = [
-            "Welcome Page",
-            "About Us",
-            "Contact Page",
-            "Product Details",
-            "Blog Post"
-        ]
-        
-        let events = [
-            "pageview",
-            "click",
-            "purchase",
-            "order",
-        ]
-        
-        let randomURL = urls.randomElement() ?? "https://www.default.com"
-        let randomTitle = titles.randomElement() ?? "Default Title"
-        let randomEvent = events.randomElement() ?? "pageview"
-        
-        return [
-            "track": randomEvent,
-            "url": randomURL,
-            "title": randomTitle
-        ]
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SplashScreenView: View {
     @State private var isActive = false
-    @State private var size = 0.8
+    @State private var size = 0.1
     @State private var opacity = 0.5
     
     var body: some View {
@@ -17,9 +17,10 @@ struct SplashScreenView: View {
             ContentView()
         } else {
             VStack {
-                Image(systemName: "bolt.fill")
-                    .font(.system(size: 80))
-                    .foregroundColor(.blue)
+                Image(.logo)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: 300, maxHeight: 300)
                     .scaleEffect(size)
                     .opacity(opacity)
                     .onAppear {

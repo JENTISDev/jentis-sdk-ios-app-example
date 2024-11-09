@@ -15,6 +15,7 @@ struct ConfigModalView: View {
     @State private var environment: TrackConfig.Environment
     @State private var version: String
     @State private var debugCode: String
+    @State private var sessionTimeout: String
     
     var onSave: ((TrackConfig) -> Void)
     
@@ -25,7 +26,8 @@ struct ConfigModalView: View {
             container: "mobiweb-demoshop",
             environment: .live,
             version: "1",
-            debugCode: "44c2acd3-434d-4234-983b-48e91551eb5a"
+            debugCode: "44c2acd3-434d-4234-983b-48e91551eb5a",
+            sessionTimeoutInSeconds: 1800
         )
         
         // Initialize state variables with saved or default values
@@ -34,6 +36,7 @@ struct ConfigModalView: View {
         _environment = State(initialValue: config.environment)
         _version = State(initialValue: config.version ?? "")
         _debugCode = State(initialValue: config.debugCode ?? "")
+        _sessionTimeout = State(initialValue: String(config.sessionTimeoutInSeconds ?? 1800))
         
         self.onSave = onSave
     }
@@ -84,15 +87,26 @@ struct ConfigModalView: View {
                         TextField("Debug Code", text: $debugCode)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                     }
+                    
+                    VStack(alignment: .leading) {
+                        Text("Session Timeout (seconds)")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                        TextField("Session Timeout", text: $sessionTimeout)
+                            .keyboardType(.numberPad)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                    }
                 }
                 
                 Button("Save") {
+                    let timeoutValue = TimeInterval(sessionTimeout) ?? 1800 // Default to 1800 seconds if invalid
                     let config = TrackConfig(
                         trackDomain: trackDomain,
                         container: container,
                         environment: environment,
                         version: version,
-                        debugCode: debugCode
+                        debugCode: debugCode,
+                        sessionTimeoutInSeconds: timeoutValue
                     )
                     
                     onSave(config)
@@ -100,7 +114,7 @@ struct ConfigModalView: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .center)
             }
-            .navigationTitle("Edit Configuration")
+            .navigationTitle("Configuration")
             .navigationBarItems(leading: Button("Cancel") {
                 presentationMode.wrappedValue.dismiss()
             })
