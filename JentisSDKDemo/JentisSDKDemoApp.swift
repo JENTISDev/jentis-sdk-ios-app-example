@@ -51,7 +51,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             container: "mobiweb-demoshop",
             environment: .live,
             version: "1",
-            debugCode: "44c2acd3-434d-4234-983b-48e91551eb5a"
+            debugCode: "44c2acd3-434d-4234-983b-48e91551eb5a",
+            authorizationToken: "22fef7a3b00466743fee2ab8cd8afb01"
         )
         
         JentisService.configure(with: config)
