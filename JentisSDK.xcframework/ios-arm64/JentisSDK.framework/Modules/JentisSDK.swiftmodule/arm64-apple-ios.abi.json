@@ -4113,9 +4113,58 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "authorizationToken",
+            "printedName": "authorizationToken",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9JentisSDK11TrackConfigC18authorizationTokenSSvp",
+            "mangledName": "$s9JentisSDK11TrackConfigC18authorizationTokenSSvp",
+            "moduleName": "JentisSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9JentisSDK11TrackConfigC18authorizationTokenSSvg",
+                "mangledName": "$s9JentisSDK11TrackConfigC18authorizationTokenSSvg",
+                "moduleName": "JentisSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(trackDomain:container:environment:version:debugCode:sessionTimeoutInSeconds:)",
+            "printedName": "init(trackDomain:container:environment:version:debugCode:sessionTimeoutInSeconds:authorizationToken:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -4183,11 +4232,18 @@
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:9JentisSDK11TrackConfigC11trackDomain9container11environment7version9debugCode23sessionTimeoutInSecondsACSS_SSAC11EnvironmentOSSSgALSdSgtcfc",
-            "mangledName": "$s9JentisSDK11TrackConfigC11trackDomain9container11environment7version9debugCode23sessionTimeoutInSecondsACSS_SSAC11EnvironmentOSSSgALSdSgtcfc",
+            "usr": "s:9JentisSDK11TrackConfigC11trackDomain9container11environment7version9debugCode23sessionTimeoutInSeconds18authorizationTokenACSS_SSAC11EnvironmentOSSSgAMSdSgSStcfc",
+            "mangledName": "$s9JentisSDK11TrackConfigC11trackDomain9container11environment7version9debugCode23sessionTimeoutInSeconds18authorizationTokenACSS_SSAC11EnvironmentOSSSgAMSdSgSStcfc",
             "moduleName": "JentisSDK",
             "declAttributes": [
               "AccessControl",
@@ -4198,7 +4254,7 @@
           {
             "kind": "Function",
             "name": "configure",
-            "printedName": "configure(trackDomain:container:environment:version:debugCode:sessionTimeoutInSeconds:)",
+            "printedName": "configure(trackDomain:container:environment:version:debugCode:sessionTimeoutInSeconds:authorizationToken:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -4267,11 +4323,18 @@
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
               }
             ],
             "declKind": "Func",
-            "usr": "s:9JentisSDK11TrackConfigC9configure11trackDomain9container11environment7version9debugCode23sessionTimeoutInSecondsySS_SSAC11EnvironmentOSSSgAMSdSgtFZ",
-            "mangledName": "$s9JentisSDK11TrackConfigC9configure11trackDomain9container11environment7version9debugCode23sessionTimeoutInSecondsySS_SSAC11EnvironmentOSSSgAMSdSgtFZ",
+            "usr": "s:9JentisSDK11TrackConfigC9configure11trackDomain9container11environment7version9debugCode23sessionTimeoutInSeconds18authorizationTokenySS_SSAC11EnvironmentOSSSgANSdSgSStFZ",
+            "mangledName": "$s9JentisSDK11TrackConfigC9configure11trackDomain9container11environment7version9debugCode23sessionTimeoutInSeconds18authorizationTokenySS_SSAC11EnvironmentOSSSgANSdSgSStFZ",
             "moduleName": "JentisSDK",
             "static": true,
             "declAttributes": [
@@ -6105,9 +6168,23 @@
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config\/TrackConfig.swift",
       "kind": "StringLiteral",
-      "offset": 899,
+      "offset": 978,
       "length": 24,
       "value": "\"com.jentis.TrackConfig\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config\/TrackConfig.swift",
+      "kind": "StringLiteral",
+      "offset": 1267,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config\/TrackConfig.swift",
+      "kind": "StringLiteral",
+      "offset": 2097,
+      "length": 2,
+      "value": "\"\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config\/Config.swift",
@@ -6203,16 +6280,23 @@
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
       "kind": "StringLiteral",
-      "offset": 7195,
+      "offset": 14052,
       "length": 21,
       "value": "\"defaultTrackCommand\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
       "kind": "StringLiteral",
-      "offset": 7241,
+      "offset": 14098,
       "length": 23,
       "value": "\"defaultDependencyType\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
+      "kind": "Dictionary",
+      "offset": 14168,
+      "length": 3,
+      "value": "[]"
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Utilities\/UserDefaultsUtility.swift",
@@ -6220,6 +6304,13 @@
       "offset": 187,
       "length": 14,
       "value": "\"pushDataList\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Utilities\/UserDefaultsUtility.swift",
+      "kind": "StringLiteral",
+      "offset": 242,
+      "length": 13,
+      "value": "\"productData\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Utilities\/LoggerUtility.swift",

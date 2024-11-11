@@ -130,8 +130,9 @@ public class TrackConfig : Swift.Codable {
   final public let version: Swift.String?
   final public let debugCode: Swift.String?
   final public let sessionTimeoutInSeconds: Foundation.TimeInterval?
-  public init(trackDomain: Swift.String, container: Swift.String, environment: JentisSDK.TrackConfig.Environment, version: Swift.String?, debugCode: Swift.String?, sessionTimeoutInSeconds: Foundation.TimeInterval? = nil)
-  public static func configure(trackDomain: Swift.String, container: Swift.String, environment: JentisSDK.TrackConfig.Environment, version: Swift.String? = nil, debugCode: Swift.String? = nil, sessionTimeoutInSeconds: Foundation.TimeInterval? = nil)
+  final public let authorizationToken: Swift.String
+  public init(trackDomain: Swift.String, container: Swift.String, environment: JentisSDK.TrackConfig.Environment, version: Swift.String?, debugCode: Swift.String?, sessionTimeoutInSeconds: Foundation.TimeInterval? = nil, authorizationToken: Swift.String = "")
+  public static func configure(trackDomain: Swift.String, container: Swift.String, environment: JentisSDK.TrackConfig.Environment, version: Swift.String? = nil, debugCode: Swift.String? = nil, sessionTimeoutInSeconds: Foundation.TimeInterval? = nil, authorizationToken: Swift.String = "")
   public static var shared: JentisSDK.TrackConfig {
     get
   }
