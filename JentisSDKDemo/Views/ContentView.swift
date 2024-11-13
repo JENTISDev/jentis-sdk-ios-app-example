@@ -23,44 +23,51 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                VStack(spacing: 20) {
+                VStack(spacing: 0) {
                     Text("Jentis SDK Demo")
                         .foregroundColor(.blue)
                         .font(.largeTitle)
                         .fontWeight(.bold)
-                        .padding()
-
-                    Button(action: {
-                        showConsentModal.toggle()
-                    }) {
-                        Text("Consent Modal")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color.green)
-                            .cornerRadius(10)
-                    }
-                    .padding(.horizontal)
                     
-                    Button(action: {
-                        showTrackingView = true
-                    }) {
-                        Text("Tracking Examples")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color.purple)
-                            .cornerRadius(10)
-                    }
-                    .padding(.horizontal)
-                    .background(
-                        NavigationLink(destination: TrackingView(), isActive: $showTrackingView) {
-                            EmptyView()
+                    Image(.logo)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 200, height: 200)
+                        .padding(.top)
+
+                    VStack(spacing: 20) {
+                        Button(action: {
+                            showConsentModal.toggle()
+                        }) {
+                            Text("Consent Settings")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(Color.green)
+                                .cornerRadius(10)
                         }
-                        .hidden()
-                    )
+                        .padding(.horizontal)
+                        
+                        Button(action: {
+                            showTrackingView = true
+                        }) {
+                            Text("Tracking Examples")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(Color.purple)
+                                .cornerRadius(10)
+                        }
+                        .padding(.horizontal)
+                        .background(
+                            NavigationLink(destination: TrackingView(), isActive: $showTrackingView) {
+                                EmptyView()
+                            }
+                            .hidden()
+                        )
+                    }
 
                     Spacer()
                     
