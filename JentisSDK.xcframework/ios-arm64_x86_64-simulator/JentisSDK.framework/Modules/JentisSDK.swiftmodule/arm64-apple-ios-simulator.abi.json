@@ -6280,23 +6280,16 @@
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
       "kind": "StringLiteral",
-      "offset": 14052,
+      "offset": 7125,
       "length": 21,
       "value": "\"defaultTrackCommand\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
       "kind": "StringLiteral",
-      "offset": 14098,
+      "offset": 7171,
       "length": 23,
       "value": "\"defaultDependencyType\""
-    },
-    {
-      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
-      "kind": "Dictionary",
-      "offset": 14168,
-      "length": 3,
-      "value": "[]"
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Utilities\/UserDefaultsUtility.swift",
@@ -6304,13 +6297,6 @@
       "offset": 187,
       "length": 14,
       "value": "\"pushDataList\""
-    },
-    {
-      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Utilities\/UserDefaultsUtility.swift",
-      "kind": "StringLiteral",
-      "offset": 242,
-      "length": 13,
-      "value": "\"productData\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Utilities\/LoggerUtility.swift",
