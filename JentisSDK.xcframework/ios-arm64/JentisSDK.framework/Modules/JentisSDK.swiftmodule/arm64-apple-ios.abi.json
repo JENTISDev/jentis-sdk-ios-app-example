@@ -4662,7 +4662,8 @@
         "mangledName": "$s9JentisSDK0A7ServiceC",
         "moduleName": "JentisSDK",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "RawDocComment"
         ],
         "hasMissingDesignatedInitializers": true,
         "conformances": [
@@ -4728,7 +4729,8 @@
             "static": true,
             "declAttributes": [
               "Final",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "accessors": [
               {
@@ -4751,6 +4753,7 @@
                 "declAttributes": [
                   "Final"
                 ],
+                "throwing": true,
                 "accessorKind": "get"
               }
             ]
@@ -4901,7 +4904,8 @@
         "mangledName": "$s9JentisSDK15TrackingServiceC",
         "moduleName": "JentisSDK",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "RawDocComment"
         ],
         "hasMissingDesignatedInitializers": true,
         "conformances": [
@@ -6083,6 +6087,16 @@
             "mangledName": "$sSE"
           }
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       }
     ],
     "json_format_version": 8
@@ -6091,49 +6105,49 @@
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
       "kind": "StringLiteral",
-      "offset": 656,
+      "offset": 1902,
       "length": 21,
       "value": "\"navigator-userAgent\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
       "kind": "StringLiteral",
-      "offset": 4202,
+      "offset": 3041,
       "length": 24,
       "value": "\"document_location_href\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
       "kind": "StringLiteral",
-      "offset": 4262,
+      "offset": 3101,
       "length": 15,
       "value": "\"fb_browser_id\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
       "kind": "StringLiteral",
-      "offset": 4350,
+      "offset": 3189,
       "length": 12,
       "value": "\"product_id\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
       "kind": "Dictionary",
-      "offset": 4626,
+      "offset": 3465,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
       "kind": "StringLiteral",
-      "offset": 7105,
+      "offset": 5944,
       "length": 25,
       "value": "\"enrichment_xxxlprodfeed\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
       "kind": "Dictionary",
-      "offset": 8020,
+      "offset": 6859,
       "length": 3,
       "value": "[]"
     },
@@ -6280,16 +6294,30 @@
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
       "kind": "StringLiteral",
-      "offset": 7125,
+      "offset": 1492,
       "length": 21,
       "value": "\"defaultTrackCommand\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
       "kind": "StringLiteral",
-      "offset": 7171,
+      "offset": 1542,
       "length": 23,
       "value": "\"defaultDependencyType\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
+      "kind": "StringLiteral",
+      "offset": 3339,
+      "length": 16,
+      "value": "\"VendorConsents\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
+      "kind": "StringLiteral",
+      "offset": 3402,
+      "length": 27,
+      "value": "\"VendorConsents_lastupdate\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Utilities\/UserDefaultsUtility.swift",

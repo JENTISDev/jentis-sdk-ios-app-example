@@ -150,7 +150,7 @@ public class TrackConfig : Swift.Codable {
 @_hasMissingDesignatedInitializers public class TrackingService {
   public static func initialize()
   public static var shared: JentisSDK.TrackingService {
-    get
+    get throws
   }
   public static func resetInstance()
   public func setConsents(_ vendorConsents: [Swift.String : JentisSDK.ConsentStatus]) async -> Swift.Result<Swift.Bool, any Swift.Error>

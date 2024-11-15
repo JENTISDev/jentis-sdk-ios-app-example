@@ -23,17 +23,17 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                VStack(spacing: 0) {
+                VStack(spacing: -30) {
                     Text("Jentis SDK Demo")
                         .foregroundColor(.blue)
                         .font(.largeTitle)
                         .fontWeight(.bold)
                     
-                    Image(.logo)
+                    Image("logo")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 200, height: 200)
-                        .padding(.top)
+                        .frame(width: 300, height: 300)
+                        .padding(.top, -30)  // Negative padding to bring it closer to the title
 
                     VStack(spacing: 20) {
                         Button(action: {
