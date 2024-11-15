@@ -13,6 +13,7 @@ struct TrackingView: View {
     @State private var showProductViewPopover = false
     @State private var showAddToCartPopover = false
     @State private var showOrderPopover = false
+    @State private var showNewExamplePopover = false
     @State private var snackbarMessage: String = ""
     @State private var showSnackbar: Bool = false
     @State private var isError: Bool = false
@@ -148,7 +149,7 @@ struct TrackingView: View {
                         "track": "order",
                         "orderid": "12345666",
                         "brutto": 499.98,
-                        "paytype": "creditcart"
+                        "paytype": "creditcard"
                     ]
                 ],
                 snackbarMessage: "Order action sent successfully!",
@@ -179,7 +180,61 @@ struct TrackingView: View {
                         "track": "order",
                         "orderid": "12345666",
                         "brutto": 499.98,
-                        "paytype": "creditcart"
+                        "paytype": "creditcard"
+                    ])
+                """
+            )
+
+            // New Example Button with Info Popover
+            createTrackingButton(
+                title: "New Example",
+                color: .pink,
+                actions: [
+                    [
+                        "track": "product",
+                        "type": "order",
+                        "id": "123",
+                        "name": "Testproduct",
+                        "brutto": 199.99
+                    ],
+                    [
+                        "track": "product",
+                        "type": "currentcart",
+                        "id": "777",
+                        "color": "green"
+                    ],
+                    [
+                        "track": "product",
+                        "type": "order",
+                        "id": "456",
+                        "name": "Testproduct 2",
+                        "brutto": 299.99
+                    ]
+                ],
+                snackbarMessage: "New example sent successfully!",
+                showPopover: $showNewExamplePopover,
+                popoverText: """
+                    TrackingService.shared.push([
+                        "track": "product",
+                        "type": "order",
+                        "id": "123",
+                        "name": "Testproduct",
+                        "brutto": 199.99
+                    ])
+
+                    TrackingService.shared.push([
+                        "track": "product",
+                        "type": "currentcart",
+                        "id": "777",
+                        "color": "green"
+                    ])
+
+                    TrackingService.shared.push([
+                        "track": "product",
+                        "type": "order",
+                        "id": "456",
+                        "name": "Testproduct 2",
+                        "brutto": 299.99
                     ])
                 """
             )
@@ -203,7 +258,7 @@ struct TrackingView: View {
                 Task {
                     do {
                         for action in actions {
-                            try await TrackingService.shared.push(action) // Use try await here
+                            try await TrackingService.shared.push(action)
                         }
                         try await TrackingService.shared.submit()
                         self.snackbarMessage = snackbarMessage
