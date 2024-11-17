@@ -15,9 +15,8 @@ public struct VariablesWrapper {
   public let documentLocationHref: Swift.String
   public let fbBrowserId: Swift.String
   public let jtspushedcommands: [Swift.String]
-  public let productId: [Swift.String]
   public let customProperties: [Swift.String : Swift.String]
-  public init(documentLocationHref: Swift.String, fbBrowserId: Swift.String, jtspushedcommands: [Swift.String], productId: [Swift.String], customProperties: [Swift.String : Swift.String] = [:])
+  public init(documentLocationHref: Swift.String, fbBrowserId: Swift.String, jtspushedcommands: [Swift.String], customProperties: [Swift.String : Swift.String] = [:])
 }
 public struct ConsentModel : Swift.Codable {
   public let version: Swift.String
@@ -158,7 +157,7 @@ public class TrackConfig : Swift.Codable {
 }
 extension JentisSDK.TrackingService {
   public func push(_ customProperties: [Swift.String : Any])
-  public func submit() async throws
+  public func submit(_ customInitiator: Swift.String? = nil) async throws
 }
 @_hasMissingDesignatedInitializers public class TimestampUtility {
   public static func currentTimestampInMillis() -> Swift.Int

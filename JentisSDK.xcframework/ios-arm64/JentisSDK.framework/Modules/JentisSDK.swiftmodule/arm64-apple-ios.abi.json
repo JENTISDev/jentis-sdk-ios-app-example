@@ -169,66 +169,6 @@
           },
           {
             "kind": "Var",
-            "name": "productId",
-            "printedName": "productId",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[Swift.String]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sa"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:9JentisSDK16VariablesWrapperV9productIdSaySSGvp",
-            "mangledName": "$s9JentisSDK16VariablesWrapperV9productIdSaySSGvp",
-            "moduleName": "JentisSDK",
-            "declAttributes": [
-              "HasStorage",
-              "AccessControl"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Array",
-                    "printedName": "[Swift.String]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      }
-                    ],
-                    "usr": "s:Sa"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9JentisSDK16VariablesWrapperV9productIdSaySSGvg",
-                "mangledName": "$s9JentisSDK16VariablesWrapperV9productIdSaySSGvg",
-                "moduleName": "JentisSDK",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
             "name": "customProperties",
             "printedName": "customProperties",
             "children": [
@@ -302,7 +242,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(documentLocationHref:fbBrowserId:jtspushedcommands:productId:customProperties:)",
+            "printedName": "init(documentLocationHref:fbBrowserId:jtspushedcommands:customProperties:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -321,20 +261,6 @@
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[Swift.String]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sa"
               },
               {
                 "kind": "TypeNominal",
@@ -373,8 +299,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:9JentisSDK16VariablesWrapperV20documentLocationHref11fbBrowserId17jtspushedcommands07productJ016customPropertiesACSS_SSSaySSGAISDyS2SGtcfc",
-            "mangledName": "$s9JentisSDK16VariablesWrapperV20documentLocationHref11fbBrowserId17jtspushedcommands07productJ016customPropertiesACSS_SSSaySSGAISDyS2SGtcfc",
+            "usr": "s:9JentisSDK16VariablesWrapperV20documentLocationHref11fbBrowserId17jtspushedcommands16customPropertiesACSS_SSSaySSGSDyS2SGtcfc",
+            "mangledName": "$s9JentisSDK16VariablesWrapperV20documentLocationHref11fbBrowserId17jtspushedcommands16customPropertiesACSS_SSSaySSGSDyS2SGtcfc",
             "moduleName": "JentisSDK",
             "declAttributes": [
               "AccessControl"
@@ -4879,17 +4805,32 @@
           {
             "kind": "Function",
             "name": "submit",
-            "printedName": "submit()",
+            "printedName": "submit(_:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:9JentisSDK15TrackingServiceC6submityyYaKF",
-            "mangledName": "$s9JentisSDK15TrackingServiceC6submityyYaKF",
+            "usr": "s:9JentisSDK15TrackingServiceC6submityySSSgYaKF",
+            "mangledName": "$s9JentisSDK15TrackingServiceC6submityySSSgYaKF",
             "moduleName": "JentisSDK",
             "declAttributes": [
               "AccessControl"
@@ -6112,42 +6053,35 @@
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
       "kind": "StringLiteral",
-      "offset": 3041,
+      "offset": 3005,
       "length": 24,
       "value": "\"document_location_href\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
       "kind": "StringLiteral",
-      "offset": 3101,
+      "offset": 3065,
       "length": 15,
       "value": "\"fb_browser_id\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
-      "kind": "StringLiteral",
-      "offset": 3189,
-      "length": 12,
-      "value": "\"product_id\""
-    },
-    {
-      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
       "kind": "Dictionary",
-      "offset": 3465,
+      "offset": 3346,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
       "kind": "StringLiteral",
-      "offset": 5944,
+      "offset": 5630,
       "length": 25,
       "value": "\"enrichment_xxxlprodfeed\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
       "kind": "Dictionary",
-      "offset": 6859,
+      "offset": 6481,
       "length": 3,
       "value": "[]"
     },
@@ -6308,14 +6242,14 @@
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
       "kind": "StringLiteral",
-      "offset": 3339,
+      "offset": 3351,
       "length": 16,
       "value": "\"VendorConsents\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
       "kind": "StringLiteral",
-      "offset": 3402,
+      "offset": 3414,
       "length": 27,
       "value": "\"VendorConsents_lastupdate\""
     },

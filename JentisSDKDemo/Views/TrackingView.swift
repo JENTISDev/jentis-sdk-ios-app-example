@@ -17,6 +17,7 @@ struct TrackingView: View {
     @State private var snackbarMessage: String = ""
     @State private var showSnackbar: Bool = false
     @State private var isError: Bool = false
+    @State private var customInitiator: String = ""
 
     var body: some View {
         VStack(spacing: 20) {
@@ -24,6 +25,16 @@ struct TrackingView: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .padding()
+
+            VStack(alignment: .leading, spacing: 10) {
+                Text("Custom Initiator (Optional)")
+                    .font(.headline)
+                    .foregroundColor(.gray)
+                TextField("Enter custom initiator", text: $customInitiator)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(.horizontal)
+            }
+            .padding(.bottom, 20)
 
             // PageView Button with Info Popover
             createTrackingButton(
@@ -187,7 +198,7 @@ struct TrackingView: View {
 
             // New Example Button with Info Popover
             createTrackingButton(
-                title: "New Example",
+                title: "ProductView (Advanced)",
                 color: .pink,
                 actions: [
                     [
@@ -260,7 +271,11 @@ struct TrackingView: View {
                         for action in actions {
                             try await TrackingService.shared.push(action)
                         }
-                        try await TrackingService.shared.submit()
+                        if customInitiator.isEmpty {
+                            try await TrackingService.shared.submit()
+                        } else {
+                            try await TrackingService.shared.submit(customInitiator)
+                        }
                         self.snackbarMessage = snackbarMessage
                         self.isError = false
                         showSnackbarWithDelay()

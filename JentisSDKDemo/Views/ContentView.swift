@@ -100,7 +100,7 @@ struct ContentView: View {
                     }
                 }
                 .sheet(isPresented: $isConfigModalPresented) {
-                    ConfigModalView { newConfig in
+                    ConfigModalView { newConfig  in
                         JentisService.configure(with: newConfig)
                     }
                 }
