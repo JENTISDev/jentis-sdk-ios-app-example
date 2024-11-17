@@ -14,6 +14,7 @@ struct TrackingView: View {
     @State private var showAddToCartPopover = false
     @State private var showOrderPopover = false
     @State private var showNewExamplePopover = false
+    @State private var showEnrichmentPopover = false // New enrichment popover state
     @State private var snackbarMessage: String = ""
     @State private var showSnackbar: Bool = false
     @State private var isError: Bool = false
@@ -36,7 +37,7 @@ struct TrackingView: View {
             }
             .padding(.bottom, 20)
 
-            // PageView Button with Info Popover
+            // PageView Button
             createTrackingButton(
                 title: "PageView",
                 color: .blue,
@@ -58,7 +59,7 @@ struct TrackingView: View {
                 """
             )
 
-            // Productview Button with Info Popover
+            // Productview Button
             createTrackingButton(
                 title: "Productview",
                 color: .purple,
@@ -100,7 +101,7 @@ struct TrackingView: View {
                 """
             )
 
-            // Add-To-Cart Button with Info Popover
+            // Add-To-Cart Button
             createTrackingButton(
                 title: "Add-To-Cart",
                 color: .green,
@@ -133,7 +134,7 @@ struct TrackingView: View {
                 """
             )
 
-            // Order Button with Info Popover
+            // Order Button
             createTrackingButton(
                 title: "Order",
                 color: .orange,
@@ -196,7 +197,7 @@ struct TrackingView: View {
                 """
             )
 
-            // New Example Button with Info Popover
+            // ProductView (Advanced) Button
             createTrackingButton(
                 title: "ProductView (Advanced)",
                 color: .pink,
@@ -247,6 +248,35 @@ struct TrackingView: View {
                         "name": "Testproduct 2",
                         "brutto": 299.99
                     ])
+                """
+            )
+
+            // Add Enrichment Button
+            createEnrichmentButton(
+                title: "Add Enrichment",
+                color: .red,
+                enrichmentData: [
+                    "pluginId": "enrichment_xxxlprodfeed",
+                    "arguments": [
+                        "accountId": "JENTIS TEST ACCOUNT",
+                        "page_title": "Demo-APP Order Confirmed",
+                        "productId": ["123", "777", "456"] // Product IDs array
+                    ],
+                    "variables": ["enrichment_product_variant"]
+                ],
+                snackbarMessage: "Enrichment added and submitted successfully!",
+                showPopover: $showEnrichmentPopover,
+                popoverText: """
+                    TrackingService.shared.addEnrichment(
+                        pluginId: "enrichment_xxxlprodfeed",
+                        arguments: [
+                            "accountId": "JENTIS TEST ACCOUNT",
+                            "page_title": "Demo-APP Order Confirmed",
+                            "productId": ["123", "777", "456"]
+                        ],
+                        variables: ["enrichment_product_variant"]
+                    )
+                    TrackingService.shared.submit()
                 """
             )
 
@@ -306,6 +336,71 @@ struct TrackingView: View {
             .popover(isPresented: showPopover) {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("How to track \(title):")
+                        .font(.headline)
+                        .padding(.bottom, 5)
+                    Text(popoverText)
+                        .font(.system(.body, design: .monospaced))
+                        .foregroundColor(.blue)
+                }
+                .padding()
+            }
+        }
+    }
+
+    private func createEnrichmentButton(
+        title: String,
+        color: Color,
+        enrichmentData: [String: Any],
+        snackbarMessage: String,
+        showPopover: Binding<Bool>,
+        popoverText: String
+    ) -> some View {
+        HStack {
+            Button(action: {
+                Task {
+                    do {
+                        let pluginId = enrichmentData["pluginId"] as? String ?? "unknownPlugin"
+                        let arguments = enrichmentData["arguments"] as? [String: Any] ?? [:]
+                        let variables = enrichmentData["variables"] as? [String] ?? []
+
+                        TrackingService.shared.addEnrichment(
+                            pluginId: pluginId,
+                            arguments: arguments,
+                            variables: variables
+                        )
+
+                        try await TrackingService.shared.submit(customInitiator)
+
+                        self.snackbarMessage = snackbarMessage
+                        self.isError = false
+                        showSnackbarWithDelay()
+                    } catch {
+                        self.snackbarMessage = "Failed to add enrichment and submit"
+                        self.isError = true
+                        showSnackbarWithDelay()
+                    }
+                }
+            }) {
+                Text(title)
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(color)
+                    .cornerRadius(10)
+            }
+            .padding(.horizontal)
+
+            Button(action: {
+                showPopover.wrappedValue.toggle()
+            }) {
+                Image(systemName: "info.circle")
+                    .font(.title2)
+                    .foregroundColor(.gray)
+            }
+            .popover(isPresented: showPopover) {
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("How to add \(title):")
                         .font(.headline)
                         .padding(.bottom, 5)
                     Text(popoverText)

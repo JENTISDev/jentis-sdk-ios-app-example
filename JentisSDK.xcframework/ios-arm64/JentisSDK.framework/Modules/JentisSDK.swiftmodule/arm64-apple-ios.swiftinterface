@@ -158,6 +158,7 @@ public class TrackConfig : Swift.Codable {
 extension JentisSDK.TrackingService {
   public func push(_ customProperties: [Swift.String : Any])
   public func submit(_ customInitiator: Swift.String? = nil) async throws
+  public func addEnrichment(pluginId: Swift.String? = nil, arguments: [Swift.String : Any], variables: [Swift.String])
 }
 @_hasMissingDesignatedInitializers public class TimestampUtility {
   public static func currentTimestampInMillis() -> Swift.Int
