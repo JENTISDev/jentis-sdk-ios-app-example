@@ -45,7 +45,10 @@ struct TrackingView: View {
                     [
                         "track": "pageview",
                         "pagetitle": "Demo-APP Pagetitle",
-                        "url": "https://www.demoapp.com"
+                        "url": "https://www.demoapp.com",
+                        "document_title": "Demo-APP Document Title",
+                        "virtualPagePath": "Track Pageview",
+                        "window_location_href": "https://mipion.jtm-demo.com/NEWiostest"
                     ]
                 ],
                 snackbarMessage: "PageView action sent successfully!",
@@ -363,7 +366,7 @@ struct TrackingView: View {
                         let arguments = enrichmentData["arguments"] as? [String: Any] ?? [:]
                         let variables = enrichmentData["variables"] as? [String] ?? []
 
-                        TrackingService.shared.addEnrichment(
+                        try await TrackingService.shared.addEnrichment(
                             pluginId: pluginId,
                             arguments: arguments,
                             variables: variables

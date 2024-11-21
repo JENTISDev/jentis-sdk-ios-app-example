@@ -47,11 +47,12 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     
     private func setupJentisSDK() {
         let config = TrackConfig(
-            trackDomain: "nd7cud.mobiweb.jtm-demo.com",
-            container: "mobiweb-demoshop",
+            trackDomain: "kndmjh.mipion.jtm-demo.com",
+            container: "mipion-demo",
             environment: .live,
-            version: "1",
-            debugCode: "44c2acd3-434d-4234-983b-48e91551eb5a",
+            version: "9",
+            debugCode: "9983b926-e84e-46da-9f1b-3b495ab0ed4f",
+            sessionTimeoutInSeconds: 1800,
             authorizationToken: "22fef7a3b00466743fee2ab8cd8afb01"
         )
         

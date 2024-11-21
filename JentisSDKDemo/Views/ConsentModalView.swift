@@ -38,9 +38,9 @@ struct ConsentModalView: View {
             Divider()
             
             VStack(spacing: 16) {
-                consentToggle(title: "Google Analytics", isOn: $isGoogleAnalyticsAllowed, ncmBinding: $isGoogleAnalyticsNCM, color: .blue)
+                consentToggle(title: "Google Analytics 4 Server-side", isOn: $isGoogleAnalyticsAllowed, ncmBinding: $isGoogleAnalyticsNCM, color: .blue)
                 consentToggle(title: "Facebook", isOn: $isFacebookAllowed, ncmBinding: $isFacebookNCM, color: .indigo)
-                consentToggle(title: "Awin", isOn: $isAwinAllowed, ncmBinding: $isAwinNCM, color: .green)
+                consentToggle(title: "Google Ads", isOn: $isAwinAllowed, ncmBinding: $isAwinNCM, color: .green)
             }
             .padding(.horizontal)
             
@@ -78,9 +78,9 @@ struct ConsentModalView: View {
 
         // Map to ConsentStatus and pass to onSave
         let vendorConsents: [String: ConsentStatus] = [
-            "googleanalytics": isGoogleAnalyticsNCM ? .ncm : (isGoogleAnalyticsAllowed ? .allow : .deny),
+            "google_analytics_4_server": isGoogleAnalyticsNCM ? .ncm : (isGoogleAnalyticsAllowed ? .allow : .deny),
             "facebook": isFacebookNCM ? .ncm : (isFacebookAllowed ? .allow : .deny),
-            "awin": isAwinNCM ? .ncm : (isAwinAllowed ? .allow : .deny)
+            "adwords": isAwinNCM ? .ncm : (isAwinAllowed ? .allow : .deny)
         ]
         presentationMode.wrappedValue.dismiss()
         Task { await onSave(vendorConsents) }
