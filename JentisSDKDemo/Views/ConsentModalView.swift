@@ -11,10 +11,10 @@ struct ConsentModalView: View {
     @Environment(\.presentationMode) var presentationMode
     @Binding var isGoogleAnalyticsAllowed: Bool
     @Binding var isFacebookAllowed: Bool
-    @Binding var isAwinAllowed: Bool
+    @Binding var isAdwordsAllowed: Bool
     @State private var isGoogleAnalyticsNCM: Bool = false
     @State private var isFacebookNCM: Bool = false
-    @State private var isAwinNCM: Bool = false
+    @State private var isAdwordsNCM: Bool = false
     let onSave: ([String: ConsentStatus]) async -> Void
 
     private let userDefaults = UserDefaults.standard
@@ -38,9 +38,9 @@ struct ConsentModalView: View {
             Divider()
             
             VStack(spacing: 16) {
-                consentToggle(title: "Google Analytics 4 Server-side", isOn: $isGoogleAnalyticsAllowed, ncmBinding: $isGoogleAnalyticsNCM, color: .blue)
+                consentToggle(title: "GA4 server-side", isOn: $isGoogleAnalyticsAllowed, ncmBinding: $isGoogleAnalyticsNCM, color: .blue)
                 consentToggle(title: "Facebook", isOn: $isFacebookAllowed, ncmBinding: $isFacebookNCM, color: .indigo)
-                consentToggle(title: "Google Ads", isOn: $isAwinAllowed, ncmBinding: $isAwinNCM, color: .green)
+                consentToggle(title: "Google Ads", isOn: $isAdwordsAllowed, ncmBinding: $isAdwordsNCM, color: .green)
             }
             .padding(.horizontal)
             
@@ -71,16 +71,16 @@ struct ConsentModalView: View {
         // Save current selections to UserDefaults
         userDefaults.set(isGoogleAnalyticsAllowed, forKey: "isGoogleAnalyticsAllowed")
         userDefaults.set(isFacebookAllowed, forKey: "isFacebookAllowed")
-        userDefaults.set(isAwinAllowed, forKey: "isAwinAllowed")
+        userDefaults.set(isAdwordsAllowed, forKey: "isAdwordsAllowed")
         userDefaults.set(isGoogleAnalyticsNCM, forKey: "isGoogleAnalyticsNCM")
         userDefaults.set(isFacebookNCM, forKey: "isFacebookNCM")
-        userDefaults.set(isAwinNCM, forKey: "isAwinNCM")
+        userDefaults.set(isAdwordsNCM, forKey: "isAdwordsNCM")
 
         // Map to ConsentStatus and pass to onSave
         let vendorConsents: [String: ConsentStatus] = [
             "google_analytics_4_server": isGoogleAnalyticsNCM ? .ncm : (isGoogleAnalyticsAllowed ? .allow : .deny),
             "facebook": isFacebookNCM ? .ncm : (isFacebookAllowed ? .allow : .deny),
-            "adwords": isAwinNCM ? .ncm : (isAwinAllowed ? .allow : .deny)
+            "adwords": isAdwordsNCM ? .ncm : (isAdwordsAllowed ? .allow : .deny)
         ]
         presentationMode.wrappedValue.dismiss()
         Task { await onSave(vendorConsents) }
@@ -90,10 +90,10 @@ struct ConsentModalView: View {
         // Load saved values from UserDefaults
         isGoogleAnalyticsAllowed = userDefaults.bool(forKey: "isGoogleAnalyticsAllowed")
         isFacebookAllowed = userDefaults.bool(forKey: "isFacebookAllowed")
-        isAwinAllowed = userDefaults.bool(forKey: "isAwinAllowed")
+        isAdwordsAllowed = userDefaults.bool(forKey: "isAdwordsAllowed")
         isGoogleAnalyticsNCM = userDefaults.bool(forKey: "isGoogleAnalyticsNCM")
         isFacebookNCM = userDefaults.bool(forKey: "isFacebookNCM")
-        isAwinNCM = userDefaults.bool(forKey: "isAwinNCM")
+        isAdwordsNCM = userDefaults.bool(forKey: "isAdwordsNCM")
     }
     
     @ViewBuilder

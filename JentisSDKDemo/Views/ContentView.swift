@@ -18,7 +18,7 @@ struct ContentView: View {
 
     @State private var isGoogleAnalyticsAllowed: Bool = false
     @State private var isFacebookAllowed: Bool = false
-    @State private var isAwinAllowed: Bool = false
+    @State private var isAdwordsAllowed: Bool = false
 
     var body: some View {
         NavigationView {
@@ -85,7 +85,7 @@ struct ContentView: View {
                     ConsentModalView(
                         isGoogleAnalyticsAllowed: $isGoogleAnalyticsAllowed,
                         isFacebookAllowed: $isFacebookAllowed,
-                        isAwinAllowed: $isAwinAllowed,
+                        isAdwordsAllowed: $isAdwordsAllowed,
                         onSave: setConsent
                     )
                 }
