@@ -17,6 +17,7 @@ struct ConfigModalView: View {
     @State private var debugCode: String
     @State private var sessionTimeout: String
     @State private var authorizationToken: String
+    @State private var customProtocol: String
     
     var onSave: ((TrackConfig) -> Void)
     
@@ -28,7 +29,8 @@ struct ConfigModalView: View {
             version: "9",
             debugCode: "9983b926-e84e-46da-9f1b-3b495ab0ed4f",
             sessionTimeoutInSeconds: 1800,
-            authorizationToken: "22fef7a3b00466743fee2ab8cd8afb01"
+            authorizationToken: "22fef7a3b00466743fee2ab8cd8afb01",
+            customProtocol: "https"
         )
         
         _trackDomain = State(initialValue: config.trackDomain)
@@ -38,6 +40,7 @@ struct ConfigModalView: View {
         _debugCode = State(initialValue: config.debugCode ?? "")
         _sessionTimeout = State(initialValue: String(config.sessionTimeoutInSeconds ?? 1800))
         _authorizationToken = State(initialValue: config.authorizationToken)
+        _customProtocol = State(initialValue: config.customProtocol ?? "https")
         
         self.onSave = onSave
     }
@@ -105,6 +108,15 @@ struct ConfigModalView: View {
                         TextField("Authorization Token", text: $authorizationToken)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                     }
+                    
+                    // Add custom protocol input
+                    VStack(alignment: .leading) {
+                        Text("Custom Protocol (http/https)")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                        TextField("Custom Protocol", text: $customProtocol)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                    }
                 }
                 
                 Button("Save") {
@@ -116,7 +128,8 @@ struct ConfigModalView: View {
                         version: version,
                         debugCode: debugCode,
                         sessionTimeoutInSeconds: timeoutValue,
-                        authorizationToken: authorizationToken
+                        authorizationToken: authorizationToken,
+                        customProtocol: customProtocol
                     )
                     
                     onSave(config)

@@ -130,8 +130,9 @@ public class TrackConfig : Swift.Codable {
   final public let debugCode: Swift.String?
   final public let sessionTimeoutInSeconds: Foundation.TimeInterval?
   final public let authorizationToken: Swift.String
-  public init(trackDomain: Swift.String, container: Swift.String, environment: JentisSDK.TrackConfig.Environment, version: Swift.String?, debugCode: Swift.String?, sessionTimeoutInSeconds: Foundation.TimeInterval? = nil, authorizationToken: Swift.String = "")
-  public static func configure(trackDomain: Swift.String, container: Swift.String, environment: JentisSDK.TrackConfig.Environment, version: Swift.String? = nil, debugCode: Swift.String? = nil, sessionTimeoutInSeconds: Foundation.TimeInterval? = nil, authorizationToken: Swift.String = "")
+  public var customProtocol: Swift.String?
+  public init(trackDomain: Swift.String, container: Swift.String, environment: JentisSDK.TrackConfig.Environment, version: Swift.String?, debugCode: Swift.String?, sessionTimeoutInSeconds: Foundation.TimeInterval? = nil, authorizationToken: Swift.String = "", customProtocol: Swift.String? = nil)
+  public static func configure(trackDomain: Swift.String, container: Swift.String, environment: JentisSDK.TrackConfig.Environment, version: Swift.String? = nil, debugCode: Swift.String? = nil, sessionTimeoutInSeconds: Foundation.TimeInterval? = nil, authorizationToken: Swift.String = "", customProtocol: Swift.String? = nil)
   public static var shared: JentisSDK.TrackConfig {
     get
   }
@@ -141,6 +142,15 @@ public class TrackConfig : Swift.Codable {
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
+}
+public enum CodableValue : Swift.Codable, Swift.Equatable {
+  case string(Swift.String)
+  case bool(Swift.Bool)
+  case number(Swift.Double)
+  case array([JentisSDK.CodableValue])
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public static func == (lhs: JentisSDK.CodableValue, rhs: JentisSDK.CodableValue) -> Swift.Bool
 }
 @_hasMissingDesignatedInitializers public class JentisService {
   public static func configure(with config: JentisSDK.TrackConfig)
@@ -159,6 +169,7 @@ extension JentisSDK.TrackingService {
   public func push(_ customProperties: [Swift.String : Any])
   public func submit(_ customInitiator: Swift.String? = nil) async throws
   public func addEnrichment(pluginId: Swift.String? = nil, arguments: [Swift.String : Any], variables: [Swift.String])
+  public func addCustomEnrichment(pluginId: Swift.String? = nil, arguments: [Swift.String : JentisSDK.CodableValue], variables: [Swift.String])
 }
 @_hasMissingDesignatedInitializers public class TimestampUtility {
   public static func currentTimestampInMillis() -> Swift.Int
