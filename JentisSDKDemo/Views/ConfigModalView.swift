@@ -76,20 +76,23 @@ struct ConfigModalView: View {
                         .pickerStyle(SegmentedPickerStyle())
                     }
                     
-                    VStack(alignment: .leading) {
-                        Text("Version")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                        TextField("Version", text: $version)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                    }
-                    
-                    VStack(alignment: .leading) {
-                        Text("Debug Code")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                        TextField("Debug Code", text: $debugCode)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                    // Conditionally show Version and Debug Code
+                    if environment != .live {
+                        VStack(alignment: .leading) {
+                            Text("Version")
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                            TextField("Version", text: $version)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                        }
+                        
+                        VStack(alignment: .leading) {
+                            Text("Debug Code")
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                            TextField("Debug Code", text: $debugCode)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                        }
                     }
                     
                     VStack(alignment: .leading) {
@@ -109,7 +112,6 @@ struct ConfigModalView: View {
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                     }
                     
-                    // Add custom protocol input
                     VStack(alignment: .leading) {
                         Text("Custom Protocol (http/https)")
                             .font(.subheadline)
@@ -125,8 +127,8 @@ struct ConfigModalView: View {
                         trackDomain: trackDomain,
                         container: container,
                         environment: environment,
-                        version: version,
-                        debugCode: debugCode,
+                        version: environment != .live ? version : nil,
+                        debugCode: environment != .live ? debugCode : nil,
                         sessionTimeoutInSeconds: timeoutValue,
                         authorizationToken: authorizationToken,
                         customProtocol: customProtocol
