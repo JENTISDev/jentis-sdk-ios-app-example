@@ -19,14 +19,14 @@ struct TrackingView: View {
     @State private var showSnackbar: Bool = false
     @State private var isError: Bool = false
     @State private var customInitiator: String = ""
-
+    
     var body: some View {
         VStack(spacing: 20) {
             Text("Tracking Actions")
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .padding()
-
+            
             VStack(alignment: .leading, spacing: 10) {
                 Text("Custom Initiator (Optional)")
                     .font(.headline)
@@ -36,7 +36,7 @@ struct TrackingView: View {
                     .padding(.horizontal)
             }
             .padding(.bottom, 20)
-
+            
             // PageView Button
             createTrackingButton(
                 title: "PageView",
@@ -61,7 +61,7 @@ struct TrackingView: View {
                     ])
                 """
             )
-
+            
             // Productview Button
             createTrackingButton(
                 title: "Productview",
@@ -89,7 +89,7 @@ struct TrackingView: View {
                         "track": "pageview",
                         "pagetitle": "Demo-APP Productview"
                     ])
-
+                
                     TrackingService.shared.push([
                         "track": "product",
                         "type": "productview",
@@ -97,13 +97,13 @@ struct TrackingView: View {
                         "name": "Testproduct",
                         "brutto": 199.99
                     ])
-
+                
                     TrackingService.shared.push([
                         "track": "productview"
                     ])
                 """
             )
-
+            
             // Add-To-Cart Button
             createTrackingButton(
                 title: "Add-To-Cart",
@@ -130,13 +130,13 @@ struct TrackingView: View {
                         "name": "Testproduct",
                         "brutto": 199.99
                     ])
-
+                
                     TrackingService.shared.push([
                         "track": "addtocart"
                     ])
                 """
             )
-
+            
             // Order Button
             createTrackingButton(
                 title: "Order",
@@ -174,7 +174,7 @@ struct TrackingView: View {
                         "track": "pageview",
                         "pagetitle": "Demo-APP Order Confirmed"
                     ])
-
+                
                     TrackingService.shared.push([
                         "track": "product",
                         "type": "order",
@@ -182,7 +182,7 @@ struct TrackingView: View {
                         "name": "Testproduct",
                         "brutto": 199.99
                     ])
-
+                
                     TrackingService.shared.push([
                         "track": "product",
                         "type": "order",
@@ -190,7 +190,7 @@ struct TrackingView: View {
                         "name": "Testproduct 2",
                         "brutto": 299.99
                     ])
-
+                
                     TrackingService.shared.push([
                         "track": "order",
                         "orderid": "12345666",
@@ -199,7 +199,7 @@ struct TrackingView: View {
                     ])
                 """
             )
-
+            
             // ProductView (Advanced) Button
             createTrackingButton(
                 title: "ProductView (Advanced)",
@@ -236,14 +236,14 @@ struct TrackingView: View {
                         "name": "Testproduct",
                         "brutto": 199.99
                     ])
-
+                
                     TrackingService.shared.push([
                         "track": "product",
                         "type": "currentcart",
                         "id": "777",
                         "color": "green"
                     ])
-
+                
                     TrackingService.shared.push([
                         "track": "product",
                         "type": "order",
@@ -253,7 +253,7 @@ struct TrackingView: View {
                     ])
                 """
             )
-
+            
             // Add Enrichment Button
             createEnrichmentButton(
                 title: "Add Enrichment",
@@ -274,22 +274,82 @@ struct TrackingView: View {
                     TrackingService.shared.addEnrichment(
                         pluginId: "enrichment_xxxlprodfeed",
                         arguments: [
-                            "accountId": "JENTIS TEST ACCOUNT",
+                            "account": "JENTIS TEST ACCOUNT",
                             "page_title": "Demo-APP Order Confirmed",
-                            "productId": ["123", "777", "456"]
+                            "productId": ["123", "777", "456"],
+                            "baseProductId": ["1"]
                         ],
                         variables: ["enrichment_product_variant"]
                     )
                     TrackingService.shared.submit()
                 """
             )
-
+            
+            // Custom Enrichment Button
+            createCustomEnrichmentButton(
+                title: "Custom Enrichment",
+                color: .gray,
+                showPopover: $showEnrichmentPopover,
+                snackbarMessage: "Custom enrichment sequence completed successfully!",
+                popoverText: """
+                    TrackingService.shared.push([
+                      "track": "pageview",
+                      "pagetitle": "Demo-APP Order Confirmed",
+                      "account": "JENTIS TEST ACCOUNT"
+                    ]);
+                
+                    TrackingService.shared.push([
+                      "track": "product",
+                      "type": "order",
+                      "id": "123",
+                      "name": "Testproduct",
+                      "brutto": 199.99
+                    ]);
+                
+                    TrackingService.shared.push([
+                      "track": "product",
+                      "type": "currentcart",
+                      "id": "777",
+                      "color": "green"
+                    ]);
+                
+                    TrackingService.shared.push([
+                      "track": "product",
+                      "type": "order",
+                      "id": "456",
+                      "name": "Testproduct 2",
+                      "brutto": 299.99
+                    ]);
+                
+                    TrackingService.shared.push([
+                      "track": "order",
+                      "orderid": "12345666",
+                      "brutto": 499.98,
+                      "paytype": "creditcart"
+                    ]);
+                
+                    TrackingService.shared.addCustomEnrichment(
+                      pluginId: "enrichment_xxxlprodfeed",
+                      arguments: [
+                        "account": .string("TESTACCOUNT"),
+                        "page_title": .string("MY PAGE TITLE"),
+                        "productId": .array(["1", "ABC", "3"].map { .string($0) }),
+                        "baseProductId": ["1"]
+                      ],
+                      variables: ["enrichment_product_variant"]
+                    );
+                
+                    TrackingService.shared.submit()
+                """
+            )
+            
+            
             Spacer()
         }
         .padding()
         .background(Color(.systemBackground).edgesIgnoringSafeArea(.all))
     }
-
+    
     private func createTrackingButton(
         title: String,
         color: Color,
@@ -329,7 +389,7 @@ struct TrackingView: View {
                     .cornerRadius(10)
             }
             .padding(.horizontal)
-
+            
             Button(action: {
                 showPopover.wrappedValue.toggle()
             }) {
@@ -350,7 +410,7 @@ struct TrackingView: View {
             }
         }
     }
-
+    
     private func createEnrichmentButton(
         title: String,
         color: Color,
@@ -366,15 +426,15 @@ struct TrackingView: View {
                         let pluginId = enrichmentData["pluginId"] as? String ?? "unknownPlugin"
                         let arguments = enrichmentData["arguments"] as? [String: Any] ?? [:]
                         let variables = enrichmentData["variables"] as? [String] ?? []
-
+                        
                         try await TrackingService.shared.addEnrichment(
                             pluginId: pluginId,
                             arguments: arguments,
                             variables: variables
                         )
-
+                        
                         try await TrackingService.shared.submit(customInitiator)
-
+                        
                         self.snackbarMessage = snackbarMessage
                         self.isError = false
                         showSnackbarWithDelay()
@@ -394,7 +454,7 @@ struct TrackingView: View {
                     .cornerRadius(10)
             }
             .padding(.horizontal)
-
+            
             Button(action: {
                 showPopover.wrappedValue.toggle()
             }) {
@@ -415,7 +475,117 @@ struct TrackingView: View {
             }
         }
     }
-
+    
+    private func createCustomEnrichmentButton(
+        title: String,
+        color: Color,
+        showPopover: Binding<Bool>,
+        snackbarMessage: String,
+        popoverText: String
+    ) -> some View {
+        HStack {
+            Button(action: {
+                Task {
+                    do {
+                        // Step 1: Push the PageView data
+                        try await TrackingService.shared.push([
+                            "track": "pageview",
+                            "pagetitle": "Demo-APP Order Confirmed",
+                            "account": "JENTIS TEST ACCOUNT"
+                        ])
+                        
+                        // Step 2: Push the first product order
+                        try await TrackingService.shared.push([
+                            "track": "product",
+                            "type": "order",
+                            "id": "123",
+                            "name": "Testproduct",
+                            "brutto": 199.99
+                        ])
+                        
+                        // Step 3: Push the current cart data
+                        try await TrackingService.shared.push([
+                            "track": "product",
+                            "type": "currentcart",
+                            "id": "777",
+                            "color": "green"
+                        ])
+                        
+                        // Step 4: Push the second product order
+                        try await TrackingService.shared.push([
+                            "track": "product",
+                            "type": "order",
+                            "id": "456",
+                            "name": "Testproduct 2",
+                            "brutto": 299.99
+                        ])
+                        
+                        // Step 5: Push the order details
+                        try await TrackingService.shared.push([
+                            "track": "order",
+                            "orderid": "12345666",
+                            "brutto": 499.98,
+                            "paytype": "creditcart"
+                        ])
+                        
+                        // Step 6: Add the custom enrichment
+                        TrackingService.shared.addCustomEnrichment(
+                            pluginId: "enrichment_xxxlprodfeed",
+                            arguments: [
+                                "account": .string("TESTACCOUNT"),
+                                "page_title": .string("MY PAGE TITLE"),
+                                "productId": .array(["1", "ABC", "3"].map { .string($0) }),
+                                "baseProductId": .array(["1"].map { .string($0) }),
+                            ],
+                            variables: ["enrichment_product_variant"]
+                        )
+                        
+                        // Step 7: Submit all the data
+                        try await TrackingService.shared.submit(customInitiator)
+                        
+                        // Display success snackbar
+                        self.snackbarMessage = snackbarMessage
+                        self.isError = false
+                        showSnackbarWithDelay()
+                    } catch {
+                        // Handle error
+                        self.snackbarMessage = "Failed to perform custom enrichment actions"
+                        self.isError = true
+                        showSnackbarWithDelay()
+                    }
+                }
+            }) {
+                Text(title)
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(color)
+                    .cornerRadius(10)
+            }
+            .padding(.horizontal)
+            
+            Button(action: {
+                showPopover.wrappedValue.toggle()
+            }) {
+                Image(systemName: "info.circle")
+                    .font(.title2)
+                    .foregroundColor(.gray)
+            }
+            .popover(isPresented: showPopover) {
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("How to perform \(title):")
+                        .font(.headline)
+                        .padding(.bottom, 5)
+                    Text(popoverText)
+                        .font(.system(.body, design: .monospaced))
+                        .foregroundColor(.blue)
+                }
+                .padding()
+            }
+        }
+    }
+    
     private func showSnackbarWithDelay() {
         showSnackbar = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
