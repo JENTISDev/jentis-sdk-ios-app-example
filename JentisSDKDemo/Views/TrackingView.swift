@@ -261,9 +261,10 @@ struct TrackingView: View {
                 enrichmentData: [
                     "pluginId": "enrichment_xxxlprodfeed",
                     "arguments": [
-                        "accountId": "JENTIS TEST ACCOUNT",
+                        "account": "JENTIS TEST ACCOUNT",
                         "page_title": "Demo-APP Order Confirmed",
-                        "productId": ["123", "777", "456"] // Product IDs array
+                        "productId": ["123", "777", "456"],
+                        "baseProductId": ["1"]
                     ],
                     "variables": ["enrichment_product_variant"]
                 ],
