@@ -155,6 +155,12 @@ struct TrackingView: View {
                     ],
                     [
                         "track": "product",
+                        "type": "currentcart",
+                        "id": "777",
+                        "color": "green"
+                    ],
+                    [
+                        "track": "product",
                         "type": "order",
                         "id": "456",
                         "name": "Testproduct 2",
@@ -181,6 +187,13 @@ struct TrackingView: View {
                         "id": "123",
                         "name": "Testproduct",
                         "brutto": 199.99
+                    ])
+                
+                    TrackingService.shared.push([
+                        "track": "product",
+                        "type": "currentcart",
+                        "id": "777",
+                        "color": "green"
                     ])
                 
                     TrackingService.shared.push([
