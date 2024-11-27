@@ -78,7 +78,7 @@ struct ConsentModalView: View {
 
         // Map to ConsentStatus and pass to onSave
         let vendorConsents: [String: ConsentStatus] = [
-            "google_analytics_4_server": isGoogleAnalyticsNCM ? .ncm : (isGoogleAnalyticsAllowed ? .allow : .deny),
+            "google_analytics_4_server-side": isGoogleAnalyticsNCM ? .ncm : (isGoogleAnalyticsAllowed ? .allow : .deny),
             "facebook": isFacebookNCM ? .ncm : (isFacebookAllowed ? .allow : .deny),
             "adwords": isAdwordsNCM ? .ncm : (isAdwordsAllowed ? .allow : .deny)
         ]
