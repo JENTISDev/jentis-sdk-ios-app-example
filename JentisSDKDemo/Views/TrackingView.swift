@@ -168,7 +168,7 @@ struct TrackingView: View {
                     ],
                     [
                         "track": "order",
-                        "orderid": "12345666",
+                        "order_id": "12345666",
                         "brutto": 499.98,
                         "paytype": "creditcard"
                     ]
@@ -206,7 +206,7 @@ struct TrackingView: View {
                 
                     TrackingService.shared.push([
                         "track": "order",
-                        "orderid": "12345666",
+                        "order_id": "12345666",
                         "brutto": 499.98,
                         "paytype": "creditcard"
                     ])
@@ -336,7 +336,7 @@ struct TrackingView: View {
                 
                     TrackingService.shared.push([
                       "track": "order",
-                      "orderid": "12345666",
+                      "order_id": "12345666",
                       "brutto": 499.98,
                       "paytype": "creditcart"
                     ]);
@@ -536,7 +536,7 @@ struct TrackingView: View {
                         // Step 5: Push the order details
                         try await TrackingService.shared.push([
                             "track": "order",
-                            "orderid": "12345666",
+                            "order_id": "12345666",
                             "brutto": 499.98,
                             "paytype": "creditcart"
                         ])
