@@ -167,9 +167,10 @@ public enum CodableValue : Swift.Codable, Swift.Equatable {
 }
 extension JentisSDK.TrackingService {
   public func push(_ customProperties: [Swift.String : Any])
-  public func submit(_ customInitiator: Swift.String? = nil) async throws
+  public func submit(skipAddingSubmitCommand: Swift.Bool = false, _ customInitiator: Swift.String? = nil) async throws
   public func addEnrichment(pluginId: Swift.String? = nil, arguments: [Swift.String : Any], variables: [Swift.String])
   public func addCustomEnrichment(pluginId: Swift.String? = nil, arguments: [Swift.String : JentisSDK.CodableValue], variables: [Swift.String])
+  public func addToCart(_ customProperties: [Swift.String : Any]) async throws
 }
 @_hasMissingDesignatedInitializers public class TimestampUtility {
   public static func currentTimestampInMillis() -> Swift.Int

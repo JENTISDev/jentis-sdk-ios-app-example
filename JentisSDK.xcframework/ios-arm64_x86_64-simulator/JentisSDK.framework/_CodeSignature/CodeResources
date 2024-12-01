@@ -14,11 +14,11 @@
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		Lt5IkD4f/7pDjAWjhQNAdGgIZQA=
+		C9dwsdUSXoXKml2t77Zi6LO4DNA=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		fzXERHsfWe2SqY8w9PT8jMQCuXA=
+		IGPLFJdu9VJBVJKwsZ90BfzbIlQ=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -26,19 +26,19 @@
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		fzXERHsfWe2SqY8w9PT8jMQCuXA=
+		IGPLFJdu9VJBVJKwsZ90BfzbIlQ=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		5RsPKhZhJuh0QIhLoTXSQp6M92k=
+		GlenBSjT1WhXZ9WyEQv1EHB+4FA=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		Lt5IkD4f/7pDjAWjhQNAdGgIZQA=
+		C9dwsdUSXoXKml2t77Zi6LO4DNA=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		YS+1HMI73h3BxNmwmZBwWVdhMIQ=
+		mYWDOt2YTAisJ+EbfjkKIWMskC0=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		YS+1HMI73h3BxNmwmZBwWVdhMIQ=
+		mYWDOt2YTAisJ+EbfjkKIWMskC0=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		91OPAmSWVtIY+ksI9CKWcPZMxnk=
+		httTGY3tXR3arWp8Ywd4KtZYup8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -70,14 +70,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cvh0vGpl0BOxARimCIJqkmntDW6EBi7ZMHLmrjipwxo=
+			+dJVvsUQsvO87xlzJMf35pQuuV918m0GB/wst3oUay4=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2uz0bbgHpFMGqu2I6XA2qWorxkq5txquzp8OKXL4kBU=
+			4iNoEI3kfcEuaszHd7I9UVWqiO05RBhOPtNAjHwkSwU=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -91,28 +91,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2uz0bbgHpFMGqu2I6XA2qWorxkq5txquzp8OKXL4kBU=
+			4iNoEI3kfcEuaszHd7I9UVWqiO05RBhOPtNAjHwkSwU=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			s443/UNC7mvk7FwLDc/QA/IjewUXMdW6/fhABhmoW3g=
+			n6HPecErvNdIM93kCbP9ecJWxXtMCIMC1syYn3K2kss=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cvh0vGpl0BOxARimCIJqkmntDW6EBi7ZMHLmrjipwxo=
+			+dJVvsUQsvO87xlzJMf35pQuuV918m0GB/wst3oUay4=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nID5P/NthwWtv332S6VJwxLyELah9l9n1bpglwlNyDI=
+			Q8wV3WfNslaH9CX5n/8dYm6OUhLqS3uHpUTNsoZNE5o=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -126,14 +126,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nID5P/NthwWtv332S6VJwxLyELah9l9n1bpglwlNyDI=
+			Q8wV3WfNslaH9CX5n/8dYm6OUhLqS3uHpUTNsoZNE5o=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+U13o0xylpiEt9a0C1a0xzMM3fjPa2HhPEIDmlCxBdg=
+			LCYf25CLxIvfJzu83cy3GFbbJBZLaTfINlUqHLNzUJw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

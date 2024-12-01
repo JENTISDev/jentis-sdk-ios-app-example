@@ -344,6 +344,16 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "ConsentModel",
         "printedName": "ConsentModel",
@@ -5052,6 +5062,16 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "JentisService",
         "printedName": "JentisService",
@@ -5307,12 +5327,19 @@
           {
             "kind": "Function",
             "name": "submit",
-            "printedName": "submit(_:)",
+            "printedName": "submit(skipAddingSubmitCommand:_:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
               },
               {
                 "kind": "TypeNominal",
@@ -5331,8 +5358,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:9JentisSDK15TrackingServiceC6submityySSSgYaKF",
-            "mangledName": "$s9JentisSDK15TrackingServiceC6submityySSSgYaKF",
+            "usr": "s:9JentisSDK15TrackingServiceC6submit23skipAddingSubmitCommand_ySb_SSSgtYaKF",
+            "mangledName": "$s9JentisSDK15TrackingServiceC6submit23skipAddingSubmitCommand_ySb_SSSgtYaKF",
             "moduleName": "JentisSDK",
             "declAttributes": [
               "AccessControl"
@@ -5478,6 +5505,47 @@
               "AccessControl"
             ],
             "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "addToCart",
+            "printedName": "addToCart(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9JentisSDK15TrackingServiceC9addToCartyySDySSypGYaKF",
+            "mangledName": "$s9JentisSDK15TrackingServiceC9addToCartyySDySSypGYaKF",
+            "moduleName": "JentisSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
             "funcSelfKind": "NonMutating"
           }
         ],
@@ -5645,6 +5713,16 @@
         "printedName": "os",
         "declKind": "Import",
         "moduleName": "JentisSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       },
       {
         "kind": "TypeDecl",
@@ -6730,6 +6808,69 @@
       "value": "[]"
     },
     {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DebugDataModel.swift",
+      "kind": "StringLiteral",
+      "offset": 416,
+      "length": 9,
+      "value": "\"debugid\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DebugDataModel.swift",
+      "kind": "StringLiteral",
+      "offset": 497,
+      "length": 17,
+      "value": "\"eventDocumentId\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DebugDataModel.swift",
+      "kind": "StringLiteral",
+      "offset": 884,
+      "length": 5,
+      "value": "\"_id\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DebugDataModel.swift",
+      "kind": "StringLiteral",
+      "offset": 1587,
+      "length": 17,
+      "value": "\"request_headers\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DebugDataModel.swift",
+      "kind": "StringLiteral",
+      "offset": 1650,
+      "length": 25,
+      "value": "\"query_string_parameters\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DebugDataModel.swift",
+      "kind": "StringLiteral",
+      "offset": 2041,
+      "length": 12,
+      "value": "\"requestUrl\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DebugDataModel.swift",
+      "kind": "StringLiteral",
+      "offset": 2095,
+      "length": 15,
+      "value": "\"requestMethod\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DebugDataModel.swift",
+      "kind": "StringLiteral",
+      "offset": 2152,
+      "length": 15,
+      "value": "\"requestStatus\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DebugDataModel.swift",
+      "kind": "StringLiteral",
+      "offset": 2209,
+      "length": 15,
+      "value": "\"remoteAddress\""
+    },
+    {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/ConsentModel.swift",
       "kind": "StringLiteral",
       "offset": 633,
@@ -6777,6 +6918,20 @@
       "offset": 2807,
       "length": 2,
       "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Utilities\/TagCache.swift",
+      "kind": "Array",
+      "offset": 219,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Utilities\/TagCache.swift",
+      "kind": "StringLiteral",
+      "offset": 267,
+      "length": 21,
+      "value": "\"com.jentis.tagCache\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config\/Config.swift",
@@ -6872,37 +7027,58 @@
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
       "kind": "StringLiteral",
-      "offset": 1501,
+      "offset": 1117,
       "length": 21,
       "value": "\"defaultTrackCommand\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
       "kind": "StringLiteral",
-      "offset": 1551,
+      "offset": 1167,
       "length": 23,
       "value": "\"defaultDependencyType\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
       "kind": "Dictionary",
-      "offset": 1619,
+      "offset": 1235,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
       "kind": "StringLiteral",
-      "offset": 3359,
+      "offset": 2966,
       "length": 16,
       "value": "\"VendorConsents\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
       "kind": "StringLiteral",
-      "offset": 3422,
+      "offset": 3029,
       "length": 27,
       "value": "\"VendorConsents_lastupdate\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
+      "kind": "BooleanLiteral",
+      "offset": 11071,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/MonitorPayload.swift",
+      "kind": "StringLiteral",
+      "offset": 386,
+      "length": 9,
+      "value": "\"debugid\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/MonitorPayload.swift",
+      "kind": "StringLiteral",
+      "offset": 467,
+      "length": 17,
+      "value": "\"eventDocumentId\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Utilities\/UserDefaultsUtility.swift",

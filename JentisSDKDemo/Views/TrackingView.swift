@@ -119,30 +119,55 @@ struct TrackingView: View {
             createTrackingButton(
                 title: "Add-To-Cart",
                 color: .green,
-                actions: [
-                    [
-                        "track": "product",
-                        "type": "addtocart",
-                        "id": "123",
-                        "name": "Testproduct",
-                        "brutto": 199.99
-                    ],
-                    [
-                        "track": "addtocart"
-                    ]
-                ],
+                actions: [], // Actions are no longer needed as we're using the addToCart method directly
                 snackbarMessage: "Add-To-Cart action sent successfully!",
                 showPopover: $showAddToCartPopover,
                 popoverText: """
-                    TrackingService.shared.push([
-                        "track": "product",
-                        "type": "addtocart",
+                    TrackingService.shared.addToCart([
                         "id": "123",
                         "name": "Testproduct",
                         "brutto": 199.99
                     ])
                 """
-            )
+            ) {
+                Task {
+                    do {
+                        // Prepare custom properties for Add-To-Cart
+                        let customProperties: [String: Any] = [
+                            "id": "123",
+                            "name": "Testproduct",
+                            "brutto": 199.99
+                        ]
+                        
+                        // Add enrichment if toggled on
+                        if includeEnrichment {
+                            try await TrackingService.shared.addEnrichment(
+                                pluginId: "enrichment_xxxlprodfeed",
+                                arguments: [
+                                    "account": "JENTIS TEST ACCOUNT",
+                                    "page_title": "Demo-APP Order Confirmed",
+                                    "productId": ["123", "777", "456"],
+                                    "baseProductId": ["1"]
+                                ],
+                                variables: ["enrichment_product_variant"]
+                            )
+                        }
+                        
+                        // Use the addToCart method to submit the action
+                        try await TrackingService.shared.addToCart(customProperties)
+                        
+                        // Show success message
+                        snackbarMessage = "Add-To-Cart action sent successfully!"
+                        isError = false
+                        showSnackbarWithDelay()
+                    } catch {
+                        // Handle errors
+                        snackbarMessage = "Failed to send Add-To-Cart action"
+                        isError = true
+                        showSnackbarWithDelay()
+                    }
+                }
+            }
             
             createTrackingButton(
                 title: "Order",
@@ -254,50 +279,55 @@ struct TrackingView: View {
         actions: [[String: Any]],
         snackbarMessage: String,
         showPopover: Binding<Bool>,
-        popoverText: String
+        popoverText: String,
+        customAction: (() -> Void)? = nil // Add an optional customAction parameter
     ) -> some View {
         HStack {
             Button(action: {
-                Task {
-                    do {
-                        // Initialize base tracking actions
-                        var enrichedActions = actions
-                        
-                        // If enrichment is enabled, add enrichment data explicitly
-                        if includeEnrichment {
-                            try await TrackingService.shared.addEnrichment(
-                                pluginId: "enrichment_xxxlprodfeed",
-                                arguments: [
-                                    "account": "JENTIS TEST ACCOUNT",
-                                    "page_title": "Demo-APP Order Confirmed",
-                                    "productId": ["123", "777", "456"],
-                                    "baseProductId": ["1"]
-                                ],
-                                variables: ["enrichment_product_variant"]
-                            )
+                if let customAction = customAction {
+                    customAction() // Execute the custom closure if provided
+                } else {
+                    Task {
+                        do {
+                            // Initialize base tracking actions
+                            var enrichedActions = actions
+                            
+                            // If enrichment is enabled, add enrichment data explicitly
+                            if includeEnrichment {
+                                try await TrackingService.shared.addEnrichment(
+                                    pluginId: "enrichment_xxxlprodfeed",
+                                    arguments: [
+                                        "account": "JENTIS TEST ACCOUNT",
+                                        "page_title": "Demo-APP Order Confirmed",
+                                        "productId": ["123", "777", "456"],
+                                        "baseProductId": ["1"]
+                                    ],
+                                    variables: ["enrichment_product_variant"]
+                                )
+                            }
+                            
+                            // Push actions sequentially
+                            for action in enrichedActions {
+                                try await TrackingService.shared.push(action)
+                            }
+                            
+                            // Submit the data
+                            if customInitiator.isEmpty {
+                                try await TrackingService.shared.submit()
+                            } else {
+                                try await TrackingService.shared.submit(customInitiator)
+                            }
+                            
+                            // Show success message
+                            self.snackbarMessage = snackbarMessage
+                            self.isError = false
+                            showSnackbarWithDelay()
+                        } catch {
+                            // Handle errors
+                            self.snackbarMessage = "Failed to send \(title) action"
+                            self.isError = true
+                            showSnackbarWithDelay()
                         }
-                        
-                        // Push actions sequentially
-                        for action in enrichedActions {
-                            try await TrackingService.shared.push(action)
-                        }
-                        
-                        // Submit the data
-                        if customInitiator.isEmpty {
-                            try await TrackingService.shared.submit()
-                        } else {
-                            try await TrackingService.shared.submit(customInitiator)
-                        }
-                        
-                        // Show success message
-                        self.snackbarMessage = snackbarMessage
-                        self.isError = false
-                        showSnackbarWithDelay()
-                    } catch {
-                        // Handle errors
-                        self.snackbarMessage = "Failed to send \(title) action"
-                        self.isError = true
-                        showSnackbarWithDelay()
                     }
                 }
             }) {
@@ -332,7 +362,6 @@ struct TrackingView: View {
         }
     }
 
-    
     private func showSnackbarWithDelay() {
         showSnackbar = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
