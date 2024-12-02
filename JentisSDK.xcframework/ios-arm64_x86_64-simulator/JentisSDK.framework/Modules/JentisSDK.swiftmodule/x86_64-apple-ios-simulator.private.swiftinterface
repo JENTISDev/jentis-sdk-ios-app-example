@@ -123,6 +123,9 @@ public class TrackConfig : Swift.Codable {
       get
     }
   }
+  public static var shared: JentisSDK.TrackConfig {
+    get
+  }
   final public let trackDomain: Swift.String
   final public let container: Swift.String
   final public let environment: JentisSDK.TrackConfig.Environment
@@ -131,11 +134,10 @@ public class TrackConfig : Swift.Codable {
   final public let sessionTimeoutInSeconds: Foundation.TimeInterval?
   final public let authorizationToken: Swift.String
   public var customProtocol: Swift.String?
-  public init(trackDomain: Swift.String, container: Swift.String, environment: JentisSDK.TrackConfig.Environment, version: Swift.String?, debugCode: Swift.String?, sessionTimeoutInSeconds: Foundation.TimeInterval? = nil, authorizationToken: Swift.String = "", customProtocol: Swift.String? = nil)
-  public static func configure(trackDomain: Swift.String, container: Swift.String, environment: JentisSDK.TrackConfig.Environment, version: Swift.String? = nil, debugCode: Swift.String? = nil, sessionTimeoutInSeconds: Foundation.TimeInterval? = nil, authorizationToken: Swift.String = "", customProtocol: Swift.String? = nil)
-  public static var shared: JentisSDK.TrackConfig {
-    get
-  }
+  final public let enableOfflineTracking: Swift.Bool
+  final public let offlineTrackingTimeout: Foundation.TimeInterval
+  public init(trackDomain: Swift.String, container: Swift.String, environment: JentisSDK.TrackConfig.Environment, version: Swift.String?, debugCode: Swift.String?, sessionTimeoutInSeconds: Foundation.TimeInterval? = nil, authorizationToken: Swift.String = "", customProtocol: Swift.String? = nil, enableOfflineTracking: Swift.Bool = false, offlineTrackingTimeout: Foundation.TimeInterval = 3600)
+  public static func configure(trackDomain: Swift.String, container: Swift.String, environment: JentisSDK.TrackConfig.Environment, version: Swift.String? = nil, debugCode: Swift.String? = nil, sessionTimeoutInSeconds: Foundation.TimeInterval? = nil, authorizationToken: Swift.String = "", customProtocol: Swift.String? = nil, enableOfflineTracking: Swift.Bool = false, offlineTrackingTimeout: Foundation.TimeInterval = 3600)
   public static func loadConfigFromUserDefaults()
   public static func clearConfigFromUserDefaults()
   public static func currentConfig() -> JentisSDK.TrackConfig?

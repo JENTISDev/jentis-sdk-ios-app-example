@@ -3708,6 +3708,53 @@
           },
           {
             "kind": "Var",
+            "name": "shared",
+            "printedName": "shared",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "TrackConfig",
+                "printedName": "JentisSDK.TrackConfig",
+                "usr": "s:9JentisSDK11TrackConfigC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9JentisSDK11TrackConfigC6sharedACvpZ",
+            "mangledName": "$s9JentisSDK11TrackConfigC6sharedACvpZ",
+            "moduleName": "JentisSDK",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TrackConfig",
+                    "printedName": "JentisSDK.TrackConfig",
+                    "usr": "s:9JentisSDK11TrackConfigC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9JentisSDK11TrackConfigC6sharedACvgZ",
+                "mangledName": "$s9JentisSDK11TrackConfigC6sharedACvgZ",
+                "moduleName": "JentisSDK",
+                "static": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "trackDomain",
             "printedName": "trackDomain",
             "children": [
@@ -4209,9 +4256,107 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "enableOfflineTracking",
+            "printedName": "enableOfflineTracking",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9JentisSDK11TrackConfigC21enableOfflineTrackingSbvp",
+            "mangledName": "$s9JentisSDK11TrackConfigC21enableOfflineTrackingSbvp",
+            "moduleName": "JentisSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9JentisSDK11TrackConfigC21enableOfflineTrackingSbvg",
+                "mangledName": "$s9JentisSDK11TrackConfigC21enableOfflineTrackingSbvg",
+                "moduleName": "JentisSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "offlineTrackingTimeout",
+            "printedName": "offlineTrackingTimeout",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9JentisSDK11TrackConfigC22offlineTrackingTimeoutSdvp",
+            "mangledName": "$s9JentisSDK11TrackConfigC22offlineTrackingTimeoutSdvp",
+            "moduleName": "JentisSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9JentisSDK11TrackConfigC22offlineTrackingTimeoutSdvg",
+                "mangledName": "$s9JentisSDK11TrackConfigC22offlineTrackingTimeoutSdvg",
+                "moduleName": "JentisSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(trackDomain:container:environment:version:debugCode:sessionTimeoutInSeconds:authorizationToken:customProtocol:)",
+            "printedName": "init(trackDomain:container:environment:version:debugCode:sessionTimeoutInSeconds:authorizationToken:customProtocol:enableOfflineTracking:offlineTrackingTimeout:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -4301,11 +4446,25 @@
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "hasDefaultArg": true,
+                "usr": "s:Sd"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:9JentisSDK11TrackConfigC11trackDomain9container11environment7version9debugCode23sessionTimeoutInSeconds18authorizationToken14customProtocolACSS_SSAC11EnvironmentOSSSgANSdSgSSANtcfc",
-            "mangledName": "$s9JentisSDK11TrackConfigC11trackDomain9container11environment7version9debugCode23sessionTimeoutInSeconds18authorizationToken14customProtocolACSS_SSAC11EnvironmentOSSSgANSdSgSSANtcfc",
+            "usr": "s:9JentisSDK11TrackConfigC11trackDomain9container11environment7version9debugCode23sessionTimeoutInSeconds18authorizationToken14customProtocol21enableOfflineTracking07offlinevM0ACSS_SSAC11EnvironmentOSSSgAPSdSgSSAPSbSdtcfc",
+            "mangledName": "$s9JentisSDK11TrackConfigC11trackDomain9container11environment7version9debugCode23sessionTimeoutInSeconds18authorizationToken14customProtocol21enableOfflineTracking07offlinevM0ACSS_SSAC11EnvironmentOSSSgAPSdSgSSAPSbSdtcfc",
             "moduleName": "JentisSDK",
             "declAttributes": [
               "AccessControl",
@@ -4316,7 +4475,7 @@
           {
             "kind": "Function",
             "name": "configure",
-            "printedName": "configure(trackDomain:container:environment:version:debugCode:sessionTimeoutInSeconds:authorizationToken:customProtocol:)",
+            "printedName": "configure(trackDomain:container:environment:version:debugCode:sessionTimeoutInSeconds:authorizationToken:customProtocol:enableOfflineTracking:offlineTrackingTimeout:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -4407,11 +4566,25 @@
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "hasDefaultArg": true,
+                "usr": "s:Sd"
               }
             ],
             "declKind": "Func",
-            "usr": "s:9JentisSDK11TrackConfigC9configure11trackDomain9container11environment7version9debugCode23sessionTimeoutInSeconds18authorizationToken14customProtocolySS_SSAC11EnvironmentOSSSgAOSdSgSSAOtFZ",
-            "mangledName": "$s9JentisSDK11TrackConfigC9configure11trackDomain9container11environment7version9debugCode23sessionTimeoutInSeconds18authorizationToken14customProtocolySS_SSAC11EnvironmentOSSSgAOSdSgSSAOtFZ",
+            "usr": "s:9JentisSDK11TrackConfigC9configure11trackDomain9container11environment7version9debugCode23sessionTimeoutInSeconds18authorizationToken14customProtocol21enableOfflineTracking07offlinewN0ySS_SSAC11EnvironmentOSSSgAQSdSgSSAQSbSdtFZ",
+            "mangledName": "$s9JentisSDK11TrackConfigC9configure11trackDomain9container11environment7version9debugCode23sessionTimeoutInSeconds18authorizationToken14customProtocol21enableOfflineTracking07offlinewN0ySS_SSAC11EnvironmentOSSSgAQSdSgSSAQSbSdtFZ",
             "moduleName": "JentisSDK",
             "static": true,
             "declAttributes": [
@@ -4420,53 +4593,6 @@
               "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Var",
-            "name": "shared",
-            "printedName": "shared",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "TrackConfig",
-                "printedName": "JentisSDK.TrackConfig",
-                "usr": "s:9JentisSDK11TrackConfigC"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:9JentisSDK11TrackConfigC6sharedACvpZ",
-            "mangledName": "$s9JentisSDK11TrackConfigC6sharedACvpZ",
-            "moduleName": "JentisSDK",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "TrackConfig",
-                    "printedName": "JentisSDK.TrackConfig",
-                    "usr": "s:9JentisSDK11TrackConfigC"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9JentisSDK11TrackConfigC6sharedACvgZ",
-                "mangledName": "$s9JentisSDK11TrackConfigC6sharedACvgZ",
-                "moduleName": "JentisSDK",
-                "static": true,
-                "declAttributes": [
-                  "Final"
-                ],
-                "accessorKind": "get"
-              }
-            ]
           },
           {
             "kind": "Function",
@@ -5725,6 +5851,23 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Network",
+        "printedName": "Network",
+        "declKind": "Import",
+        "moduleName": "JentisSDK"
+      },
+      {
         "kind": "TypeDecl",
         "name": "Action",
         "printedName": "Action",
@@ -5936,6 +6079,16 @@
             "usr": "s:SY",
             "mangledName": "$sSY"
           }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "RawDocComment"
         ]
       },
       {
@@ -6878,7 +7031,7 @@
       "value": "\"navigator-userAgent\""
     },
     {
-      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Session\/SessionManager.swift",
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Managers\/SessionManager.swift",
       "kind": "IntegerLiteral",
       "offset": 270,
       "length": 2,
@@ -6901,23 +7054,51 @@
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config\/TrackConfig.swift",
       "kind": "StringLiteral",
-      "offset": 1050,
+      "offset": 1744,
       "length": 24,
       "value": "\"com.jentis.TrackConfig\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config\/TrackConfig.swift",
       "kind": "StringLiteral",
-      "offset": 1396,
+      "offset": 2048,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config\/TrackConfig.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2129,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config\/TrackConfig.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2183,
+      "length": 4,
+      "value": "3600"
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config\/TrackConfig.swift",
       "kind": "StringLiteral",
-      "offset": 2807,
+      "offset": 3545,
       "length": 2,
       "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config\/TrackConfig.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3626,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config\/TrackConfig.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3680,
+      "length": 4,
+      "value": "3600"
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Utilities\/TagCache.swift",
@@ -7027,42 +7208,42 @@
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
       "kind": "StringLiteral",
-      "offset": 1117,
+      "offset": 1650,
       "length": 21,
       "value": "\"defaultTrackCommand\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
       "kind": "StringLiteral",
-      "offset": 1167,
+      "offset": 1700,
       "length": 23,
       "value": "\"defaultDependencyType\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
       "kind": "Dictionary",
-      "offset": 1235,
+      "offset": 1768,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
       "kind": "StringLiteral",
-      "offset": 2966,
+      "offset": 3499,
       "length": 16,
       "value": "\"VendorConsents\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
       "kind": "StringLiteral",
-      "offset": 3029,
+      "offset": 3562,
       "length": 27,
       "value": "\"VendorConsents_lastupdate\""
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackingService.swift",
       "kind": "BooleanLiteral",
-      "offset": 11071,
+      "offset": 11604,
       "length": 5,
       "value": "false"
     },
@@ -7109,6 +7290,41 @@
       "value": "\"default\""
     },
     {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Managers\/OfflineCacheManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 430,
+      "length": 4,
+      "value": "3600"
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Managers\/OfflineCacheManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 478,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Managers\/OfflineCacheManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 524,
+      "length": 4,
+      "value": "3600"
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Managers\/OfflineCacheManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 613,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Managers\/OfflineCacheManager.swift",
+      "kind": "StringLiteral",
+      "offset": 671,
+      "length": 37,
+      "value": "\"com.jentis.OfflineCacheMonitorQueue\""
+    },
+    {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/Action.swift",
       "kind": "StringLiteral",
       "offset": 134,
@@ -7121,6 +7337,27 @@
       "offset": 158,
       "length": 8,
       "value": "\"update\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/OfflineCache.swift",
+      "kind": "Array",
+      "offset": 252,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/OfflineCache.swift",
+      "kind": "StringLiteral",
+      "offset": 300,
+      "length": 30,
+      "value": "\"com.jentis.OfflineCacheQueue\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/OfflineCache.swift",
+      "kind": "StringLiteral",
+      "offset": 384,
+      "length": 25,
+      "value": "\"com.jentis.OfflineCache\""
     }
   ]
 }
