@@ -191,6 +191,13 @@ struct TrackingView: View {
                         "color": "green"
                     ],
                     [
+                        "track": "product",
+                        "type": "order",
+                        "id": "456",
+                        "name": "Testproduct 2",
+                        "brutto": 299.99
+                    ],
+                    [
                         "track": "order",
                         "order_id": "12345666",
                         "brutto": 499.98,
