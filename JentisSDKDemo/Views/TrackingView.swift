@@ -119,7 +119,7 @@ struct TrackingView: View {
             createTrackingButton(
                 title: "Add-To-Cart",
                 color: .green,
-                actions: [], // Actions are no longer needed as we're using the addToCart method directly
+                actions: [],
                 snackbarMessage: "Add-To-Cart action sent successfully!",
                 showPopover: $showAddToCartPopover,
                 popoverText: """
@@ -132,7 +132,7 @@ struct TrackingView: View {
             ) {
                 Task {
                     do {
-                        // Prepare custom properties for Add-To-Cart
+                        // Prepare the payload for Add-To-Cart
                         let customProperties: [String: Any] = [
                             "id": "123",
                             "name": "Testproduct",
