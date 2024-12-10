@@ -15,11 +15,11 @@ struct ContentView: View {
     @State private var showConsentModal: Bool = false
     @State private var isConfigModalPresented = false
     @State private var showTrackingView = false
-
+    
     @State private var isGoogleAnalyticsAllowed: Bool = false
     @State private var isFacebookAllowed: Bool = false
     @State private var isAdwordsAllowed: Bool = false
-
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -34,7 +34,7 @@ struct ContentView: View {
                         .scaledToFit()
                         .frame(width: 300, height: 300)
                         .padding(.top, -30)  // Negative padding to bring it closer to the title
-
+                    
                     VStack(spacing: 20) {
                         Button(action: {
                             showConsentModal.toggle()
@@ -65,10 +65,10 @@ struct ContentView: View {
                             NavigationLink(destination: TrackingView(), isActive: $showTrackingView) {
                                 EmptyView()
                             }
-                            .hidden()
+                                .hidden()
                         )
                     }
-
+                    
                     Spacer()
                     
                     if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
@@ -104,7 +104,7 @@ struct ContentView: View {
                         JentisService.configure(with: newConfig)
                     }
                 }
-
+                
                 if showSnackbar {
                     SnackbarView(message: snackbarMessage, isError: isError)
                         .transition(.move(edge: .bottom))
@@ -113,7 +113,7 @@ struct ContentView: View {
             }
         }
     }
-
+    
     private func setConsent(_ vendorConsents: [String: ConsentStatus]) async {
         do {
             try await TrackingService.shared.setConsents(vendorConsents)
@@ -125,7 +125,7 @@ struct ContentView: View {
         }
         showSnackbarWithDelay()
     }
-
+    
     private func showSnackbarWithDelay() {
         showSnackbar = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {

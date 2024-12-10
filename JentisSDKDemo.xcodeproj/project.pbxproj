@@ -16,8 +16,6 @@
 		967214A32CB4029900570B9D /* JentisSDKDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214A22CB4029900570B9D /* JentisSDKDemoUITests.swift */; };
 		967214A52CB4029900570B9D /* JentisSDKDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214A42CB4029900570B9D /* JentisSDKDemoUITestsLaunchTests.swift */; };
 		967214B22CB402D200570B9D /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214B12CB402D200570B9D /* SplashScreenView.swift */; };
-		967214B62CB4035B00570B9D /* JentisSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967214B52CB4035B00570B9D /* JentisSDK.xcframework */; };
-		967214B72CB4035B00570B9D /* JentisSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 967214B52CB4035B00570B9D /* JentisSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		967214BA2CB4039100570B9D /* SnackbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214B92CB4039100570B9D /* SnackbarView.swift */; };
 		96754F052CDF36CA0098E4E8 /* TrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96754F042CDF36C90098E4E8 /* TrackingView.swift */; };
 		96DF45832CDB39CE00BD5D30 /* ConfigModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DF45822CDB39CC00BD5D30 /* ConfigModalView.swift */; };
@@ -25,6 +23,8 @@
 		96FBA5CA2CBE264C0045C096 /* Color+Jentis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBA5C92CBE264C0045C096 /* Color+Jentis.swift */; };
 		96FBA5CC2CBE28CC0045C096 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96FBA5CB2CBE28CC0045C096 /* GoogleService-Info.plist */; };
 		96FBA5CF2CBE29720045C096 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 96FBA5CE2CBE29710045C096 /* FirebaseAppDistribution-Beta */; };
+		96FC6F8D2D084D0C005C3E7E /* JentisSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FC6F8C2D084D0C005C3E7E /* JentisSDK.xcframework */; };
+		96FC6F8F2D084D17005C3E7E /* JentisSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 96FC6F8C2D084D0C005C3E7E /* JentisSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +51,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				967214B72CB4035B00570B9D /* JentisSDK.xcframework in Embed Frameworks */,
+				96FC6F8F2D084D17005C3E7E /* JentisSDK.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,12 +72,12 @@
 		967214A42CB4029900570B9D /* JentisSDKDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JentisSDKDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		967214B12CB402D200570B9D /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		967214B32CB4034700570B9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		967214B52CB4035B00570B9D /* JentisSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = JentisSDK.xcframework; sourceTree = "<group>"; };
 		967214B92CB4039100570B9D /* SnackbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarView.swift; sourceTree = "<group>"; };
 		96754F042CDF36C90098E4E8 /* TrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingView.swift; sourceTree = "<group>"; };
 		96DF45822CDB39CC00BD5D30 /* ConfigModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigModalView.swift; sourceTree = "<group>"; };
 		96FBA5C92CBE264C0045C096 /* Color+Jentis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Jentis.swift"; sourceTree = "<group>"; };
 		96FBA5CB2CBE28CC0045C096 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		96FC6F8C2D084D0C005C3E7E /* JentisSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = JentisSDK.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +86,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				96FBA5C62CBE21EE0045C096 /* netfox in Frameworks */,
-				967214B62CB4035B00570B9D /* JentisSDK.xcframework in Frameworks */,
 				96FBA5CF2CBE29720045C096 /* FirebaseAppDistribution-Beta in Frameworks */,
+				96FC6F8D2D084D0C005C3E7E /* JentisSDK.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,7 +171,7 @@
 		967214B42CB4035B00570B9D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				967214B52CB4035B00570B9D /* JentisSDK.xcframework */,
+				96FC6F8C2D084D0C005C3E7E /* JentisSDK.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -266,7 +266,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1610;
 				TargetAttributes = {
 					967214832CB4029800570B9D = {
 						CreatedOnToolsVersion = 15.4;
@@ -567,7 +567,6 @@
 		967214AC2CB4029900570B9D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -587,7 +586,6 @@
 		967214AD2CB4029900570B9D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -607,7 +605,6 @@
 		967214AF2CB4029900570B9D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P88DR85ZT4;
@@ -625,7 +622,6 @@
 		967214B02CB4029900570B9D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P88DR85ZT4;

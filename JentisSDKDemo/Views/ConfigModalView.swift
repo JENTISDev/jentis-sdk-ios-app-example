@@ -22,7 +22,8 @@ struct ConfigModalView: View {
     var onSave: ((TrackConfig) -> Void)
     
     init(onSave: @escaping ((TrackConfig) -> Void)) {
-        let config = TrackConfig.currentConfig() ?? TrackConfig(
+        
+        let config = TrackConfig(
             trackDomain: "kndmjh.mipion.jtm-demo.com",
             container: "mipion-demo",
             environment: .live,

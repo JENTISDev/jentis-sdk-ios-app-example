@@ -53,7 +53,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             version: "9",
             debugCode: "9983b926-e84e-46da-9f1b-3b495ab0ed4f",
             sessionTimeoutInSeconds: 1800,
-            authorizationToken: "22fef7a3b00466743fee2ab8cd8afb01"
+            authorizationToken: "22fef7a3b00466743fee2ab8cd8afb01",
+            enableOfflineTracking: true
         )
         
         JentisService.configure(with: config)

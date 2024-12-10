@@ -50,10 +50,6 @@ public struct ConsentModel : Swift.Codable {
     public init(from decoder: any Swift.Decoder) throws
   }
   public struct Configuration : Swift.Codable {
-    public let container: Swift.String
-    public let environment: Swift.String
-    public let version: Swift.String
-    public let debugcode: Swift.String
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }
@@ -110,40 +106,44 @@ public struct ConsentModel : Swift.Codable {
   public static func getCurrentSessionID() -> Swift.String?
   @objc deinit
 }
-public class TrackConfig : Swift.Codable {
-  public enum Environment : Swift.String, Swift.CaseIterable, Swift.Codable {
-    case live, stage
-    public init?(rawValue: Swift.String)
-    public typealias AllCases = [JentisSDK.TrackConfig.Environment]
-    public typealias RawValue = Swift.String
-    nonisolated public static var allCases: [JentisSDK.TrackConfig.Environment] {
-      get
-    }
-    public var rawValue: Swift.String {
-      get
-    }
-  }
-  public static var shared: JentisSDK.TrackConfig {
+@_hasMissingDesignatedInitializers public class TrackingSettings {
+  public static var shared: JentisSDK.TrackingSettings {
     get
   }
-  final public let trackDomain: Swift.String
-  final public let container: Swift.String
-  final public let environment: JentisSDK.TrackConfig.Environment
-  final public let version: Swift.String?
-  final public let debugCode: Swift.String?
-  final public let sessionTimeoutInSeconds: Foundation.TimeInterval?
-  final public let authorizationToken: Swift.String
-  public var customProtocol: Swift.String?
-  final public let enableOfflineTracking: Swift.Bool
-  final public let offlineTrackingTimeout: Foundation.TimeInterval
-  public init(trackDomain: Swift.String, container: Swift.String, environment: JentisSDK.TrackConfig.Environment, version: Swift.String?, debugCode: Swift.String?, sessionTimeoutInSeconds: Foundation.TimeInterval? = nil, authorizationToken: Swift.String = "", customProtocol: Swift.String? = nil, enableOfflineTracking: Swift.Bool = false, offlineTrackingTimeout: Foundation.TimeInterval = 3600)
-  public static func configure(trackDomain: Swift.String, container: Swift.String, environment: JentisSDK.TrackConfig.Environment, version: Swift.String? = nil, debugCode: Swift.String? = nil, sessionTimeoutInSeconds: Foundation.TimeInterval? = nil, authorizationToken: Swift.String = "", customProtocol: Swift.String? = nil, enableOfflineTracking: Swift.Bool = false, offlineTrackingTimeout: Foundation.TimeInterval = 3600)
+  public static func configure(config: JentisSDK.TrackConfig)
+  public var trackDomain: Swift.String {
+    get
+  }
+  public var container: Swift.String {
+    get
+  }
+  public var environment: JentisSDK.TrackConfig.Environment {
+    get
+  }
+  public var version: Swift.String? {
+    get
+  }
+  public var debugCode: Swift.String? {
+    get
+  }
+  public var sessionTimeoutInSeconds: Foundation.TimeInterval? {
+    get
+  }
+  public var authorizationToken: Swift.String {
+    get
+  }
+  public var customProtocol: Swift.String? {
+    get
+  }
+  public var enableOfflineTracking: Swift.Bool {
+    get
+  }
+  public var offlineTrackingTimeout: Foundation.TimeInterval {
+    get
+  }
   public static func loadConfigFromUserDefaults()
   public static func clearConfigFromUserDefaults()
-  public static func currentConfig() -> JentisSDK.TrackConfig?
   @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
 }
 public enum CodableValue : Swift.Codable, Swift.Equatable {
   case string(Swift.String)
@@ -154,12 +154,7 @@ public enum CodableValue : Swift.Codable, Swift.Equatable {
   public func encode(to encoder: any Swift.Encoder) throws
   public static func == (lhs: JentisSDK.CodableValue, rhs: JentisSDK.CodableValue) -> Swift.Bool
 }
-@_hasMissingDesignatedInitializers public class JentisService {
-  public static func configure(with config: JentisSDK.TrackConfig)
-  @objc deinit
-}
 @_hasMissingDesignatedInitializers public class TrackingService {
-  public static func initialize()
   public static var shared: JentisSDK.TrackingService {
     get throws
   }
@@ -177,6 +172,24 @@ extension JentisSDK.TrackingService {
 @_hasMissingDesignatedInitializers public class TimestampUtility {
   public static func currentTimestampInMillis() -> Swift.Int
   @objc deinit
+}
+public enum LogLevel : Swift.Int {
+  case debug
+  case info
+  case warning
+  case error
+  case critical
+  case none
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension JentisSDK.LogLevel : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
 }
 public enum Action : Swift.String {
   case new
@@ -218,12 +231,44 @@ public enum ConsentStatus : Swift.Codable {
     get
   }
 }
+@_hasMissingDesignatedInitializers public class JentisService {
+  public static func setLogLevel(_ level: JentisSDK.LogLevel)
+  public static func configure(with config: JentisSDK.TrackConfig)
+  @objc deinit
+}
+public struct TrackConfig : Swift.Codable {
+  public enum Environment : Swift.String, Swift.CaseIterable, Swift.Codable {
+    case live, stage
+    public init?(rawValue: Swift.String)
+    public typealias AllCases = [JentisSDK.TrackConfig.Environment]
+    public typealias RawValue = Swift.String
+    nonisolated public static var allCases: [JentisSDK.TrackConfig.Environment] {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public let trackDomain: Swift.String
+  public let container: Swift.String
+  public let environment: JentisSDK.TrackConfig.Environment
+  public let version: Swift.String?
+  public let debugCode: Swift.String?
+  public let sessionTimeoutInSeconds: Foundation.TimeInterval?
+  public let authorizationToken: Swift.String
+  public var customProtocol: Swift.String?
+  public let enableOfflineTracking: Swift.Bool
+  public let offlineTrackingTimeout: Foundation.TimeInterval
+  public init(trackDomain: Swift.String, container: Swift.String, environment: JentisSDK.TrackConfig.Environment, version: Swift.String? = nil, debugCode: Swift.String? = nil, sessionTimeoutInSeconds: Foundation.TimeInterval? = nil, authorizationToken: Swift.String = "", customProtocol: Swift.String? = nil, enableOfflineTracking: Swift.Bool = false, offlineTrackingTimeout: Foundation.TimeInterval = 3600)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
 extension JentisSDK.ConsentModel.System.CodingKeys : Swift.Equatable {}
 extension JentisSDK.ConsentModel.System.CodingKeys : Swift.Hashable {}
 extension JentisSDK.ConsentModel.System.CodingKeys : Swift.RawRepresentable {}
-extension JentisSDK.TrackConfig.Environment : Swift.Equatable {}
-extension JentisSDK.TrackConfig.Environment : Swift.Hashable {}
-extension JentisSDK.TrackConfig.Environment : Swift.RawRepresentable {}
+extension JentisSDK.LogLevel : Swift.Equatable {}
+extension JentisSDK.LogLevel : Swift.Hashable {}
+extension JentisSDK.LogLevel : Swift.RawRepresentable {}
 extension JentisSDK.Action : Swift.Equatable {}
 extension JentisSDK.Action : Swift.Hashable {}
 extension JentisSDK.Action : Swift.RawRepresentable {}
@@ -232,3 +277,6 @@ extension JentisSDK.ConsentStatus : Swift.Hashable {}
 extension JentisSDK.ConsentStatus.CodingKeys : Swift.Equatable {}
 extension JentisSDK.ConsentStatus.CodingKeys : Swift.Hashable {}
 extension JentisSDK.ConsentStatus.CodingKeys : Swift.RawRepresentable {}
+extension JentisSDK.TrackConfig.Environment : Swift.Equatable {}
+extension JentisSDK.TrackConfig.Environment : Swift.Hashable {}
+extension JentisSDK.TrackConfig.Environment : Swift.RawRepresentable {}
