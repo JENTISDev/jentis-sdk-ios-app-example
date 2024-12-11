@@ -25,6 +25,7 @@
 		96FBA5CF2CBE29720045C096 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 96FBA5CE2CBE29710045C096 /* FirebaseAppDistribution-Beta */; };
 		96FC6F8D2D084D0C005C3E7E /* JentisSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FC6F8C2D084D0C005C3E7E /* JentisSDK.xcframework */; };
 		96FC6F8F2D084D17005C3E7E /* JentisSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 96FC6F8C2D084D0C005C3E7E /* JentisSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		96FC6F962D09911E005C3E7E /* UserDefaultsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FC6F952D09911D005C3E7E /* UserDefaultsUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		96FBA5C92CBE264C0045C096 /* Color+Jentis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Jentis.swift"; sourceTree = "<group>"; };
 		96FBA5CB2CBE28CC0045C096 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		96FC6F8C2D084D0C005C3E7E /* JentisSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = JentisSDK.xcframework; sourceTree = "<group>"; };
+		96FC6F952D09911D005C3E7E /* UserDefaultsUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		967214862CB4029800570B9D /* JentisSDKDemo */ = {
 			isa = PBXGroup;
 			children = (
+				96FC6F952D09911D005C3E7E /* UserDefaultsUtility.swift */,
 				96754F072CDF3BAB0098E4E8 /* Views */,
 				96754F062CDF3B980098E4E8 /* Extensions */,
 				96FBA5CB2CBE28CC0045C096 /* GoogleService-Info.plist */,
@@ -343,6 +346,7 @@
 				96754F052CDF36CA0098E4E8 /* TrackingView.swift in Sources */,
 				967214882CB4029800570B9D /* JentisSDKDemoApp.swift in Sources */,
 				967214B22CB402D200570B9D /* SplashScreenView.swift in Sources */,
+				96FC6F962D09911E005C3E7E /* UserDefaultsUtility.swift in Sources */,
 				965768682CD63389007893A2 /* ConsentModalView.swift in Sources */,
 				96DF45832CDB39CE00BD5D30 /* ConfigModalView.swift in Sources */,
 			);
@@ -507,7 +511,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_ASSET_PATHS = "\"JentisSDKDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = 85TJ6UUY75;
 				ENABLE_PREVIEWS = YES;
@@ -539,7 +543,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_ASSET_PATHS = "\"JentisSDKDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = 85TJ6UUY75;
 				ENABLE_PREVIEWS = YES;

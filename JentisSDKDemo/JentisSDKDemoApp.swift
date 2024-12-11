@@ -57,6 +57,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             enableOfflineTracking: true
         )
         
+        JentisService.setLogLevel(.debug)
         JentisService.configure(with: config)
     }
 }

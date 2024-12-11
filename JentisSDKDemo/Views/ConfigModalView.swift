@@ -18,12 +18,14 @@ struct ConfigModalView: View {
     @State private var sessionTimeout: String
     @State private var authorizationToken: String
     @State private var customProtocol: String
+    @State private var enableOfflineTracking: Bool
     
     var onSave: ((TrackConfig) -> Void)
     
     init(onSave: @escaping ((TrackConfig) -> Void)) {
+        let savedConfig = UserDefaultsUtility.shared.get(key: "lastTrackConfig", type: TrackConfig.self)
         
-        let config = TrackConfig(
+        let config = savedConfig ?? TrackConfig(
             trackDomain: "kndmjh.mipion.jtm-demo.com",
             container: "mipion-demo",
             environment: .live,
@@ -31,7 +33,8 @@ struct ConfigModalView: View {
             debugCode: "9983b926-e84e-46da-9f1b-3b495ab0ed4f",
             sessionTimeoutInSeconds: 1800,
             authorizationToken: "22fef7a3b00466743fee2ab8cd8afb01",
-            customProtocol: "https"
+            customProtocol: "https",
+            enableOfflineTracking: true
         )
         
         _trackDomain = State(initialValue: config.trackDomain)
@@ -42,6 +45,7 @@ struct ConfigModalView: View {
         _sessionTimeout = State(initialValue: String(config.sessionTimeoutInSeconds ?? 1800))
         _authorizationToken = State(initialValue: config.authorizationToken)
         _customProtocol = State(initialValue: config.customProtocol ?? "https")
+        _enableOfflineTracking = State(initialValue: config.enableOfflineTracking)
         
         self.onSave = onSave
     }
@@ -77,23 +81,20 @@ struct ConfigModalView: View {
                         .pickerStyle(SegmentedPickerStyle())
                     }
                     
-                    // Conditionally show Version and Debug Code
-                    if environment != .live {
-                        VStack(alignment: .leading) {
-                            Text("Version")
-                                .font(.subheadline)
-                                .foregroundColor(.gray)
-                            TextField("Version", text: $version)
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                        }
-                        
-                        VStack(alignment: .leading) {
-                            Text("Debug Code")
-                                .font(.subheadline)
-                                .foregroundColor(.gray)
-                            TextField("Debug Code", text: $debugCode)
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                        }
+                    VStack(alignment: .leading) {
+                        Text("Version")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                        TextField("Version", text: $version)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                    }
+                    
+                    VStack(alignment: .leading) {
+                        Text("Debug Code")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                        TextField("Debug Code", text: $debugCode)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
                     }
                     
                     VStack(alignment: .leading) {
@@ -120,6 +121,10 @@ struct ConfigModalView: View {
                         TextField("Custom Protocol", text: $customProtocol)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                     }
+                    
+                    Toggle(isOn: $enableOfflineTracking) {
+                        Text("Enable Offline Tracking")
+                    }
                 }
                 
                 Button("Save") {
@@ -128,12 +133,16 @@ struct ConfigModalView: View {
                         trackDomain: trackDomain,
                         container: container,
                         environment: environment,
-                        version: environment != .live ? version : nil,
-                        debugCode: environment != .live ? debugCode : nil,
+                        version: version.isEmpty ? nil : version,
+                        debugCode: debugCode.isEmpty ? nil : debugCode,
                         sessionTimeoutInSeconds: timeoutValue,
                         authorizationToken: authorizationToken,
-                        customProtocol: customProtocol
+                        customProtocol: customProtocol,
+                        enableOfflineTracking: enableOfflineTracking
                     )
+                    
+                    // Save the configuration to UserDefaults
+                    UserDefaultsUtility.shared.save(key: "lastTrackConfig", value: config)
                     
                     onSave(config)
                     presentationMode.wrappedValue.dismiss()

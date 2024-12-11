@@ -6323,13 +6323,6 @@
         ]
       },
       {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "JentisSDK"
-      },
-      {
         "kind": "TypeDecl",
         "name": "JentisService",
         "printedName": "JentisService",
@@ -7804,7 +7797,7 @@
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Services\/TrackingService.swift",
       "kind": "BooleanLiteral",
-      "offset": 10228,
+      "offset": 11694,
       "length": 5,
       "value": "false"
     },
@@ -7968,13 +7961,6 @@
       "offset": 415,
       "length": 4,
       "value": "1000"
-    },
-    {
-      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Services\/JentisService.swift",
-      "kind": "BooleanLiteral",
-      "offset": 202,
-      "length": 5,
-      "value": "false"
     },
     {
       "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/TrackConfig.swift",
