@@ -18,13 +18,12 @@
 		967214B22CB402D200570B9D /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214B12CB402D200570B9D /* SplashScreenView.swift */; };
 		967214BA2CB4039100570B9D /* SnackbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214B92CB4039100570B9D /* SnackbarView.swift */; };
 		96754F052CDF36CA0098E4E8 /* TrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96754F042CDF36C90098E4E8 /* TrackingView.swift */; };
+		968D208B2D0C4E2C00E74542 /* JentisSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 968D208A2D0C4E2C00E74542 /* JentisSDK */; };
 		96DF45832CDB39CE00BD5D30 /* ConfigModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DF45822CDB39CC00BD5D30 /* ConfigModalView.swift */; };
 		96FBA5C62CBE21EE0045C096 /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 96FBA5C52CBE21EE0045C096 /* netfox */; };
 		96FBA5CA2CBE264C0045C096 /* Color+Jentis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBA5C92CBE264C0045C096 /* Color+Jentis.swift */; };
 		96FBA5CC2CBE28CC0045C096 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96FBA5CB2CBE28CC0045C096 /* GoogleService-Info.plist */; };
 		96FBA5CF2CBE29720045C096 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 96FBA5CE2CBE29710045C096 /* FirebaseAppDistribution-Beta */; };
-		96FC6F8D2D084D0C005C3E7E /* JentisSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FC6F8C2D084D0C005C3E7E /* JentisSDK.xcframework */; };
-		96FC6F8F2D084D17005C3E7E /* JentisSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 96FC6F8C2D084D0C005C3E7E /* JentisSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		96FC6F962D09911E005C3E7E /* UserDefaultsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FC6F952D09911D005C3E7E /* UserDefaultsUtility.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,13 +45,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		967214B82CB4035C00570B9D /* Embed Frameworks */ = {
+		96CD79B02D0C387100A25C99 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				96FC6F8F2D084D17005C3E7E /* JentisSDK.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,7 +76,6 @@
 		96DF45822CDB39CC00BD5D30 /* ConfigModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigModalView.swift; sourceTree = "<group>"; };
 		96FBA5C92CBE264C0045C096 /* Color+Jentis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Jentis.swift"; sourceTree = "<group>"; };
 		96FBA5CB2CBE28CC0045C096 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		96FC6F8C2D084D0C005C3E7E /* JentisSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = JentisSDK.xcframework; sourceTree = "<group>"; };
 		96FC6F952D09911D005C3E7E /* UserDefaultsUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,8 +85,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				96FBA5C62CBE21EE0045C096 /* netfox in Frameworks */,
+				968D208B2D0C4E2C00E74542 /* JentisSDK in Frameworks */,
 				96FBA5CF2CBE29720045C096 /* FirebaseAppDistribution-Beta in Frameworks */,
-				96FC6F8D2D084D0C005C3E7E /* JentisSDK.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,7 +171,6 @@
 		967214B42CB4035B00570B9D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				96FC6F8C2D084D0C005C3E7E /* JentisSDK.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -210,7 +206,7 @@
 				967214802CB4029800570B9D /* Sources */,
 				967214812CB4029800570B9D /* Frameworks */,
 				967214822CB4029800570B9D /* Resources */,
-				967214B82CB4035C00570B9D /* Embed Frameworks */,
+				96CD79B02D0C387100A25C99 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -220,6 +216,7 @@
 			packageProductDependencies = (
 				96FBA5C52CBE21EE0045C096 /* netfox */,
 				96FBA5CE2CBE29710045C096 /* FirebaseAppDistribution-Beta */,
+				968D208A2D0C4E2C00E74542 /* JentisSDK */,
 			);
 			productName = JentisSDKDemo;
 			productReference = 967214842CB4029800570B9D /* JentisSDKDemo.app */;
@@ -296,6 +293,7 @@
 			packageReferences = (
 				96FBA5C42CBE21EE0045C096 /* XCRemoteSwiftPackageReference "netfox" */,
 				96FBA5CD2CBE29710045C096 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				968D20892D0C4E2C00E74542 /* XCRemoteSwiftPackageReference "jentis-sdk-ios-early-adopter" */,
 			);
 			productRefGroup = 967214852CB4029800570B9D /* Products */;
 			projectDirPath = "";
@@ -511,7 +509,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 27;
 				DEVELOPMENT_ASSET_PATHS = "\"JentisSDKDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = 85TJ6UUY75;
 				ENABLE_PREVIEWS = YES;
@@ -543,7 +541,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 27;
 				DEVELOPMENT_ASSET_PATHS = "\"JentisSDKDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = 85TJ6UUY75;
 				ENABLE_PREVIEWS = YES;
@@ -682,6 +680,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		968D20892D0C4E2C00E74542 /* XCRemoteSwiftPackageReference "jentis-sdk-ios-early-adopter" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JENTISDev/jentis-sdk-ios-early-adopter.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
 		96FBA5C42CBE21EE0045C096 /* XCRemoteSwiftPackageReference "netfox" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kasketis/netfox.git";
@@ -701,6 +707,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		968D208A2D0C4E2C00E74542 /* JentisSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 968D20892D0C4E2C00E74542 /* XCRemoteSwiftPackageReference "jentis-sdk-ios-early-adopter" */;
+			productName = JentisSDK;
+		};
 		96FBA5C52CBE21EE0045C096 /* netfox */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 96FBA5C42CBE21EE0045C096 /* XCRemoteSwiftPackageReference "netfox" */;
