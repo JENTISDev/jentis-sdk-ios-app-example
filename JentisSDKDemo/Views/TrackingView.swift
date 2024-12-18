@@ -27,10 +27,10 @@ struct TrackingView: View {
                 "enrichment_xxxlprodfeed": [
                     "variables": ["enrichment_product_variant"],
                     "arguments": [
-                        "account": "JENTIS TEST ACCOUNT",
+                        "account": "account",
                         "baseProductId": ["1"],
-                        "page_title": "Demo-APP Order Confirmed",
-                        "productId": ["123", "777", "456"]
+                        "page_title": "pagetitle",
+                        "productId": "product_id"
                     ]
                 ]
             ]
@@ -144,9 +144,9 @@ struct TrackingView: View {
                             try await TrackingService.shared.addEnrichment(
                                 pluginId: "enrichment_xxxlprodfeed",
                                 arguments: [
-                                    "account": "JENTIS TEST ACCOUNT",
-                                    "page_title": "Demo-APP Order Confirmed",
-                                    "productId": ["123", "777", "456"],
+                                    "accountId": "account",
+                                    "page_title": "pagetitle",
+                                    "productId": "product_id",
                                     "baseProductId": ["1"]
                                 ],
                                 variables: ["enrichment_product_variant"]
@@ -264,9 +264,9 @@ struct TrackingView: View {
                     TrackingService.shared.addCustomEnrichment(
                         pluginId: "enrichment_xxxlprodfeed",
                         arguments: [
-                            "account": "JENTIS TEST ACCOUNT",
-                            "page_title": "MY PAGE TITLE",
-                            "productId": ["123", "ABC", "3"],
+                            "account": "account",
+                            "page_title": "pagetitle",
+                            "productId": "product_id",
                             "baseProductId": ["1"]
                         ],
                         variables: ["enrichment_product_variant"]
@@ -297,25 +297,25 @@ struct TrackingView: View {
                     Task {
                         do {
                             // Initialize base tracking actions
-                            var enrichedActions = actions
+                            let enrichedActions = actions
+                            
+                            // Push actions sequentially
+                            for action in enrichedActions {
+                                try await TrackingService.shared.push(action)
+                            }
                             
                             // If enrichment is enabled, add enrichment data explicitly
                             if includeEnrichment {
                                 try await TrackingService.shared.addEnrichment(
                                     pluginId: "enrichment_xxxlprodfeed",
                                     arguments: [
-                                        "account": "JENTIS TEST ACCOUNT",
-                                        "page_title": "Demo-APP Order Confirmed",
-                                        "productId": ["123", "777", "456"],
+                                        "accountId": "account",
+                                        "page_title": "pagetitle",
+                                        "productId": "product_id",
                                         "baseProductId": ["1"]
                                     ],
                                     variables: ["enrichment_product_variant"]
                                 )
-                            }
-                            
-                            // Push actions sequentially
-                            for action in enrichedActions {
-                                try await TrackingService.shared.push(action)
                             }
                             
                             // Submit the data

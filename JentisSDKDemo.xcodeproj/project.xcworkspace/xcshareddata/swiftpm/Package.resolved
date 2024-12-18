@@ -87,8 +87,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/JENTISDev/jentis-sdk-ios-early-adopter.git",
       "state" : {
-        "revision" : "9a109133d2c77bf9c91a487a330e4f7f2d7e00d1",
-        "version" : "1.0.1"
+        "revision" : "60732e52e16efb22d3931c5e40dded79f4b00bfb",
+        "version" : "1.0.2"
       }
     },
     {
