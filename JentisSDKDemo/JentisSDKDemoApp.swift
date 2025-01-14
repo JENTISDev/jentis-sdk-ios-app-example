@@ -47,7 +47,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     
     private func setupJentisSDK() {
         let config = TrackConfig(
-            trackDomain: "kndmjh.mipion.jtm-demo.com",
+            trackDomain: "qc3ipx.ckion-dev.jtm-demo.com", //"kndmjh.mipion.jtm-demo.com",
             container: "mipion-demo",
             environment: .live,
             version: "9",

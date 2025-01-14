@@ -180,20 +180,20 @@ struct TrackingView: View {
                     [
                         "track": "product",
                         "type": "order",
-                        "id": "123",
+                        "product_id": "123",
                         "name": "Testproduct",
                         "brutto": 199.99
                     ],
                     [
                         "track": "product",
                         "type": "currentcart",
-                        "id": "777",
+                        "product_id": "777",
                         "color": "green"
                     ],
                     [
                         "track": "product",
                         "type": "order",
-                        "id": "456",
+                        "product_id": "456",
                         "name": "Testproduct 2",
                         "brutto": 299.99
                     ],
