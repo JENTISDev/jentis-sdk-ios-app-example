@@ -312,17 +312,18 @@ struct TrackingView: View {
         snackbarMessage: String,
         showPopover: Binding<Bool>,
         popoverText: String,
-        customAction: (() -> Void)? = nil // Add an optional customAction parameter
+        customAction: (() -> Void)? = nil
     ) -> some View {
         HStack {
             Button(action: {
                 // Start Firebase trace
                 let trace = Performance.startTrace(name: "\(title)_button_action")
-                trace?.incrementMetric("cumulative_cpu_time", by: Int64(metricsManager.cpuTime * 1000)) // Add MetricKit data
-
+                let cpuTimeInMilliseconds = Int64(metricsManager.cpuTime * 1000)
+                print("CPU Time (ms): \(cpuTimeInMilliseconds)")
+                trace?.incrementMetric("cumulative_cpu_time", by: cpuTimeInMilliseconds)
 
                 if let customAction = customAction {
-                    customAction() // Execute the custom closure if provided
+                    customAction()
                 } else {
                     Task {
                         do {
