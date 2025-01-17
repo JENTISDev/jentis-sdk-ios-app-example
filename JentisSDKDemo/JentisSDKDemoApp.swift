@@ -10,6 +10,7 @@ import netfox
 import FirebaseCore
 import JentisSDK
 import AppTrackingTransparency
+import Firebase
 
 @main
 struct JentisSDKDemoApp: App {

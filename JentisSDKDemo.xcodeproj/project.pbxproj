@@ -21,6 +21,7 @@
 		96DF45832CDB39CE00BD5D30 /* ConfigModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DF45822CDB39CC00BD5D30 /* ConfigModalView.swift */; };
 		96E896312D35253200A9738C /* JentisSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E896302D35253200A9738C /* JentisSDK.framework */; };
 		96E896322D35253200A9738C /* JentisSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 96E896302D35253200A9738C /* JentisSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		96E896382D3A667300A9738C /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 96E896372D3A667300A9738C /* FirebasePerformance */; };
 		96FBA5C62CBE21EE0045C096 /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 96FBA5C52CBE21EE0045C096 /* netfox */; };
 		96FBA5CA2CBE264C0045C096 /* Color+Jentis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBA5C92CBE264C0045C096 /* Color+Jentis.swift */; };
 		96FBA5CC2CBE28CC0045C096 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96FBA5CB2CBE28CC0045C096 /* GoogleService-Info.plist */; };
@@ -89,6 +90,7 @@
 			files = (
 				96FBA5C62CBE21EE0045C096 /* netfox in Frameworks */,
 				96E896312D35253200A9738C /* JentisSDK.framework in Frameworks */,
+				96E896382D3A667300A9738C /* FirebasePerformance in Frameworks */,
 				96FBA5CF2CBE29720045C096 /* FirebaseAppDistribution-Beta in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,6 +222,7 @@
 			packageProductDependencies = (
 				96FBA5C52CBE21EE0045C096 /* netfox */,
 				96FBA5CE2CBE29710045C096 /* FirebaseAppDistribution-Beta */,
+				96E896372D3A667300A9738C /* FirebasePerformance */,
 			);
 			productName = JentisSDKDemo;
 			productReference = 967214842CB4029800570B9D /* JentisSDKDemo.app */;
@@ -511,7 +514,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_ASSET_PATHS = "\"JentisSDKDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = 85TJ6UUY75;
 				ENABLE_PREVIEWS = YES;
@@ -543,7 +546,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_ASSET_PATHS = "\"JentisSDKDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = 85TJ6UUY75;
 				ENABLE_PREVIEWS = YES;
@@ -701,6 +704,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		96E896372D3A667300A9738C /* FirebasePerformance */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 96FBA5CD2CBE29710045C096 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebasePerformance;
+		};
 		96FBA5C52CBE21EE0045C096 /* netfox */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 96FBA5C42CBE21EE0045C096 /* XCRemoteSwiftPackageReference "netfox" */;

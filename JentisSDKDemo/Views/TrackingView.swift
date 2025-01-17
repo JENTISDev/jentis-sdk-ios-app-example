@@ -7,6 +7,7 @@
 
 import SwiftUI
 import JentisSDK
+import FirebasePerformance
 
 struct TrackingView: View {
     @State private var showPageViewPopover = false
@@ -278,6 +279,28 @@ struct TrackingView: View {
         }
         .padding()
         .background(Color(.systemBackground).edgesIgnoringSafeArea(.all))
+        .overlay(
+                VStack {
+                    if showSnackbar {
+                        HStack {
+                            Image(systemName: isError ? "xmark.circle.fill" : "checkmark.circle.fill")
+                                .foregroundColor(isError ? .red : .green)
+                            Text(snackbarMessage)
+                                .foregroundColor(.white)
+                                .multilineTextAlignment(.center)
+                        }
+                        .padding()
+                        .background(isError ? Color.red : Color.green)
+                        .cornerRadius(8)
+                        .shadow(radius: 4)
+                        .padding(.horizontal)
+                    }
+                }
+                .animation(.easeInOut, value: showSnackbar)
+                .transition(.move(edge: .bottom))
+                .padding(.bottom, 20),
+                alignment: .bottom
+            )
     }
     
     private func createTrackingButton(
@@ -291,6 +314,9 @@ struct TrackingView: View {
     ) -> some View {
         HStack {
             Button(action: {
+                // Start Firebase trace
+                let trace = Performance.startTrace(name: "\(title)_button_action")
+                
                 if let customAction = customAction {
                     customAction() // Execute the custom closure if provided
                 } else {
@@ -325,11 +351,17 @@ struct TrackingView: View {
                                 try await TrackingService.shared.submit(customInitiator)
                             }
                             
+                            // Stop trace after action completes
+                            trace?.stop()
+                            
                             // Show success message
                             self.snackbarMessage = snackbarMessage
                             self.isError = false
                             showSnackbarWithDelay()
                         } catch {
+                            // Stop trace in case of failure
+                            trace?.stop()
+                            
                             // Handle errors
                             self.snackbarMessage = "Failed to send \(title) action"
                             self.isError = true
