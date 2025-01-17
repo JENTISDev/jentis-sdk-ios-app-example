@@ -21,7 +21,9 @@ struct TrackingView: View {
     @State private var isError: Bool = false
     @State private var includeEnrichment: Bool = false // Checkbox state
     @State private var customInitiator: String = ""
-    
+    @State private var cumulativeCPUTime: Double = 0.0
+    @StateObject private var metricsManager = MetricsManager()
+
     var enrichmentData: [String: Any] {
         [
             "enrichment": [
@@ -316,7 +318,9 @@ struct TrackingView: View {
             Button(action: {
                 // Start Firebase trace
                 let trace = Performance.startTrace(name: "\(title)_button_action")
-                
+                trace?.incrementMetric("cumulative_cpu_time", by: Int64(metricsManager.cpuTime * 1000)) // Add MetricKit data
+
+
                 if let customAction = customAction {
                     customAction() // Execute the custom closure if provided
                 } else {
@@ -407,4 +411,47 @@ struct TrackingView: View {
             showSnackbar = false
         }
     }
+}
+
+
+import MetricKit
+import Combine
+
+class MetricsManager: NSObject, ObservableObject, MXMetricManagerSubscriber {
+    @Published var cpuTime: Double = 0.0 // Store CPU time in seconds
+
+    override init() {
+        super.init()
+        MXMetricManager.shared.add(self)
+    }
+
+    func didReceive(_ payloads: [MXMetricPayload]) {
+        for payload in payloads {
+            // Access CPU Metrics
+            if let cpuMetrics = payload.cpuMetrics {
+                DispatchQueue.main.async {
+                    let cpuTimeInSeconds = cpuMetrics.cumulativeCPUTime.converted(to: .seconds).value
+                    self.cpuTime = cpuTimeInSeconds
+                    print("Cumulative CPU Time: \(cpuTimeInSeconds) seconds")
+                }
+            }
+            
+            // Access Memory Metrics
+            if let memoryMetrics = payload.memoryMetrics {
+                DispatchQueue.main.async {
+                    let peakMemoryInMB = memoryMetrics.peakMemoryUsage.converted(to: .megabytes).value
+                    print("Peak Memory Usage: \(peakMemoryInMB) MB")
+                }
+            }
+
+            // Access Disk I/O Metrics
+            if let diskMetrics = payload.diskIOMetrics {
+                DispatchQueue.main.async {
+                    let totalReadBytes = diskMetrics.cumulativeLogicalWrites.converted(to: .megabytes).value
+                    print("Total Disk Writes: \(totalReadBytes) MB")
+                }
+            }
+        }
+    }
+
 }
