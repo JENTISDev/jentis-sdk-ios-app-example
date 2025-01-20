@@ -47,7 +47,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     }
     
     private func setupJentisSDK() {
-        let config = TrackConfig(
+        let savedConfig = UserDefaultsUtility.shared.get(key: "lastTrackConfig", type: TrackConfig.self)
+        
+        let config = savedConfig ?? TrackConfig(
             trackDomain: "qc3ipx.ckion-dev.jtm-demo.com", //"kndmjh.mipion.jtm-demo.com",
             container: "mipion-demo",
             environment: .live,

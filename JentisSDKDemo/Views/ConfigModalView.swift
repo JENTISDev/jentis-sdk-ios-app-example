@@ -26,7 +26,7 @@ struct ConfigModalView: View {
         let savedConfig = UserDefaultsUtility.shared.get(key: "lastTrackConfig", type: TrackConfig.self)
         
         let config = savedConfig ?? TrackConfig(
-            trackDomain: "kndmjh.mipion.jtm-demo.com",
+            trackDomain: "qc3ipx.ckion-dev.jtm-demo.com",
             container: "mipion-demo",
             environment: .live,
             version: "9",
