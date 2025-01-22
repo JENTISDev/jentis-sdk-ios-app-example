@@ -25,27 +25,29 @@ struct ContentView: View {
             ZStack {
                 VStack(spacing: -30) {
                     Text("Jentis SDK Demo")
-                        .foregroundColor(.blue)
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
+                        .foregroundColor(Color.mainDark)
+                        .font(.system(size: 35, weight: .bold))
+                        .kerning(0.5)
                     
                     Image("logo")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 300, height: 300)
-                        .padding(.top, -30)  // Negative padding to bring it closer to the title
                     
                     VStack(spacing: 20) {
                         Button(action: {
                             showConsentModal.toggle()
                         }) {
                             Text("Consent Settings")
-                                .font(.headline)
-                                .foregroundColor(.white)
+                                .font(.system(size: 16, weight: .medium))
+                                .foregroundColor(.brandBlue)
                                 .padding()
                                 .frame(maxWidth: .infinity)
-                                .background(Color.green)
-                                .cornerRadius(10)
+                                .background(.white)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .stroke(Color.brandBlue, lineWidth: 1)
+                                )
                         }
                         .padding(.horizontal)
                         
@@ -53,12 +55,12 @@ struct ContentView: View {
                             showTrackingView = true
                         }) {
                             Text("Tracking Examples")
-                                .font(.headline)
+                                .font(.system(size: 16, weight: .medium))
                                 .foregroundColor(.white)
                                 .padding()
                                 .frame(maxWidth: .infinity)
-                                .background(Color.purple)
-                                .cornerRadius(10)
+                                .background(Color.brandBlue)
+                                .cornerRadius(12)
                         }
                         .padding(.horizontal)
                         .background(

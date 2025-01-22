@@ -20,7 +20,7 @@ struct SnackbarView: View {
                 .foregroundColor(.white)
                 .padding()
                 .frame(maxWidth: .infinity)
-                .background(isError ? Color.red : Color.green)
+                .background(isError ? Color.red : Color.brandGreen)
                 .cornerRadius(10)
                 .padding(.horizontal, 20)
                 .padding(.bottom, 20)

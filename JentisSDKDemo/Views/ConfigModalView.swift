@@ -127,7 +127,7 @@ struct ConfigModalView: View {
                     }
                 }
                 
-                Button("Save") {
+                Button("Save Changes") {
                     let timeoutValue = TimeInterval(sessionTimeout) ?? 1800
                     let config = TrackConfig(
                         trackDomain: trackDomain,
@@ -148,6 +148,11 @@ struct ConfigModalView: View {
                     presentationMode.wrappedValue.dismiss()
                 }
                 .frame(maxWidth: .infinity, alignment: .center)
+                .font(.system(size: 16, weight: .medium))
+                .padding()
+                .background(Color.brandBlue)
+                .foregroundColor(.white)
+                .cornerRadius(12)
             }
             .navigationTitle("Configuration")
             .navigationBarItems(leading: Button("Cancel") {

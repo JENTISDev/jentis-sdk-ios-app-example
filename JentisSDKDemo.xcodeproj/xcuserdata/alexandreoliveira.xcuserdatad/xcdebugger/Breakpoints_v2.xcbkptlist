@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9B4E86CB-E91C-4AE9-9F9C-0DF6E717FFD6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JentisSDKDemo/Views/ContentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "AC38818E-71A5-4703-A5F6-8EB8C4CAE0B8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -34,6 +18,52 @@
             endingLineNumber = "132"
             landmarkName = "body"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "50D7D636-1970-4316-BBFA-6863968C8E84"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JentisSDKDemo/Views/TrackingView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "322"
+            endingLineNumber = "322"
+            landmarkName = "createTrackingButton(title:color:actions:snackbarMessage:showPopover:popoverText:customAction:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "50D7D636-1970-4316-BBFA-6863968C8E84 - da267c2e582e9b6f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.popover&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, attachmentAnchor: SwiftUI.PopoverAttachmentAnchor, arrowEdge: SwiftUI.Edge, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0)&gt; in JentisSDKDemo.TrackingView.createTrackingButton(title: Swift.String, color: SwiftUI.Color, actions: Swift.Array&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, snackbarMessage: Swift.String, showPopover: SwiftUI.Binding&lt;Swift.Bool&gt;, popoverText: Swift.String, customAction: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; some"
+                  moduleName = "JentisSDKDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexandreoliveira/Developer/jentis-sdk-ios-app-example/JentisSDKDemo/Views/TrackingView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "322"
+                  endingLineNumber = "322">
+               </Location>
+               <Location
+                  uuid = "50D7D636-1970-4316-BBFA-6863968C8E84 - da267c2e582e9b6f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.popover&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, attachmentAnchor: SwiftUI.PopoverAttachmentAnchor, arrowEdge: SwiftUI.Edge, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0)&gt; in JentisSDKDemo.TrackingView.createTrackingButton(title: Swift.String, color: SwiftUI.Color, actions: Swift.Array&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, snackbarMessage: Swift.String, showPopover: SwiftUI.Binding&lt;Swift.Bool&gt;, popoverText: Swift.String, customAction: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; some"
+                  moduleName = "JentisSDKDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexandreoliveira/Developer/jentis-sdk-ios-app-example/JentisSDKDemo/Views/TrackingView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "322"
+                  endingLineNumber = "322">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

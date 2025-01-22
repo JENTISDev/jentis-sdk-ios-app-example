@@ -38,9 +38,9 @@ struct ConsentModalView: View {
             Divider()
             
             VStack(spacing: 16) {
-                consentToggle(title: "GA4 server-side", isOn: $isGoogleAnalyticsAllowed, ncmBinding: $isGoogleAnalyticsNCM, color: .blue)
-                consentToggle(title: "Facebook", isOn: $isFacebookAllowed, ncmBinding: $isFacebookNCM, color: .indigo)
-                consentToggle(title: "Google Ads", isOn: $isAdwordsAllowed, ncmBinding: $isAdwordsNCM, color: .green)
+                consentToggle(title: "GA4 server-side", isOn: $isGoogleAnalyticsAllowed, ncmBinding: $isGoogleAnalyticsNCM, color: .brandGreen)
+                consentToggle(title: "Facebook", isOn: $isFacebookAllowed, ncmBinding: $isFacebookNCM, color: .brandGreen)
+                consentToggle(title: "Google Ads", isOn: $isAdwordsAllowed, ncmBinding: $isAdwordsNCM, color: .brandGreen)
             }
             .padding(.horizontal)
             
@@ -48,13 +48,12 @@ struct ConsentModalView: View {
             
             Button(action: saveConsents) {
                 Text("Save Changes")
-                    .fontWeight(.semibold)
+                    .font(.system(size: 16, weight: .medium))
                     .frame(maxWidth: .infinity)
                     .padding()
-                    .background(Color.blue)
+                    .background(Color.brandBlue)
                     .foregroundColor(.white)
-                    .cornerRadius(10)
-                    .shadow(radius: 2, y: 2)
+                    .cornerRadius(12)
             }
             .padding(.horizontal)
             .padding(.bottom)
