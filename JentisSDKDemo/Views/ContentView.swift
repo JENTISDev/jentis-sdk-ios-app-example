@@ -19,6 +19,7 @@ struct ContentView: View {
     @State private var isGoogleAnalyticsAllowed: Bool = false
     @State private var isFacebookAllowed: Bool = false
     @State private var isAdwordsAllowed: Bool = false
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         NavigationView {
@@ -44,9 +45,11 @@ struct ContentView: View {
                                 .padding()
                                 .frame(maxWidth: .infinity)
                                 .background(.white)
+                                .cornerRadius(12)
                                 .overlay(
-                                    RoundedRectangle(cornerRadius: 12)
-                                        .stroke(Color.brandBlue, lineWidth: 1)
+                                    colorScheme != .dark ?
+                                        RoundedRectangle(cornerRadius: 12)
+                                            .stroke(Color.brandBlue, lineWidth: 1) : nil
                                 )
                         }
                         .padding(.horizontal)
