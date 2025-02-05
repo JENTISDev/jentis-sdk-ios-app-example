@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		960FC4222D3FF27D00397F21 /* JentisSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 960FC4212D3FF27D00397F21 /* JentisSDK */; };
 		965768682CD63389007893A2 /* ConsentModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965768672CD63388007893A2 /* ConsentModalView.swift */; };
 		967214882CB4029800570B9D /* JentisSDKDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214872CB4029800570B9D /* JentisSDKDemoApp.swift */; };
 		9672148A2CB4029800570B9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214892CB4029800570B9D /* ContentView.swift */; };
@@ -19,6 +18,7 @@
 		967214B22CB402D200570B9D /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214B12CB402D200570B9D /* SplashScreenView.swift */; };
 		967214BA2CB4039100570B9D /* SnackbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214B92CB4039100570B9D /* SnackbarView.swift */; };
 		96754F052CDF36CA0098E4E8 /* TrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96754F042CDF36C90098E4E8 /* TrackingView.swift */; };
+		9684988C2D53529800C2CE4A /* JentisSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 9684988B2D53529800C2CE4A /* JentisSDK */; };
 		96DF45832CDB39CE00BD5D30 /* ConfigModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DF45822CDB39CC00BD5D30 /* ConfigModalView.swift */; };
 		96E896382D3A667300A9738C /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 96E896372D3A667300A9738C /* FirebasePerformance */; };
 		96FBA5C62CBE21EE0045C096 /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 96FBA5C52CBE21EE0045C096 /* netfox */; };
@@ -73,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				960FC4222D3FF27D00397F21 /* JentisSDK in Frameworks */,
+				9684988C2D53529800C2CE4A /* JentisSDK in Frameworks */,
 				96FBA5C62CBE21EE0045C096 /* netfox in Frameworks */,
 				96E896382D3A667300A9738C /* FirebasePerformance in Frameworks */,
 				96FBA5CF2CBE29720045C096 /* FirebaseAppDistribution-Beta in Frameworks */,
@@ -207,7 +207,7 @@
 				96FBA5C52CBE21EE0045C096 /* netfox */,
 				96FBA5CE2CBE29710045C096 /* FirebaseAppDistribution-Beta */,
 				96E896372D3A667300A9738C /* FirebasePerformance */,
-				960FC4212D3FF27D00397F21 /* JentisSDK */,
+				9684988B2D53529800C2CE4A /* JentisSDK */,
 			);
 			productName = JentisSDKDemo;
 			productReference = 967214842CB4029800570B9D /* JentisSDKDemo.app */;
@@ -284,7 +284,7 @@
 			packageReferences = (
 				96FBA5C42CBE21EE0045C096 /* XCRemoteSwiftPackageReference "netfox" */,
 				96FBA5CD2CBE29710045C096 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				960FC4202D3FF27D00397F21 /* XCRemoteSwiftPackageReference "jentis-sdk-ios-early-adopter" */,
+				9684988A2D53529800C2CE4A /* XCRemoteSwiftPackageReference "jentis-sdk-ios-releases" */,
 			);
 			productRefGroup = 967214852CB4029800570B9D /* Products */;
 			projectDirPath = "";
@@ -671,9 +671,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		960FC4202D3FF27D00397F21 /* XCRemoteSwiftPackageReference "jentis-sdk-ios-early-adopter" */ = {
+		9684988A2D53529800C2CE4A /* XCRemoteSwiftPackageReference "jentis-sdk-ios-releases" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/JENTISDev/jentis-sdk-ios-early-adopter.git";
+			repositoryURL = "https://github.com/JENTISDev/jentis-sdk-ios-releases.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.3;
@@ -698,9 +698,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		960FC4212D3FF27D00397F21 /* JentisSDK */ = {
+		9684988B2D53529800C2CE4A /* JentisSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 960FC4202D3FF27D00397F21 /* XCRemoteSwiftPackageReference "jentis-sdk-ios-early-adopter" */;
+			package = 9684988A2D53529800C2CE4A /* XCRemoteSwiftPackageReference "jentis-sdk-ios-releases" */;
 			productName = JentisSDK;
 		};
 		96E896372D3A667300A9738C /* FirebasePerformance */ = {

@@ -1,5 +1,5 @@
 {
-  "originHash" : "3f510eb92740c1b9061a08e1db336f030d15ec131dd7eb89993656001cd1f938",
+  "originHash" : "841d370d534e41d1b410f02c6add021b24846f655715ecd1e59fc96fb20193bb",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -83,11 +83,11 @@
       }
     },
     {
-      "identity" : "jentis-sdk-ios-early-adopter",
+      "identity" : "jentis-sdk-ios-releases",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/JENTISDev/jentis-sdk-ios-early-adopter.git",
+      "location" : "https://github.com/JENTISDev/jentis-sdk-ios-releases.git",
       "state" : {
-        "revision" : "60bb3b2116c368ff3789716e9b766fb3eb3b8803",
+        "revision" : "0d0393a9ce0881d1f42c888082c0f7995da41e21",
         "version" : "1.0.3"
       }
     },
