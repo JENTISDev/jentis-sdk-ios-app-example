@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		962BD0CD2D69B2B4005850B1 /* Wormholy in Frameworks */ = {isa = PBXBuildFile; productRef = 962BD0CC2D69B2B4005850B1 /* Wormholy */; };
 		965768682CD63389007893A2 /* ConsentModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965768672CD63388007893A2 /* ConsentModalView.swift */; };
 		967214882CB4029800570B9D /* JentisSDKDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214872CB4029800570B9D /* JentisSDKDemoApp.swift */; };
 		9672148A2CB4029800570B9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214892CB4029800570B9D /* ContentView.swift */; };
@@ -21,7 +22,6 @@
 		9684988C2D53529800C2CE4A /* JentisSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 9684988B2D53529800C2CE4A /* JentisSDK */; };
 		96DF45832CDB39CE00BD5D30 /* ConfigModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DF45822CDB39CC00BD5D30 /* ConfigModalView.swift */; };
 		96E896382D3A667300A9738C /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 96E896372D3A667300A9738C /* FirebasePerformance */; };
-		96FBA5C62CBE21EE0045C096 /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 96FBA5C52CBE21EE0045C096 /* netfox */; };
 		96FBA5CA2CBE264C0045C096 /* Color+Jentis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBA5C92CBE264C0045C096 /* Color+Jentis.swift */; };
 		96FBA5CC2CBE28CC0045C096 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96FBA5CB2CBE28CC0045C096 /* GoogleService-Info.plist */; };
 		96FBA5CF2CBE29720045C096 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 96FBA5CE2CBE29710045C096 /* FirebaseAppDistribution-Beta */; };
@@ -74,7 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9684988C2D53529800C2CE4A /* JentisSDK in Frameworks */,
-				96FBA5C62CBE21EE0045C096 /* netfox in Frameworks */,
+				962BD0CD2D69B2B4005850B1 /* Wormholy in Frameworks */,
 				96E896382D3A667300A9738C /* FirebasePerformance in Frameworks */,
 				96FBA5CF2CBE29720045C096 /* FirebaseAppDistribution-Beta in Frameworks */,
 			);
@@ -204,10 +204,10 @@
 			);
 			name = JentisSDKDemo;
 			packageProductDependencies = (
-				96FBA5C52CBE21EE0045C096 /* netfox */,
 				96FBA5CE2CBE29710045C096 /* FirebaseAppDistribution-Beta */,
 				96E896372D3A667300A9738C /* FirebasePerformance */,
 				9684988B2D53529800C2CE4A /* JentisSDK */,
+				962BD0CC2D69B2B4005850B1 /* Wormholy */,
 			);
 			productName = JentisSDKDemo;
 			productReference = 967214842CB4029800570B9D /* JentisSDKDemo.app */;
@@ -282,9 +282,9 @@
 			);
 			mainGroup = 9672147B2CB4029800570B9D;
 			packageReferences = (
-				96FBA5C42CBE21EE0045C096 /* XCRemoteSwiftPackageReference "netfox" */,
 				96FBA5CD2CBE29710045C096 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				9684988A2D53529800C2CE4A /* XCRemoteSwiftPackageReference "jentis-sdk-ios-releases" */,
+				962BD0CB2D69B2B4005850B1 /* XCRemoteSwiftPackageReference "Wormholy" */,
 			);
 			productRefGroup = 967214852CB4029800570B9D /* Products */;
 			projectDirPath = "";
@@ -500,7 +500,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 36;
+				CURRENT_PROJECT_VERSION = 37;
 				DEVELOPMENT_ASSET_PATHS = "\"JentisSDKDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = 85TJ6UUY75;
 				ENABLE_PREVIEWS = YES;
@@ -532,7 +532,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 36;
+				CURRENT_PROJECT_VERSION = 37;
 				DEVELOPMENT_ASSET_PATHS = "\"JentisSDKDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = 85TJ6UUY75;
 				ENABLE_PREVIEWS = YES;
@@ -671,20 +671,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		962BD0CB2D69B2B4005850B1 /* XCRemoteSwiftPackageReference "Wormholy" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pmusolino/Wormholy.git";
+			requirement = {
+				kind = exactVersion;
+				version = 2.0.0;
+			};
+		};
 		9684988A2D53529800C2CE4A /* XCRemoteSwiftPackageReference "jentis-sdk-ios-releases" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/JENTISDev/jentis-sdk-ios-releases.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.3;
-			};
-		};
-		96FBA5C42CBE21EE0045C096 /* XCRemoteSwiftPackageReference "netfox" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kasketis/netfox.git";
-			requirement = {
-				kind = exactVersion;
-				version = 1.21.0;
 			};
 		};
 		96FBA5CD2CBE29710045C096 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
@@ -698,6 +698,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		962BD0CC2D69B2B4005850B1 /* Wormholy */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 962BD0CB2D69B2B4005850B1 /* XCRemoteSwiftPackageReference "Wormholy" */;
+			productName = Wormholy;
+		};
 		9684988B2D53529800C2CE4A /* JentisSDK */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9684988A2D53529800C2CE4A /* XCRemoteSwiftPackageReference "jentis-sdk-ios-releases" */;
@@ -707,11 +712,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 96FBA5CD2CBE29710045C096 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebasePerformance;
-		};
-		96FBA5C52CBE21EE0045C096 /* netfox */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 96FBA5C42CBE21EE0045C096 /* XCRemoteSwiftPackageReference "netfox" */;
-			productName = netfox;
 		};
 		96FBA5CE2CBE29710045C096 /* FirebaseAppDistribution-Beta */ = {
 			isa = XCSwiftPackageProductDependency;

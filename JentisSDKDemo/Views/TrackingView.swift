@@ -314,20 +314,60 @@ struct TrackingView: View {
     ) -> some View {
         HStack {
             Button(action: {
+                // Start Firebase trace
+                let trace = Performance.startTrace(name: "\(title)_button_action")
+                let cpuTimeInMilliseconds = Int64(metricsManager.cpuTime * 1000)
+                print("CPU Time (ms): \(cpuTimeInMilliseconds)")
+                trace?.incrementMetric("cumulative_cpu_time", by: cpuTimeInMilliseconds)
+
                 if let customAction = customAction {
                     customAction()
                 } else {
                     Task {
                         do {
-                            for action in actions {
-                                try TrackingService.shared.push(action)
+                            // Initialize base tracking actions
+                            let enrichedActions = actions
+                            
+                            // Push actions sequentially
+                            for action in enrichedActions {
+                                try await TrackingService.shared.push(action)
                             }
-                            self.snackbarMessage = "\(title) action sent successfully!"
-                            isError = false
+                            
+                            // If enrichment is enabled, add enrichment data explicitly
+                            if includeEnrichment {
+                                try await TrackingService.shared.addEnrichment(
+                                    pluginId: "enrichment_xxxlprodfeed",
+                                    arguments: [
+                                        "accountId": "account",
+                                        "page_title": "pagetitle",
+                                        "productId": "product_id",
+                                        "baseProductId": ["1"]
+                                    ],
+                                    variables: ["enrichment_product_variant"]
+                                )
+                            }
+                            
+                            // Submit the data
+                            if customInitiator.isEmpty {
+                                try await TrackingService.shared.submit()
+                            } else {
+                                try await TrackingService.shared.submit(customInitiator)
+                            }
+                            
+                            // Stop trace after action completes
+                            trace?.stop()
+                            
+                            // Show success message
+                            self.snackbarMessage = snackbarMessage
+                            self.isError = false
                             showSnackbarWithDelay()
                         } catch {
+                            // Stop trace in case of failure
+                            trace?.stop()
+                            
+                            // Handle errors
                             self.snackbarMessage = "Failed to send \(title) action"
-                            isError = true
+                            self.isError = true
                             showSnackbarWithDelay()
                         }
                     }
@@ -351,18 +391,15 @@ struct TrackingView: View {
                     .foregroundColor(.gray)
             }
             .popover(isPresented: showPopover) {
-                ScrollView { // Wrap popover content in a ScrollView
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text("How to track \(title):")
-                            .font(.headline)
-                            .padding(.bottom, 5)
-                        Text(popoverText)
-                            .font(.system(.body, design: .monospaced))
-                            .foregroundColor(.mainBlue)
-                    }
-                    .padding()
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("How to track \(title):")
+                        .font(.headline)
+                        .padding(.bottom, 5)
+                    Text(popoverText)
+                        .font(.system(.body, design: .monospaced))
+                        .foregroundColor(.blue)
                 }
-                .frame(width: 300, height: 400)
+                .padding()
             }
         }
     }
